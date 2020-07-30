@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>메뉴토글</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+      #sidebar {
+        width: 250px;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        height: 100%;
+        z-index: 999;
+        background: #333;
+        color: #fff;
+        transition: all 0.3s;
+      }
+      #sidebar.active {
+        left: 0;
+      }
+
+      .overlay {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 998;
+        display: block;
+      }
+      body {
+        opacity: 1;
+        transition: 0.7s opacity;
+      }
+
+      body.fade {
+        opacity: 0;
+        transition: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap" class="fade">
+      <nav id="sidebar"></nav>
+      <button id="sidebarCollapse">토글</button>
+      <div class="overlay"></div>
+    </div>
+    <script>
+      const sidebarCollapse = document.querySelector("#sidebarCollapse");
+      const overlay = document.querySelector(".overlay");
+      const sidebar = document.querySelector("#sidebar");
+
+      sidebarCollapse.addEventListener("click", fade);
+      overlay.addEventListener("click", over);
+
+      function fade() {
+        sidebar.classList.add("active");
+        overlay.classList.add("fade");
+      }
+
+      function over() {
+        sidebar.classList.remove("active");
+      }
+    </script>
+
+    <!-- <script>
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').addClass('active');
+            $('.overlay').fadeIn();
+        });
+        
+        $('.overlay').on('click', function () {
+            $('#sidebar').removeClass('active');
+            $('.overlay').fadeOut();
+        });
+    </script> -->
+  </body>
+</html>
