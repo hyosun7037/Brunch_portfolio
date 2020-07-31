@@ -1,8 +1,8 @@
 import React from "react";
-import NavNonmember from "./components/NavNonmem";
+import NavWriter from "./components/NavWriter";
 
 const App = () => {
-  return <NavNonmember></NavNonmember>;
+  return <NavWriter></NavWriter>;
 };
 
 export default App;

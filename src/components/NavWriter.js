@@ -1,7 +1,11 @@
 import React from "react";
+import styled from "styled-components";
+import NavNonmember from "./NavNonmem";
+
+const Writer = styled(NavNonmember)``;
 
 const NavWriter = () => {
-  return <div></div>;
+  return <Writer></Writer>;
 };
 
 export default NavWriter;

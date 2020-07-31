@@ -19,13 +19,29 @@ const NavHeader = styled.div`
   height: 239px;
   border-bottom: 1px solid #ddd;
   background-color: #f8f8f8;
-  overflow: hidden;
+  overflow-y: hidden;
 `;
 
-const NavContents = styled.div`
+const NavContents = styled.ul`
   height: 373px;
   padding-top: 28px;
-  overflow-y: auto;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 auto;
+  overflow: auto;
+`;
+
+const NavContentsMenu = styled.li`
+  font-size: 14px;
+  color: #777;
+  height: 13px;
+  letter-spacing: 0.8px;
+  line-height: 13px;
+  padding: 12.5px 0;
+  &:hover {
+    color: #00c3bd;
+    cursor: pointer;
+  }
 `;
 
 const NavMain = styled.div`
@@ -34,8 +50,12 @@ const NavMain = styled.div`
 `;
 
 const NavFooter = styled.div`
+  position: absolute;
+  width: 100%;
+  bottom: 0;
   height: 139px;
-  margin: 40px 0 30px;
+  /* margin: 40px 0 30px; 
+  크기 줄였을 때 겹치는 부분 오류 나중에 수정하기 */
 `;
 
 const NavLogo = styled.div`
@@ -52,11 +72,36 @@ const NavStart = styled.button`
   height: 32px;
   border-radius: 16px;
   font-size: 13px;
+  font-family: "Noto Sans KR";
+  font-weight: 500;
   color: #00c3bd;
   border: 1px solid #00c3bd;
   margin-top: 13px;
   background-color: #fff;
+  cursor: pointer;
 `;
+
+const NavFindById = styled.a`
+  font-size: 13px;
+  color: #959595;
+  border-bottom: 1px solid #bbb;
+  cursor: pointer;
+`;
+
+const NavText = {
+  lineHeight: "1.35",
+  fontSize: "13px",
+  fontStyle: "italic",
+  color: "#666",
+  marginBottom: "5px",
+};
+
+const NavSubText = {
+  fontSize: "10px",
+  fontStyle: "italic",
+  letterSpacing: "0.3px",
+  color: "#959595",
+};
 
 const NavNonmember = () => {
   // a 태그 나중에 수정예정
@@ -65,16 +110,46 @@ const NavNonmember = () => {
       <NavMain>
         <NavHeader>
           <NavLogo></NavLogo>
-          <p className="NavText1">text</p>
-          <p>text</p>
+          <p className="NavText" style={NavText}>
+            You can make anything <br />
+            by writing
+          </p>
+          <p className="NavSubText" style={NavSubText}>
+            - C.S.Lewis -
+          </p>
           <Route path="/" component={Main} exact={true}></Route>
-          <NavStart>브런치 시작하기</NavStart>
+          <NavStart>
+            <Route path="/" component={Main}>
+              브런치 시작하기
+            </Route>
+          </NavStart>
         </NavHeader>
-        <NavContents></NavContents>
+        <NavContents>
+          <NavContentsMenu>
+            <Route path="/" component={Main}>
+              브런치 홈
+            </Route>
+          </NavContentsMenu>
+          <NavContentsMenu>
+            <Route path="/" component={Main}>
+              브런치 나우
+            </Route>
+          </NavContentsMenu>
+          <NavContentsMenu>
+            <Route path="/" component={Main}>
+              브런치 책방
+            </Route>
+          </NavContentsMenu>
+        </NavContents>
       </NavMain>
-      <NavFooter></NavFooter>
+      <NavFooter>
+        <NavFindById>
+          <Route path="/" component={Main} exact={true}>
+            계정을 잊어버리셨나요?
+          </Route>
+        </NavFindById>
+      </NavFooter>
     </NavWrap>
   );
 };
-
 export default NavNonmember;
