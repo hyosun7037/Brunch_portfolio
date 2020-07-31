@@ -2,34 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Route } from "react-router-dom";
 import Main from "../pages/Main";
-
-const NavWrap = styled.div`
-  width: 260px;
-  height: 100%;
-  text-align: center;
-  position: fixed;
-  left: 0;
-  top: 0;
-  border-right: 1px solid #ddd;
-  background-color: #fff;
-`;
-
-const NavHeader = styled.div`
-  position: relative;
-  height: 239px;
-  border-bottom: 1px solid #ddd;
-  background-color: #f8f8f8;
-  overflow-y: hidden;
-`;
-
-const NavContents = styled.ul`
-  height: 373px;
-  padding-top: 28px;
-  padding-left: 0;
-  padding-right: 0;
-  margin: 0 auto;
-  overflow: auto;
-`;
+import '../styles/nav.css'
 
 const NavContentsMenu = styled.li`
   font-size: 14px;
@@ -44,11 +17,6 @@ const NavContentsMenu = styled.li`
   }
 `;
 
-const NavMain = styled.div`
-  height: 612px;
-  margin-bottom: 37px;
-`;
-
 const NavFooter = styled.div`
   position: absolute;
   width: 100%;
@@ -58,14 +26,6 @@ const NavFooter = styled.div`
   크기 줄였을 때 겹치는 부분 오류 나중에 수정하기 */
 `;
 
-const NavLogo = styled.div`
-  background-image: url("https://t1.daumcdn.net/brunch/static/img/help/pc/logo_service2_v1.png");
-  background-color: #f8f8f8;
-  width: 48px;
-  height: 48px;
-  margin: 40px auto 9px;
-  background-position: -1px 54px;
-`;
 
 const NavStart = styled.button`
   width: 120px;
@@ -106,15 +66,14 @@ const NavSubText = {
 const NavNonmember = () => {
   // a 태그 나중에 수정예정
   return (
-    <NavWrap>
-      <NavMain>
-        <NavHeader>
-          <NavLogo></NavLogo>
-          <p className="NavText" style={NavText}>
+    <div className="nav__vWrap">
+        <div className="nav__Header">
+          <div className="nav__Logo"></div>
+          <p className="nav__Text" style={NavText}>
             You can make anything <br />
             by writing
           </p>
-          <p className="NavSubText" style={NavSubText}>
+          <p className="nav__SubText" style={NavSubText}>
             - C.S.Lewis -
           </p>
           <Route path="/" component={Main} exact={true}></Route>
@@ -123,8 +82,9 @@ const NavNonmember = () => {
               브런치 시작하기
             </Route>
           </NavStart>
-        </NavHeader>
-        <NavContents>
+        </div>
+        <div className="nav__Main">
+        <ul className="nav__Contents">
           <NavContentsMenu>
             <Route path="/" component={Main}>
               브런치 홈
@@ -140,16 +100,16 @@ const NavNonmember = () => {
               브런치 책방
             </Route>
           </NavContentsMenu>
-        </NavContents>
-      </NavMain>
-      <NavFooter>
+        </ul>
+      </div>
+      <div className="nav__Footer" style={{position:'absolute'}}>
         <NavFindById>
           <Route path="/" component={Main} exact={true}>
             계정을 잊어버리셨나요?
           </Route>
         </NavFindById>
-      </NavFooter>
-    </NavWrap>
+      </div>
+    </div>
   );
 };
 export default NavNonmember;
