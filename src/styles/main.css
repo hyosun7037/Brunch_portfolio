@@ -173,6 +173,42 @@ header {
   margin-top: 22px;
 }
 
+.editor__pic .wrap__btn .btn__brunch{
+  margin-top:-50px;
+  position: absolute;
+  top:50%;
+  z-index: 10;
+  width:100px;
+  height: 100px;
+}
+
+.btn__prev{
+  left:30px;
+}
+
+.btn__next{
+  right:30px;
+}
+
+.btn__prev .ico__brunch{
+  background-position: -167px -175px;
+}
+
+.btn__next .ico__brunch{
+  background-position: -269px -175px;
+}
+
+
+.ico__brunch{
+  display: block;
+  width:100px;
+  height: 101px;
+  background-image:url('http://t1.daumcdn.net/brunch9/static/images/pc/ico_brunch_v8_181004_v2.png');
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+
+
 .wrap__slide {
   width: 960px;
   height: 520px;
@@ -189,6 +225,9 @@ header {
   /* position: absolute; */
 }
 
+.item__pic{
+  position: relative;
+}
 .item__pic__type1 {
   width: 50%;
   height: 520px;
@@ -210,6 +249,12 @@ header {
   background: #959595;
 }
 
+.item__pic__type4 {
+  width: 100%;
+  height: 260px;
+  background: #bbb;
+}
+
 .wrap__pic {
   width: 960px;
   overflow: hidden;
@@ -229,6 +274,154 @@ header {
 .wrap__pic2 .item__pic__type3 {
   width: 33.3%;
   height: inherit;
+}
+
+.wrap__pic3{
+  height: 100%;
+}
+
+.wrap__pic3 .item__pic__type1{
+  width:50%;
+  height: 50%;
+}
+.wrap__pic3 .item__pic__type2{
+  width:50%;
+  height: 50%;
+}
+.wrap__pic3 .item__pic__type3{
+  width:50%;
+  height: 50%;
+}
+.wrap__pic3 .item__pic__type4{
+  width:50%;
+  height: 50%;
+}
+
+.append__info{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translateY(-50%);
+  width:100%;
+  margin-left:-50%;
+  color:#fff;
+  text-align: center;
+  z-index: 5;
+}
+
+
+.wrap__pic1 .item__pic__type1 .info__g{
+  padding:120px 50px;
+  background-color: rgba(0,0,0,0.3);
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.mask{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  background-color: #333;
+  opacity: .4;
+}
+
+
+.tit__pic{
+  display: block;
+  padding-top:12px;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.1em;
+  font-family: "Nanum Myeongjo", serif;
+}
+
+.txt__pic{
+  display: block;
+  padding-top:9px;
+  line-height: 20px;
+  font-family: "Noto Sans KR";
+  font-size:12px;
+}
+
+.info__g .info__by{
+  padding-top:30px;
+  font-size:12px;
+  font-family: "Noto Sans KR";
+  color:#fff;
+  opacity: .8;
+}
+
+
+.wrap__paging{
+  width:960px;
+  margin:22px auto 0;
+  text-align: center;
+}
+
+.wrap__paging .link__page{
+  display: inline-block;
+  height: 31px;
+  padding:0 11px;
+  vertical-align: top;
+}
+
+.wrap__paging span .img__page{
+  height: 12px;
+  margin-top:8px;
+}
+.wrap__paging .img__page{
+  display: block;
+  overflow: hidden;
+  width:13px;
+  height: 9px;
+  margin-top:10px;
+}
+
+.wrap__paging .txt__page1{
+  background-position: 0 -10px;
+}
+
+.wrap__paging .txt__page2{
+  background-position: -20px 0;
+}
+
+.wrap__paging .txt__page3{
+  background-position: -40px 0;
+}
+
+.wrap__paging .txt__page4{
+  background-position: -60px 0px;
+}
+
+.wrap__paging .txt__page5{
+  background-position: -80px 0px;
+}
+
+.wrap__paging .txt__page6{
+  background-position: -100px 0px;
+}
+
+.wrap__paging .txt__page7{
+  background-position: -120px 0px;
+}
+
+.wrap__paging .txt__page8{
+  background-position: -140px 0px;
+}
+
+.wrap__paging .txt__page9{
+  background-position: -160px 0px;
+}
+
+
+.img__page{
+  background-image:url('http://t1.daumcdn.net/brunch/static/img/help/pc/top/img_paging.v2.png');
+  background-repeat: no-repeat;
+  text-indent: -9999px;
 }
 
 .keywords {
@@ -440,6 +633,10 @@ header {
   font-size: 12px;
 }
 
+.ico__by{
+  color:#fff;
+  padding-right: 3px;
+}
 .rec__articles .ico__by {
   margin-top: 3px;
   width: 14px;

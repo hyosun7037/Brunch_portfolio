@@ -65,23 +65,127 @@ const Main = () => {
             <div className="wrap__slide">
               <ul className="list__slide">
                 <li>
-                  <div className="wrap__pic">
-                    <div className="item__pic item__pic__type1"></div>
+                  <div className="wrap__pic wrap__pic1">
+                    <div className="item__pic item__pic__type1">
+                     <a href="#">
+                       <img src="//img1.daumcdn.net/thumb/C460x648.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/18C5/image/_xgHcZmsvPsvqhH5_qbFc617JzI.jpg" width="100%" height="100%" alt="에디터 픽 사진1"/>
+                       <div className="append__info">
+                         
+                         <div className="info__g">
+                           <strong className="tit__pic">라디오 PD의 제주살이 <br />고군분투기3</strong>
+                           <span className="info__by">
+                             <span className="ico__by">by</span>
+                             슈필라움
+                           </span>
+                         </div>
+                       </div>
+                     </a>
+                    </div>
                     <div className="item__pic item__pic__type2__3">
-                      <div className="item__pic item__pic__type2"></div>
-                      <div className="item__pic item__pic__type3"></div>
+                      <div className="item__pic item__pic__type2">
+                        <a href="#">
+                        <img src="//img1.daumcdn.net/thumb/C480x260.fjpg/?fname=https://t1.daumcdn.net/section/oc/2acfb8dcbbbb4b09bae794f3d2328461" width="100%" height="100%" alt="에디터 픽 사진2"/>
+                          <div className="append__info">
+                            <div className="info__g">
+                              <strong className="tit__pic">녹물이 내 몸을 <br/>깜싸 안으니</strong>
+                              <span className="info__by">
+                                <span className="ico__by">by</span>
+                                슈필라움
+                              </span>
+                            </div>
+                          </div>
+                        </a>
+                        <div className="mask"></div>
+                      </div>
+                      <div className="item__pic item__pic__type3">
+                      <a href="#">
+                        <img src="//img1.daumcdn.net/thumb/C480x260.fjpg/?fname=https://t1.daumcdn.net/section/oc/864f6a17996542afbf477cb950244ac1" width="100%" height="100%" alt="에디터 픽 사진2"/>
+                          <div className="append__info">
+                            <div className="info__g">
+                              <strong className="tit__pic">빌 게이츠 성공 <br/>비밀, 잘 쉬면<br/>떼돈 번다</strong>
+                              <span className="info__by">
+                                <span className="ico__by">by</span>
+                                슈필라움
+                              </span>
+                            </div>
+                          </div>
+                        </a>
+                        <div className="mask"></div>
+                      </div>
                     </div>
                   </div>
                 </li>
 
                 <li>
                   <div className="wrap__pic wrap__pic2">
-                    <div className="item__pic item__pic__type1"></div>
+                    <div className="item__pic item__pic__type1">
+                    <a href="#">
+                        <img src="//img1.daumcdn.net/thumb/C320x520.fjpg/?fname=https://t1.daumcdn.net/section/oc/78b1b4e8a4244ff4859dc791900e0d5d" width="100%" height="100%" alt="에디터 픽 사진2"/>
+                          <div className="append__info">
+                            <div className="info__g">
+                              <strong className="tit__pic">런치박스 말고<br/>도시락<br/></strong>
+                              <span className="txt__pic">런치박스 말고 "오늘"<br/>"점심시간에 다들 내 런치박스를.."<br/></span>
+                              <span className="info__by">
+                                <span className="ico__by">by</span>
+                                슈필라움
+                              </span>
+                            </div>
+                          </div>
+                        </a>
+                        <div className="mask"></div>
+                    </div>
                     <div className="item__pic item__pic__type2"></div>
                     <div className="item__pic item__pic__type3"></div>
                   </div>
                 </li>
+
+                <li>
+                  <div className="wrap__pic wrap__pic3">
+                    <div className="item__pic item__pic__type1"></div>
+                    <div className="item__pic item__pic__type2"></div>
+                    <div className="item__pic item__pic__type3"></div>
+                    <div className="item__pic item__pic__type4"></div>
+                  </div>
+                </li>
               </ul>
+            </div>
+            <div className="wrap__btn">
+              <a href="#" className="btn__scroll btn__brunch btn__prev">
+                <span className="ico__brunch">이전 에디터 보기</span>
+              </a>
+              <a href="#" className="btn__scroll btn__brunch btn__next">
+              <span className="ico__brunch">다음 에디터 보기</span>
+              </a>
+            </div>
+            <div className="wrap__paging">
+              <span className="link__page">
+                <span className="screen__out">현재 페이지</span>
+                <span className="img__page txt__page1">01</span>
+              </span> {/*현재 활성화 페이지*/}
+              <a href="#" className="link__page">
+                <span className="img__page txt__page2">02</span>
+              </a>
+              <a href="#" className="link__page">
+                <span className="img__page txt__page3">03</span>
+              </a>
+              <a href="#" className="link__page">
+                <span className="img__page txt__page4">04</span>
+              </a>
+              <a href="#" className="link__page">
+                <span className="img__page txt__page5">05</span>
+              </a>
+              <a href="#" className="link__page">
+                <span className="img__page txt__page6">06</span>
+              </a>
+              <a href="#" className="link__page">
+                <span className="img__page txt__page7">07</span>
+              </a>
+              <a href="#" className="link__page">
+                <span className="img__page txt__page8">08</span>
+              </a>
+              <a href="#" className="link__page">
+                <span className="img__page txt__page9">09</span>
+              </a>
             </div>
           </div>
 
