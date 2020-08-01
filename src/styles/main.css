@@ -217,6 +217,20 @@ header {
   flex-wrap: wrap;
 }
 
+.wrap__pic2 .item__pic__type1 {
+  width: 33.3%;
+}
+
+.wrap__pic2 .item__pic__type2 {
+  width: 33.3%;
+  height: inherit;
+}
+
+.wrap__pic2 .item__pic__type3 {
+  width: 33.3%;
+  height: inherit;
+}
+
 .keywords {
   width: 960px;
   margin: 0 auto;
