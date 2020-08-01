@@ -131,10 +131,41 @@ header {
   width: 960px;
   height: 229px;
   margin: 0 auto;
-  background-color: bisque;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.intro__brunch .tit__brunch {
+  display: block;
+  margin-top: 0;
+  font-size: 40px;
+  font-weight: 400;
+  font-family: "Nanum Myeongjo", serif;
+  color: #1a1a1a;
+  text-align: left;
+  letter-spacing: -0.09em;
+  width: 100%;
+  height: auto;
+}
+
+.part {
+  display: block;
+}
+
+.ico__logo {
+  width: 28px;
+  height: 28px;
+  margin: 1px 6px 0 5px;
+  background-image: url("http://t1.daumcdn.net/brunch9/static/images/pc/ico_brunch_v8_181004_v2.png");
+  background-position: -120px -200px;
+}
+
+.intro__brunch .desc__brunch {
+  padding-bottom: 16px;
+  padding-top: -3px;
+  font-size: 32px;
+  line-height: 48px;
+  font-family: "Nanum Myeongjo", serif;
+  color: #cacaca;
+  letter-spacing: -0.09em;
 }
 
 .editor__pic {
@@ -146,20 +177,44 @@ header {
   width: 960px;
   height: 520px;
   margin: 0 auto;
-  background-color: cadetblue;
-  display: flex;
   justify-content: center;
   align-items: center;
-  /* overflow: visible; */
+  overflow: visible;
 }
 
 .list__slide {
   width: 900%;
-  position: absolute;
+  display: flex;
+  padding: 0;
+  /* position: absolute; */
+}
+
+.item__pic__type1 {
+  width: 50%;
+  height: 520px;
+  background: #00c6bd;
+}
+
+.item__pic__type2__3 {
+  width: 50%;
+}
+.item__pic__type2 {
+  width: 100%;
+  height: 260px;
+  background: #bfbfbf;
+}
+
+.item__pic__type3 {
+  width: 100%;
+  height: 260px;
+  background: #959595;
 }
 
 .wrap__pic {
   width: 960px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .keywords {
@@ -171,7 +226,7 @@ header {
 .tit__brunch {
   width: 266px;
   height: 13px;
-  margin: 152px auto 0;
+  margin: 150px auto 0;
   background-position: -101px -300px;
 }
 
@@ -276,4 +331,122 @@ header {
 
 .ad__banner img {
   width: 100%;
+}
+
+/* 추천 글 영역  */
+.rec__articles {
+  position: relative;
+  height: 845px;
+  font-family: "Noto-sans KR";
+}
+
+.rec__articles .wrap__slide {
+  background: none;
+}
+
+.rec__articles .tit__brunch {
+  width: 380px;
+  height: 13px;
+  margin-top: 152px;
+  background-position: 0 -225px;
+  position: unset;
+}
+
+.rec__articles .desc__brunch {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.rec__articles .desc__brunch .txt__brunch {
+  width: 162px;
+  height: 11px;
+  margin: 17px auto 47px;
+  background-position: 0 -75px;
+  position: unset;
+}
+
+.rec__articles .wrap__slide {
+  overflow: visible;
+  width: 960px;
+}
+
+.rec__articles .list__slide {
+  width: 7800px;
+  position: relative;
+  padding-left: 0;
+}
+
+.rec__articles .list__slide li {
+  display: inline-block;
+  width: 240px;
+  padding: 0 10px;
+  font-family: "Noto-sans KR";
+  vertical-align: top;
+}
+
+.rec__articles .link__slide {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.rec__articles .img__articles {
+  max-height: 320px;
+  overflow: hidden;
+  margin-bottom: 22px;
+}
+
+.rec__articles .tit__subject {
+  display: inline;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: -0.15em;
+  word-break: break-all;
+  color: #333;
+}
+
+.rec__articles .desc__subject {
+  display: block;
+  padding-top: 10px;
+  font-size: 12px;
+  line-height: 20px;
+  word-break: break-all;
+  color: #959595;
+  text-align: justify;
+}
+
+.rec__articles .info__by {
+  padding-top: 22px;
+  color: #959595;
+  display: block;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+
+.rec__articles .ico__by {
+  margin-top: 3px;
+  width: 14px;
+  height: 13px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  color: #bfbfbf;
+  font-size: 12px;
+  padding-right: 3px;
+}
+
+/* 푸터 영역 */
+.foot__brunch {
+  width: 100%;
+  height: 320px;
+  background-color: #101010;
+  padding-top: 48px;
+}
+
+.inner__foot {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
 }
