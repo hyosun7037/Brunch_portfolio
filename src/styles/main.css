@@ -1,129 +1,279 @@
-.wrap__banner{
-    width:100%;
-    height:480px;
-    overflow: hidden;
-    position: relative;
-    margin:0px;
+.wrap__banner {
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  position: relative;
+  margin: 0px;
 }
 
-.main__container{
-    height: 4000px;
+.main__container {
+  height: 4000px;
 }
 
-.screen__out{
-    margin:0;
-    text-indent: -9999px;
-    overflow: hidden;
-    position: absolute;
-    width:0;
-    height: 0;
+.screen__out {
+  margin: 0;
+  text-indent: -9999px;
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
 }
 
-.list__banner{
-    width:100%;
-    height:480px;
-    overflow: hidden;
-    margin: 0;
+.list__banner {
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  margin: 0;
 }
 
-.item__banner{
-    z-index: 2;
-    display: block;
-    position: absolute;
-    width:100%;
-    overflow: hidden;
-    top:0;
-    left:0;
-    transform: none;
-    transition: transform .5s ease-in-out;
+.item__banner {
+  z-index: 2;
+  display: block;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  transform: none;
+  transition: transform 0.5s ease-in-out;
 }
 
-.link__banner{
-    background-image: url('https://t1.daumcdn.net/section/oc/7fe9dff530ab4605a6723063a7dd8569');
-    background-size: cover;
-    text-align: center;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 480px;
-    display: block;
+.link__banner {
+  background-image: url("https://t1.daumcdn.net/section/oc/7fe9dff530ab4605a6723063a7dd8569");
+  background-size: cover;
+  text-align: center;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 480px;
+  display: block;
 }
 
-.txt__banner{
-    position: absolute;
-    top:50%;
-    left:50%;
-    margin:-240px 0 0 -480px;
-    width:960px;
+.txt__banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -240px 0 0 -480px;
+  width: 960px;
 }
 
-header{
-    height: 60px;
+header {
+  height: 60px;
 }
 
-.service__header{
-    height: 40px;
-    display: flex;
+.service__header {
+  height: 40px;
+  display: flex;
 }
 
-.header__inner{
-    width: 100%;
-    margin:30px 30px 0;
-    display:flex;
-    justify-content: space-between;
+.header__inner {
+  width: 100%;
+  margin: 30px 30px 0;
+  display: flex;
+  justify-content: space-between;
 }
 
-.sidebtn__logo{
-    display:flex;
+.sidebtn__logo {
+  display: flex;
 }
 
-.sidebtn{
-    background-image: url('http://t1.daumcdn.net/brunch/static/img/help/pc/ico_view_cover.v4.png');
-    background-repeat: no-repeat;
-    width:27px;
-    height: 20px;
-    background-color: white;
-    border:none;
-    margin-right:11px;
+.sidebtn {
+  background-image: url("http://t1.daumcdn.net/brunch/static/img/help/pc/ico_view_cover.v4.png");
+  background-repeat: no-repeat;
+  width: 27px;
+  height: 20px;
+  background-color: white;
+  border: none;
+  margin-right: 11px;
 }
 
-.logo{
-    background-image: url('https://t1.daumcdn.net/brunch/static/img/help/pc/logo_service2_v1.png');
-    display:inline-block;
-    width:72px;
-    height: 22px;
-    margin:0;
-    padding:0;
-    
+.logo {
+  background-image: url("https://t1.daumcdn.net/brunch/static/img/help/pc/logo_service2_v1.png");
+  display: inline-block;
+  width: 72px;
+  height: 22px;
+  margin: 0;
+  padding: 0;
 }
 
-.applybtn__search{
-    display:flex;
+.applybtn__search {
+  display: flex;
 }
 
-.applybtn{
+.applybtn {
   border-radius: 16px;
   font-family: "Noto Sans KR";
   font-weight: 500;
   background-color: #fff;
   cursor: pointer;
-  width:64px;
-  height:28px;
-  border:1px solid #959595;
-  font-family: 'Noto Sans Light',sans-serif;
-  margin-top:-5px;
-  color:#959595;
-  font-size:12px;
-  text-align:center
+  width: 64px;
+  height: 28px;
+  border: 1px solid #959595;
+  font-family: "Noto Sans Light", sans-serif;
+  margin-top: -5px;
+  color: #959595;
+  font-size: 12px;
+  text-align: center;
 }
-.search{
-    margin:0 0 0 16px;
-    display:inline-block;
-    width:22px;
-    height:19px;
-    background-position: -30px 0px;
-    background-image: url('https://t1.daumcdn.net/brunch/static/img/help/pc/ico_view_cover.v4.png');
-    border:none;
-    background-color:white;
-    margin-top:5px;
+.search {
+  margin: 0 0 0 16px;
+  display: inline-block;
+  width: 22px;
+  height: 19px;
+  background-position: -30px 0px;
+  background-image: url("https://t1.daumcdn.net/brunch/static/img/help/pc/ico_view_cover.v4.png");
+  border: none;
+  background-color: white;
+  margin-top: 5px;
+}
+
+.intro__brunch {
+  width: 960px;
+  height: 229px;
+  margin: 0 auto;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editor__pic {
+  position: relative;
+  margin-top: 22px;
+}
+
+.wrap__slide {
+  width: 960px;
+  height: 520px;
+  margin: 0 auto;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* overflow: visible; */
+}
+
+.list__slide {
+  width: 900%;
+  position: absolute;
+}
+
+.wrap__pic {
+  width: 960px;
+}
+
+.keywords {
+  width: 960px;
+  margin: 0 auto;
+  height: 450px;
+}
+
+.tit__brunch {
+  width: 266px;
+  height: 13px;
+  margin: 152px auto 0;
+  background-position: -101px -300px;
+}
+
+.txt__brunch {
+  display: block;
+  background-image: url("http://t1.daumcdn.net/brunch9/static/images/pc/txt_brunch_v5_181004_v2.png");
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+}
+
+.desc__brunch {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.keywords .desc__brunch .txt__brunch {
+  width: 149px;
+  height: 11px;
+  background-position: -175px 0;
+  margin: 17px auto 0;
+}
+
+.keyword__list__wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.keyword__list {
+  width: 960px;
+  height: 363px;
+  margin: 46px auto 0;
+  position: relative;
+  background-color: cornsilk;
+}
+
+/* 브런치 추천 작가 전체 영역 */
+.brunch__writers {
+  margin: 150px auto;
+  padding-top: 100px;
+  background: #fafafa;
+}
+
+/* 브런치 추천 작가 타이틀 */
+.brunch__writers .tit__brunch {
+  margin-top: 0;
+  width: 258px;
+  height: 13px;
+  background-position: 0 -175px;
+}
+
+/* 브런치 추천 작가 서브타이틀 */
+.brunch__writers .desc__brunch .txt__brunch {
+  width: 84px;
+  height: 11px;
+  margin: 15px auto 0;
+  background-position: -270px -70px;
+}
+
+/* 브런치 추천 작가 키워드 버튼 감싸는 영역*/
+.writer__keyword__wrap {
+  margin-top: 43px;
+  background: 0 0;
+  text-align: center;
+}
+
+/* 브런치 추천 작가 키워드 버튼 영역, 나중에 따로 오버라이딩 할 예정*/
+.writer__keyword__wrap .applybtn {
+  color: #959595;
+  border: 1px solid #eee;
+  padding: 7px 16px 6px;
+  font-size: 15px;
+  width: auto;
+  height: auto;
+  font-family: "Noto-Sans KR";
+  line-height: 18px;
+  margin: 0 2px;
+}
+
+.applybtn.active {
+  color: #00c6bd;
+  border-color: #00c6bd;
+}
+
+.wrap__writers {
+  width: 960px;
+  margin: 50px auto 85px;
+  background: #fff;
+}
+
+.list__writers {
+  height: 790px;
+}
+
+/*중간 배너 영역*/
+.ad__banner {
+  display: block;
+  width: 960px;
+  height: 140px;
+  margin: 97px auto 0;
+  background-image: url("https://t1.daumcdn.net/section/oc/e0d9e92ea70941b9a4861c128751fc48");
+}
+
+.ad__banner img {
+  width: 100%;
 }
