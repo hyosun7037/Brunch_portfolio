@@ -66,7 +66,7 @@ const NavSubText = {
 const NavNonmember = () => {
   // a 태그 나중에 수정예정
   return (
-    <div className="nav__vWrap">
+    <div className="nav__Wrap">
         <div className="nav__Header">
           <div className="nav__Logo"></div>
           <p className="nav__Text" style={NavText}>

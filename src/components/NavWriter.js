@@ -100,22 +100,22 @@ const NavWriter = () => {
               <ProfileUrl>brunch.co.kr/@haha7037</ProfileUrl>
             </Route>
           <RoundSmallBtn>
-            <Route path="/" component={Main}>글쓰기</Route> 
+            <Route path="/write" component={Main}>글쓰기</Route> 
           </RoundSmallBtn>
 
           <RoundSmallBtn>
-            <Route path="/" component={Main}>작가신청</Route>
+            <Route path="/apply" component={Main}>작가신청</Route>
           </RoundSmallBtn>
         </div>
 
         <div className="nav__Main">
         <ul className="nav__Contents">
           <NavContentsMenu>
-            <Route path="/" component={Main}>내 브런치</Route>
+            <Route path="/mybrunch" component={Main}>내 브런치</Route>
           </NavContentsMenu>
 
           <NavContentsMenu>
-            <Route path="/" component={Main}>작가의 서랍</Route>
+            <Route path="/writersbox" component={Main}>작가의 서랍</Route>
           </NavContentsMenu>
 
           <NavContentMenuLine />
@@ -126,7 +126,7 @@ const NavWriter = () => {
           </NavContentsMenu>
 
           <NavContentsMenu>
-            <Route path="/" component={Main}>브런치 나우</Route>
+            <Route path="/brunchnow" component={Main}>브런치 나우</Route>
           </NavContentsMenu>
 
           <NavContentsMenu>
@@ -135,7 +135,7 @@ const NavWriter = () => {
           </NavContentsMenu>
 
           <NavContentsMenu>
-            <Route path="/" component={Main}>피드</Route>
+            <Route path="/feed" component={Main}>피드</Route>
           </NavContentsMenu>
         </ul>
         <div className="nav__Footer">

@@ -6,30 +6,9 @@
   margin: 0px;
 }
 
-.main__container {
-  height: 4000px;
-}
-
-.screen__out {
-  margin: 0;
-  text-indent: -9999px;
-  overflow: hidden;
-  position: absolute;
-  width: 0;
-  height: 0;
-}
-
-.list__banner {
-  width: 100%;
-  height: 480px;
-  overflow: hidden;
-  margin: 0;
-}
-
 .item__banner {
   z-index: 2;
   display: block;
-  position: absolute;
   width: 100%;
   overflow: hidden;
   top: 0;
@@ -38,7 +17,11 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.link__banner {
+.list__banner {
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  margin: 0;
   background-image: url("https://t1.daumcdn.net/section/oc/7fe9dff530ab4605a6723063a7dd8569");
   background-size: cover;
   text-align: center;
@@ -77,55 +60,11 @@ header {
   display: flex;
 }
 
-.sidebtn {
-  background-image: url("http://t1.daumcdn.net/brunch/static/img/help/pc/ico_view_cover.v4.png");
-  background-repeat: no-repeat;
-  width: 27px;
-  height: 20px;
-  background-color: white;
-  border: none;
-  margin-right: 11px;
-}
-
-.logo {
-  background-image: url("https://t1.daumcdn.net/brunch/static/img/help/pc/logo_service2_v1.png");
-  display: inline-block;
-  width: 72px;
-  height: 22px;
-  margin: 0;
-  padding: 0;
-}
 
 .applybtn__search {
   display: flex;
 }
 
-.applybtn {
-  border-radius: 16px;
-  font-family: "Noto Sans KR";
-  font-weight: 500;
-  background-color: #fff;
-  cursor: pointer;
-  width: 64px;
-  height: 28px;
-  border: 1px solid #959595;
-  font-family: "Noto Sans Light", sans-serif;
-  margin-top: -5px;
-  color: #959595;
-  font-size: 12px;
-  text-align: center;
-}
-.search {
-  margin: 0 0 0 16px;
-  display: inline-block;
-  width: 22px;
-  height: 19px;
-  background-position: -30px 0px;
-  background-image: url("https://t1.daumcdn.net/brunch/static/img/help/pc/ico_view_cover.v4.png");
-  border: none;
-  background-color: white;
-  margin-top: 5px;
-}
 
 .intro__brunch {
   width: 960px;
@@ -466,7 +405,33 @@ header {
   height: 363px;
   margin: 46px auto 0;
   position: relative;
-  background-color: cornsilk;
+}
+
+.keyword__list__flex{
+  display: flex;
+}
+.keyword__item{
+  /* position: absolute; */
+  width:119px;
+  height: 119px;
+  text-align: center;
+  border:1px solid #eee;
+  z-index:1;
+  font-size: 14px;
+  line-height: 18px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-size:14px;
+  line-height: 18px;
+  font-weight: 100;
+  font-family: "Noto Sans KR";
+}
+
+.keyword__item__txt{
+  position: relative;
 }
 
 /* 브런치 추천 작가 전체 영역 */
@@ -525,6 +490,42 @@ header {
 
 .list__writers {
   height: 790px;
+}
+
+.list__writers li{
+  position: relative;
+  width:310px;
+  height: 100%;
+  margin-bottom:15px;
+  text-align:center;
+}
+
+.link__writers{
+  display:block;
+  min-height: 288px;
+  padding:46px 40px;
+  background:#fff;
+  text-decoration:none;
+}
+
+.thumb__img{
+  width:80px;
+  height:80px;
+  margin:0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color:#fff;
+}
+
+.tit__writer{
+  max-height:57px;
+  padding:17px 12px 0;
+  font-size:20px;
+  font-family:"Nanum Myeongjo";
+  line-height: 28px;
+  letter-spacing:-.02em;
+  white-space:normal;
+  word-break:keep-all;
 }
 
 /*중간 배너 영역*/

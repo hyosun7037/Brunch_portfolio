@@ -7,8 +7,8 @@ const App = () => {
   return (
     <>
       {/* <NavWriter></NavWriter> */}
-      <Main></Main>
       {/* <NavNonmember></NavNonmember> */}
+      <Main></Main>
     </>
   );
 };

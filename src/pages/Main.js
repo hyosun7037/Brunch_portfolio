@@ -1,22 +1,50 @@
 import React from "react";
 import "../styles/main.css";
+import { Route } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import styled from "styled-components";
 // import NavWriter from "../components/NavWriter";
+
+const ScreenOut = styled.h2`
+  margin: 0;
+  text-indent: -9999px;
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+`;
+
+
+const RoundBtnBig = styled.button`
+  display: inline-block;
+  margin:0 2px;
+  border-radius:25px;
+  padding:7px 16px 6px;
+  border:1px solid #eee;
+  background:#fff;
+  font-size:15px;
+  line-height:15px;
+  font-family:"Noto Sans KR";
+  color:#959595;
+  cursor:pointer;
+`
+
+const RoundBtnBigActive = styled(RoundBtnBig)`
+  color:#00c6bd;
+  border:1px solid #00c6bd;
+`
 
 const Main = () => {
   return (
     <>
       {/* <NavWriter></NavWriter> */}
       <div className="wrap__banner">
-        <h2 className="screen__out">배너</h2>
         <ul className="list__banner">
           <li className="item__banner">
-            <a href="#" className="link__banner">
-              <img
-                className="txt__banner"
-                src="https://t1.daumcdn.net/section/oc/f105e8040e3b46de8492b4815a95092c"
-                alt="텍스트배너"
-              ></img>
-            </a>
+            <Route path="/" component={Main}>
+              <img className="txt__banner" src="https://t1.daumcdn.net/section/oc/f105e8040e3b46de8492b4815a95092c" alt="텍스트배너"/>
+            </Route>
             {/* <a href="#">작은 배너</a> */}
           </li>
         </ul>
@@ -24,27 +52,10 @@ const Main = () => {
       {/*탑배너영역*/}
 
       <div className="main__container">
-        {/* header 영역, 나중에 컴포넌트로 분리할 예정*/}
-        <header>
-          <div className="service__header top">
-            <div className="header__inner">
-              <div clasName="sidebtn__logo">
-                <button className="sidebtn"></button>
-                <h1 className="logo"> </h1>
-              </div>{" "}
-              {/*햄버거버튼, 로고*/}
-              <div clasName="applybtn__search">
-                <button className="applybtn">작가신청</button>
-                <button className="search"></button>
-              </div>{" "}
-              {/*버튼, 검색*/}
-            </div>
-          </div>
-        </header>
-
+        <Header></Header>
         <main>
           {/* 인트로 브런치 텍스트 영역*/}
-          <h2 className="screen__out">브런치 본문</h2>
+          <ScreenOut>브런치 본문</ScreenOut>
           <div className="intro__brunch">
             <h3 className="tit__brunch">
               글이 작품이 되는 공간, 브런치
@@ -60,7 +71,7 @@ const Main = () => {
           </div>
 
           {/* 에디터픽 영역*/}
-          <h2 className="screen__out">에디터 픽</h2>
+          <ScreenOut>에디터픽</ScreenOut>
           <div className="editor__pic">
             <div className="wrap__slide">
               <ul className="list__slide">
@@ -159,7 +170,7 @@ const Main = () => {
             </div>
             <div className="wrap__paging">
               <span className="link__page">
-                <span className="screen__out">현재 페이지</span>
+                <ScreenOut>현재페이지</ScreenOut>
                 <span className="img__page txt__page1">01</span>
               </span> {/*현재 활성화 페이지*/}
               <a href="#" className="link__page">
@@ -198,7 +209,86 @@ const Main = () => {
               </span>
             </p>
             <div className="keyword__list__wrap">
-              <div className="keyword__list"></div>
+              <div className="keyword__list">
+                <div className="keyword__list__flex">
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                </div>
+                <div className="keyword__list__flex">
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                </div>  
+                <div className="keyword__list__flex">
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                    <a href="#" className="keyword__item brunch__keyword__item">
+                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
+                    </a>
+                </div>  
+              </div>
             </div>
           </div>
         </main>
@@ -210,13 +300,20 @@ const Main = () => {
             <span className="txt__brunch">브런치 추천작가</span>
           </p>
           <div className="writer__keyword__wrap">
-            <button className="applybtn active">사랑</button>
-            <button className="applybtn">라이프스타일</button>
-            <button className="applybtn">여행</button>
+            <RoundBtnBigActive>사랑</RoundBtnBigActive>
+            <RoundBtnBig>라이프스타일</RoundBtnBig>
+            <RoundBtnBig>여행</RoundBtnBig>
           </div>
           <div className="wrap__writers">
             <ul className="list__writers">
-              <li></li>
+              <li>
+                <a href="#" className="link__writers">
+                  <img className="img__brunch thumb__img" src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg" alt="이미지"/>
+                  <strong className="tit__writer">스마일펄</strong>
+                  <span className="team__writer">에세이스트</span>
+                  <span className="txt__writer">사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를 갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한 이야기를 씁니다.</span>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -294,20 +391,8 @@ const Main = () => {
         </div>
 
         {/* 푸터 영역 */}
-        <footer className="foot__brunch">
-          <div className="inner__foot">
-            <div className="wrap__info">
-              <div className="txt__info">
-                <span className="ico__brunch__logo"></span>
-                <q className="txt__quo">You can make anything by writing</q>
-                <span className="txt__by">C.S.Lewis</span>
-              </div>
-            </div>
-            <div className="wrap__corp"></div>
-          </div>
-        </footer>
+        <Footer></Footer>
       </div>
-      {/*전체영역*/}
     </>
   );
 };
