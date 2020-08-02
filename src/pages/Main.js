@@ -312,6 +312,78 @@ const Main = () => {
                   <strong className="tit__writer">스마일펄</strong>
                   <span className="team__writer">에세이스트</span>
                   <span className="txt__writer">사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를 갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한 이야기를 씁니다.</span>
+                  <div className="writer__keyword__wrap keyword__inside__wrap">
+                    <button className="keyword__item" data-keyword="패션">패션</button>
+                    <button className="keyword__item" data-keyword="자기계발">자기계발</button>
+                    <button className="keyword__item" data-url="/">더보기</button>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="link__writers">
+                  <img className="img__brunch thumb__img" src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg" alt="이미지"/>
+                  <strong className="tit__writer">스마일펄</strong>
+                  <span className="team__writer">에세이스트</span>
+                  <span className="txt__writer">사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를 갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한 이야기를 씁니다.</span>
+                  <div className="writer__keyword__wrap keyword__inside__wrap">
+                    <button className="keyword__item" data-keyword="패션">패션</button>
+                    <button className="keyword__item" data-keyword="자기계발">자기계발</button>
+                    <button className="keyword__item" data-url="/">더보기</button>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="link__writers">
+                  <img className="img__brunch thumb__img" src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg" alt="이미지"/>
+                  <strong className="tit__writer">스마일펄</strong>
+                  <span className="team__writer">에세이스트</span>
+                  <span className="txt__writer">사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를 갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한 이야기를 씁니다.</span>
+                  <div className="writer__keyword__wrap keyword__inside__wrap">
+                    <button className="keyword__item" data-keyword="패션">패션</button>
+                    <button className="keyword__item" data-keyword="자기계발">자기계발</button>
+                    <button className="keyword__item" data-url="/">더보기</button>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <ul className="list__writers">
+              <li>
+                <a href="#" className="link__writers">
+                  <img className="img__brunch thumb__img" src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg" alt="이미지"/>
+                  <strong className="tit__writer">스마일펄</strong>
+                  <span className="team__writer">에세이스트</span>
+                  <span className="txt__writer">사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를 갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한 이야기를 씁니다.</span>
+                  <div className="writer__keyword__wrap keyword__inside__wrap">
+                    <button className="keyword__item" data-keyword="패션">패션</button>
+                    <button className="keyword__item" data-keyword="자기계발">자기계발</button>
+                    <button className="keyword__item" data-url="/">더보기</button>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="link__writers">
+                  <img className="img__brunch thumb__img" src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg" alt="이미지"/>
+                  <strong className="tit__writer">스마일펄</strong>
+                  <span className="team__writer">에세이스트</span>
+                  <span className="txt__writer">사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를 갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한 이야기를 씁니다.</span>
+                  <div className="writer__keyword__wrap keyword__inside__wrap">
+                    <button className="keyword__item" data-keyword="패션">패션</button>
+                    <button className="keyword__item" data-keyword="자기계발">자기계발</button>
+                    <button className="keyword__item" data-url="/">더보기</button>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="#" className="link__writers">
+                  <img className="img__brunch thumb__img" src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg" alt="이미지"/>
+                  <strong className="tit__writer">스마일펄</strong>
+                  <span className="team__writer">에세이스트</span>
+                  <span className="txt__writer">사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를 갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한 이야기를 씁니다.</span>
+                  <div className="writer__keyword__wrap keyword__inside__wrap">
+                    <button className="keyword__item" data-keyword="패션">패션</button>
+                    <button className="keyword__item" data-keyword="자기계발">자기계발</button>
+                    <button className="keyword__item" data-url="/">더보기</button>
+                  </div>
                 </a>
               </li>
             </ul>
