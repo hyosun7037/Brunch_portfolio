@@ -45,7 +45,7 @@ header {
 }
 
 .service__header {
-  height: 40px;
+  height: 60px;
   display: flex;
 }
 
@@ -588,6 +588,11 @@ header {
   letter-spacing: -1px;
 }
 
+.recommend_articles__btn .btn__prev, .btn__next{
+  position: absolute;
+  margin-top:-250px;
+}
+
 
 /*중간 배너 영역*/
 .ad__banner {
@@ -637,6 +642,7 @@ header {
 .rec__articles .wrap__slide {
   overflow: visible;
   width: 960px;
+  position: relative;
 }
 
 .rec__articles .list__slide {

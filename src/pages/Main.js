@@ -458,8 +458,173 @@ const Main = () => {
                   </span>
                 </a>
               </li>
+
+              <li>
+                <a href="#" className="link__slide">
+                  <div className="img__articles">
+                    <img
+                      src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
+                      alt="이미지"
+                    ></img>
+                  </div>
+                  <strong className="tit__subject">
+                    한국에서 멀어졌더니 생긴 변화
+                  </strong>
+                  <p className="desc__subject">
+                    어쩌다 보니 한국에서 떨어져 산지 1년 3개월. 지난해 2월쯤만
+                    해도 싱가포르라는 나라에 대해 아무런 정보가 없었는데 1년
+                    넘게 살다 보니 여기만큼 좋은 곳이 없더라. 싱가포르라는
+                    나라가 살기 좋은 것도 있지만 한국에서 멀어짐으로써 오는
+                    긍정적인 변화가 많았다는 게 더 솔직할 것 같다. 해외생활에
+                    대한 환상을 오롯이 극대화시켜줄 수 있는 지극히 주관적인{" "}
+                  </p>
+                  <span className="info__by">
+                    <span className="ico__by">by</span>
+                    써니
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="link__slide">
+                  <div className="img__articles">
+                    <img
+                      src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
+                      alt="이미지"
+                    ></img>
+                  </div>
+                  <strong className="tit__subject">
+                    한국에서 멀어졌더니 생긴 변화
+                  </strong>
+                  <p className="desc__subject">
+                    어쩌다 보니 한국에서 떨어져 산지 1년 3개월. 지난해 2월쯤만
+                    해도 싱가포르라는 나라에 대해 아무런 정보가 없었는데 1년
+                    넘게 살다 보니 여기만큼 좋은 곳이 없더라. 싱가포르라는
+                    나라가 살기 좋은 것도 있지만 한국에서 멀어짐으로써 오는
+                    긍정적인 변화가 많았다는 게 더 솔직할 것 같다. 해외생활에
+                    대한 환상을 오롯이 극대화시켜줄 수 있는 지극히 주관적인{" "}
+                  </p>
+                  <span className="info__by">
+                    <span className="ico__by">by</span>
+                    써니
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="link__slide">
+                  <div className="img__articles">
+                    <img
+                      src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
+                      alt="이미지"
+                    ></img>
+                  </div>
+                  <strong className="tit__subject">
+                    한국에서 멀어졌더니 생긴 변화
+                  </strong>
+                  <p className="desc__subject">
+                    어쩌다 보니 한국에서 떨어져 산지 1년 3개월. 지난해 2월쯤만
+                    해도 싱가포르라는 나라에 대해 아무런 정보가 없었는데 1년
+                    넘게 살다 보니 여기만큼 좋은 곳이 없더라. 싱가포르라는
+                    나라가 살기 좋은 것도 있지만 한국에서 멀어짐으로써 오는
+                    긍정적인 변화가 많았다는 게 더 솔직할 것 같다. 해외생활에
+                    대한 환상을 오롯이 극대화시켜줄 수 있는 지극히 주관적인{" "}
+                  </p>
+                  <span className="info__by">
+                    <span className="ico__by">by</span>
+                    써니
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="link__slide">
+                  <div className="img__articles">
+                    <img
+                      src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
+                      alt="이미지"
+                    ></img>
+                  </div>
+                  <strong className="tit__subject">
+                    한국에서 멀어졌더니 생긴 변화
+                  </strong>
+                  <p className="desc__subject">
+                    어쩌다 보니 한국에서 떨어져 산지 1년 3개월. 지난해 2월쯤만
+                    해도 싱가포르라는 나라에 대해 아무런 정보가 없었는데 1년
+                    넘게 살다 보니 여기만큼 좋은 곳이 없더라. 싱가포르라는
+                    나라가 살기 좋은 것도 있지만 한국에서 멀어짐으로써 오는
+                    긍정적인 변화가 많았다는 게 더 솔직할 것 같다. 해외생활에
+                    대한 환상을 오롯이 극대화시켜줄 수 있는 지극히 주관적인{" "}
+                  </p>
+                  <span className="info__by">
+                    <span className="ico__by">by</span>
+                    써니
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="link__slide">
+                  <div className="img__articles">
+                    <img
+                      src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
+                      alt="이미지"
+                    ></img>
+                  </div>
+                  <strong className="tit__subject">
+                    한국에서 멀어졌더니 생긴 변화
+                  </strong>
+                  <p className="desc__subject">
+                    어쩌다 보니 한국에서 떨어져 산지 1년 3개월. 지난해 2월쯤만
+                    해도 싱가포르라는 나라에 대해 아무런 정보가 없었는데 1년
+                    넘게 살다 보니 여기만큼 좋은 곳이 없더라. 싱가포르라는
+                    나라가 살기 좋은 것도 있지만 한국에서 멀어짐으로써 오는
+                    긍정적인 변화가 많았다는 게 더 솔직할 것 같다. 해외생활에
+                    대한 환상을 오롯이 극대화시켜줄 수 있는 지극히 주관적인{" "}
+                  </p>
+                  <span className="info__by">
+                    <span className="ico__by">by</span>
+                    써니
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" className="link__slide">
+                  <div className="img__articles">
+                    <img
+                      src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
+                      alt="이미지"
+                    ></img>
+                  </div>
+                  <strong className="tit__subject">
+                    한국에서 멀어졌더니 생긴 변화
+                  </strong>
+                  <p className="desc__subject">
+                    어쩌다 보니 한국에서 떨어져 산지 1년 3개월. 지난해 2월쯤만
+                    해도 싱가포르라는 나라에 대해 아무런 정보가 없었는데 1년
+                    넘게 살다 보니 여기만큼 좋은 곳이 없더라. 싱가포르라는
+                    나라가 살기 좋은 것도 있지만 한국에서 멀어짐으로써 오는
+                    긍정적인 변화가 많았다는 게 더 솔직할 것 같다. 해외생활에
+                    대한 환상을 오롯이 극대화시켜줄 수 있는 지극히 주관적인{" "}
+                  </p>
+                  <span className="info__by">
+                    <span className="ico__by">by</span>
+                    써니
+                  </span>
+                </a>
+              </li>
             </ul>
           </div>
+          
+          <div className="wrap__btn recommend_articles__btn">
+              <a href="#" className="btn__scroll btn__brunch btn__prev">
+                <span className="ico__brunch">이전 에디터 보기</span>
+              </a>
+              <a href="#" className="btn__scroll btn__brunch btn__next">
+              <span className="ico__brunch">다음 에디터 보기</span>
+              </a>
+            </div>
         </div>
 
         {/* 푸터 영역 */}
