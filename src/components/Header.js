@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Route } from "react-router-dom";
-import Main from "../pages/Main";
+import { Link } from "react-router-dom";
 
 const Search = styled.button`
   margin: 0 0 0 16px;
@@ -48,25 +47,26 @@ const SideBtn = styled.button`
   background-color: white;
   border: none;
   margin-right: 11px;
+  cursor: pointer;
 `;
 
-const Header = () => {
+const Header = (props) => {
+  const { title } = props;
   return (
     <div className="service__header top">
       <div className="header__inner">
         <div clasName="sidebtn__logo">
-          <Route path="/" component={Main}>
-              <SideBtn></SideBtn>
-          </Route>
-          <Logo />
+          <Link to="/nowriter">
+            <SideBtn></SideBtn>
+          </Link>
+          <Link to="/">
+            <Logo />
+          </Link>
         </div>
         <div clasName="applybtn__search">
-          <Route path="/" component={Main}>
-              <RoundBtn>작가신청</RoundBtn>
-          </Route>
-          <Route path="/" component={Search}>
-              <Search></Search>
-          </Route>
+          <span>{title}</span>
+          <RoundBtn>작가신청</RoundBtn>
+          <Search></Search>
         </div>
       </div>
     </div>

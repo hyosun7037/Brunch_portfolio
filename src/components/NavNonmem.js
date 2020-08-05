@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Route } from "react-router-dom";
-import Main from "../pages/Main";
-import '../styles/nav.css'
+import { Link } from "react-router-dom";
+import "../styles/nav.css";
 
 const NavContentsMenu = styled.li`
   font-size: 14px;
@@ -17,15 +16,14 @@ const NavContentsMenu = styled.li`
   }
 `;
 
-const NavFooter = styled.div`
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  height: 139px;
-  /* margin: 40px 0 30px; 
-  크기 줄였을 때 겹치는 부분 오류 나중에 수정하기 */
-`;
-
+// const NavFooter = styled.div`
+//   position: absolute;
+//   width: 100%;
+//   bottom: 0;
+//   height: 139px;
+//   /* margin: 40px 0 30px;
+//   크기 줄였을 때 겹치는 부분 오류 나중에 수정하기 */
+// `;
 
 const NavStart = styled.button`
   width: 120px;
@@ -67,46 +65,36 @@ const NavNonmember = () => {
   // a 태그 나중에 수정예정
   return (
     <div className="nav__Wrap">
-        <div className="nav__Header">
-          <div className="nav__Logo"></div>
-          <p className="nav__Text" style={NavText}>
-            You can make anything <br />
-            by writing
-          </p>
-          <p className="nav__SubText" style={NavSubText}>
-            - C.S.Lewis -
-          </p>
-          <Route path="/" component={Main} exact={true}></Route>
-          <NavStart>
-            <Route path="/" component={Main}>
-              브런치 시작하기
-            </Route>
-          </NavStart>
-        </div>
-        <div className="nav__Main">
+      <div className="nav__Header">
+        <div className="nav__Logo"></div>
+        <p className="nav__Text" style={NavText}>
+          You can make anything <br />
+          by writing
+        </p>
+        <p className="nav__SubText" style={NavSubText}>
+          - C.S.Lewis -
+        </p>
+        <Link to="/"></Link>
+        <NavStart>
+          <Link to="/login">브런치 시작하기</Link>
+        </NavStart>
+      </div>
+      <div className="nav__Main">
         <ul className="nav__Contents">
           <NavContentsMenu>
-            <Route path="/" component={Main}>
-              브런치 홈
-            </Route>
+            <Link to="/">브런치 홈</Link>
           </NavContentsMenu>
           <NavContentsMenu>
-            <Route path="/" component={Main}>
-              브런치 나우
-            </Route>
+            <Link to="/now">브런치 나우</Link>
           </NavContentsMenu>
           <NavContentsMenu>
-            <Route path="/" component={Main}>
-              브런치 책방
-            </Route>
+            <Link to="/">브런치 책방</Link>
           </NavContentsMenu>
         </ul>
       </div>
-      <div className="nav__Footer" style={{position:'absolute'}}>
+      <div className="nav__Footer" style={{ position: "absolute" }}>
         <NavFindById>
-          <Route path="/" component={Main} exact={true}>
-            계정을 잊어버리셨나요?
-          </Route>
+          <Link to="/">계정을 잊어버리셨나요?</Link>
         </NavFindById>
       </div>
     </div>

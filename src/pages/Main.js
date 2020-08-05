@@ -15,25 +15,24 @@ const ScreenOut = styled.h2`
   height: 0;
 `;
 
-
 const RoundBtnBig = styled.button`
   display: inline-block;
-  margin:0 2px;
-  border-radius:25px;
-  padding:7px 16px 6px;
-  border:1px solid #eee;
-  background:#fff;
-  font-size:15px;
-  line-height:15px;
-  font-family:"Noto Sans KR";
-  color:#959595;
-  cursor:pointer;
-`
+  margin: 0 2px;
+  border-radius: 25px;
+  padding: 7px 16px 6px;
+  border: 1px solid #eee;
+  background: #fff;
+  font-size: 15px;
+  line-height: 15px;
+  font-family: "Noto Sans KR";
+  color: #959595;
+  cursor: pointer;
+`;
 
 const RoundBtnBigActive = styled(RoundBtnBig)`
-  color:#00c6bd;
-  border:1px solid #00c6bd;
-`
+  color: #00c6bd;
+  border: 1px solid #00c6bd;
+`;
 
 const Main = () => {
   return (
@@ -43,7 +42,11 @@ const Main = () => {
         <ul className="list__banner">
           <li className="item__banner">
             <Route path="/" component={Main}>
-              <img className="txt__banner" src="https://t1.daumcdn.net/section/oc/f105e8040e3b46de8492b4815a95092c" alt="텍스트배너"/>
+              <img
+                className="txt__banner"
+                src="https://t1.daumcdn.net/section/oc/f105e8040e3b46de8492b4815a95092c"
+                alt="텍스트배너"
+              />
             </Route>
             {/* <a href="#">작은 배너</a> */}
           </li>
@@ -78,27 +81,42 @@ const Main = () => {
                 <li>
                   <div className="wrap__pic wrap__pic1">
                     <div className="item__pic item__pic__type1">
-                     <a href="#">
-                       <img src="//img1.daumcdn.net/thumb/C460x648.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/18C5/image/_xgHcZmsvPsvqhH5_qbFc617JzI.jpg" width="100%" height="100%" alt="에디터 픽 사진1"/>
-                       <div className="append__info">
-                         
-                         <div className="info__g">
-                           <strong className="tit__pic">라디오 PD의 제주살이 <br />고군분투기3</strong>
-                           <span className="info__by">
-                             <span className="ico__by">by</span>
-                             슈필라움
-                           </span>
-                         </div>
-                       </div>
-                     </a>
+                      <a href="#">
+                        <img
+                          src="//img1.daumcdn.net/thumb/C460x648.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/18C5/image/_xgHcZmsvPsvqhH5_qbFc617JzI.jpg"
+                          width="100%"
+                          height="100%"
+                          alt="에디터 픽 사진1"
+                        />
+                        <div className="append__info">
+                          <div className="info__g">
+                            <strong className="tit__pic">
+                              라디오 PD의 제주살이 <br />
+                              고군분투기3
+                            </strong>
+                            <span className="info__by">
+                              <span className="ico__by">by</span>
+                              슈필라움
+                            </span>
+                          </div>
+                        </div>
+                      </a>
                     </div>
                     <div className="item__pic item__pic__type2__3">
                       <div className="item__pic item__pic__type2">
                         <a href="#">
-                        <img src="//img1.daumcdn.net/thumb/C480x260.fjpg/?fname=https://t1.daumcdn.net/section/oc/2acfb8dcbbbb4b09bae794f3d2328461" width="100%" height="100%" alt="에디터 픽 사진2"/>
+                          <img
+                            src="//img1.daumcdn.net/thumb/C480x260.fjpg/?fname=https://t1.daumcdn.net/section/oc/2acfb8dcbbbb4b09bae794f3d2328461"
+                            width="100%"
+                            height="100%"
+                            alt="에디터 픽 사진2"
+                          />
                           <div className="append__info">
                             <div className="info__g">
-                              <strong className="tit__pic">녹물이 내 몸을 <br/>깜싸 안으니</strong>
+                              <strong className="tit__pic">
+                                녹물이 내 몸을 <br />
+                                깜싸 안으니
+                              </strong>
                               <span className="info__by">
                                 <span className="ico__by">by</span>
                                 슈필라움
@@ -109,11 +127,21 @@ const Main = () => {
                         <div className="mask"></div>
                       </div>
                       <div className="item__pic item__pic__type3">
-                      <a href="#">
-                        <img src="//img1.daumcdn.net/thumb/C480x260.fjpg/?fname=https://t1.daumcdn.net/section/oc/864f6a17996542afbf477cb950244ac1" width="100%" height="100%" alt="에디터 픽 사진2"/>
+                        <a href="#">
+                          <img
+                            src="//img1.daumcdn.net/thumb/C480x260.fjpg/?fname=https://t1.daumcdn.net/section/oc/864f6a17996542afbf477cb950244ac1"
+                            width="100%"
+                            height="100%"
+                            alt="에디터 픽 사진2"
+                          />
                           <div className="append__info">
                             <div className="info__g">
-                              <strong className="tit__pic">빌 게이츠 성공 <br/>비밀, 잘 쉬면<br/>떼돈 번다</strong>
+                              <strong className="tit__pic">
+                                빌 게이츠 성공 <br />
+                                비밀, 잘 쉬면
+                                <br />
+                                떼돈 번다
+                              </strong>
                               <span className="info__by">
                                 <span className="ico__by">by</span>
                                 슈필라움
@@ -130,20 +158,35 @@ const Main = () => {
                 <li>
                   <div className="wrap__pic wrap__pic2">
                     <div className="item__pic item__pic__type1">
-                    <a href="#">
-                        <img src="//img1.daumcdn.net/thumb/C320x520.fjpg/?fname=https://t1.daumcdn.net/section/oc/78b1b4e8a4244ff4859dc791900e0d5d" width="100%" height="100%" alt="에디터 픽 사진2"/>
-                          <div className="append__info">
-                            <div className="info__g">
-                              <strong className="tit__pic">런치박스 말고<br/>도시락<br/></strong>
-                              <span className="txt__pic">런치박스 말고 "오늘"<br/>"점심시간에 다들 내 런치박스를.."<br/></span>
-                              <span className="info__by">
-                                <span className="ico__by">by</span>
-                                슈필라움
-                              </span>
-                            </div>
+                      <a href="#">
+                        <img
+                          src="//img1.daumcdn.net/thumb/C320x520.fjpg/?fname=https://t1.daumcdn.net/section/oc/78b1b4e8a4244ff4859dc791900e0d5d"
+                          width="100%"
+                          height="100%"
+                          alt="에디터 픽 사진2"
+                        />
+                        <div className="append__info">
+                          <div className="info__g">
+                            <strong className="tit__pic">
+                              런치박스 말고
+                              <br />
+                              도시락
+                              <br />
+                            </strong>
+                            <span className="txt__pic">
+                              런치박스 말고 "오늘"
+                              <br />
+                              "점심시간에 다들 내 런치박스를.."
+                              <br />
+                            </span>
+                            <span className="info__by">
+                              <span className="ico__by">by</span>
+                              슈필라움
+                            </span>
                           </div>
-                        </a>
-                        <div className="mask"></div>
+                        </div>
+                      </a>
+                      <div className="mask"></div>
                     </div>
                     <div className="item__pic item__pic__type2"></div>
                     <div className="item__pic item__pic__type3"></div>
@@ -165,14 +208,15 @@ const Main = () => {
                 <span className="ico__brunch">이전 에디터 보기</span>
               </a>
               <a href="#" className="btn__scroll btn__brunch btn__next">
-              <span className="ico__brunch">다음 에디터 보기</span>
+                <span className="ico__brunch">다음 에디터 보기</span>
               </a>
             </div>
             <div className="wrap__paging">
               <span className="link__page">
                 <ScreenOut>현재페이지</ScreenOut>
                 <span className="img__page txt__page1">01</span>
-              </span> {/*현재 활성화 페이지*/}
+              </span>{" "}
+              {/*현재 활성화 페이지*/}
               <a href="#" className="link__page">
                 <span className="img__page txt__page2">02</span>
               </a>
@@ -211,83 +255,179 @@ const Main = () => {
             <div className="keyword__list__wrap">
               <div className="keyword__list">
                 <div className="keyword__list__flex">
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
                 </div>
                 <div className="keyword__list__flex">
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                </div>  
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                </div>
                 <div className="keyword__list__flex">
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                    <a href="#" className="keyword__item brunch__keyword__item">
-                      <span className="keyword__item__txt">지구한바퀴<br/>세계여행</span>
-                    </a>
-                </div>  
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                  <a href="#" className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -308,40 +448,82 @@ const Main = () => {
             <ul className="list__writers">
               <li>
                 <a href="#" className="link__writers">
-                  <img className="img__brunch thumb__img" src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg" alt="이미지"/>
+                  <img
+                    className="img__brunch thumb__img"
+                    src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
+                    alt="이미지"
+                  />
                   <strong className="tit__writer">스마일펄</strong>
                   <span className="team__writer">에세이스트</span>
-                  <span className="txt__writer">사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를 갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한 이야기를 씁니다.</span>
+                  <span className="txt__writer">
+                    사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를
+                    갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한
+                    이야기를 씁니다.
+                  </span>
                   <div className="writer__keyword__wrap keyword__inside__wrap">
-                    <button className="keyword__item" data-keyword="패션">패션</button>
-                    <button className="keyword__item" data-keyword="자기계발">자기계발</button>
-                    <button className="keyword__item" data-url="/">더보기</button>
+                    <button className="keyword__item" data-keyword="패션">
+                      패션
+                    </button>
+                    <button className="keyword__item" data-keyword="자기계발">
+                      자기계발
+                    </button>
+                    <button className="keyword__item" data-url="/">
+                      더보기
+                    </button>
                   </div>
                 </a>
               </li>
               <li>
                 <a href="#" className="link__writers">
-                  <img className="img__brunch thumb__img" src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg" alt="이미지"/>
+                  <img
+                    className="img__brunch thumb__img"
+                    src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
+                    alt="이미지"
+                  />
                   <strong className="tit__writer">스마일펄</strong>
                   <span className="team__writer">에세이스트</span>
-                  <span className="txt__writer">사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를 갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한 이야기를 씁니다.</span>
+                  <span className="txt__writer">
+                    사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를
+                    갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한
+                    이야기를 씁니다.
+                  </span>
                   <div className="writer__keyword__wrap keyword__inside__wrap">
-                    <button className="keyword__item" data-keyword="패션">패션</button>
-                    <button className="keyword__item" data-keyword="자기계발">자기계발</button>
-                    <button className="keyword__item" data-url="/">더보기</button>
+                    <button className="keyword__item" data-keyword="패션">
+                      패션
+                    </button>
+                    <button className="keyword__item" data-keyword="자기계발">
+                      자기계발
+                    </button>
+                    <button className="keyword__item" data-url="/">
+                      더보기
+                    </button>
                   </div>
                 </a>
               </li>
               <li>
                 <a href="#" className="link__writers">
-                  <img className="img__brunch thumb__img" src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg" alt="이미지"/>
+                  <img
+                    className="img__brunch thumb__img"
+                    src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
+                    alt="이미지"
+                  />
                   <strong className="tit__writer">스마일펄</strong>
                   <span className="team__writer">에세이스트</span>
-                  <span className="txt__writer">사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를 갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한 이야기를 씁니다.</span>
+                  <span className="txt__writer">
+                    사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를
+                    갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한
+                    이야기를 씁니다.
+                  </span>
                   <div className="writer__keyword__wrap keyword__inside__wrap">
-                    <button className="keyword__item" data-keyword="패션">패션</button>
-                    <button className="keyword__item" data-keyword="자기계발">자기계발</button>
-                    <button className="keyword__item" data-url="/">더보기</button>
+                    <button className="keyword__item" data-keyword="패션">
+                      패션
+                    </button>
+                    <button className="keyword__item" data-keyword="자기계발">
+                      자기계발
+                    </button>
+                    <button className="keyword__item" data-url="/">
+                      더보기
+                    </button>
                   </div>
                 </a>
               </li>
@@ -349,40 +531,82 @@ const Main = () => {
             <ul className="list__writers">
               <li>
                 <a href="#" className="link__writers">
-                  <img className="img__brunch thumb__img" src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg" alt="이미지"/>
+                  <img
+                    className="img__brunch thumb__img"
+                    src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
+                    alt="이미지"
+                  />
                   <strong className="tit__writer">스마일펄</strong>
                   <span className="team__writer">에세이스트</span>
-                  <span className="txt__writer">사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를 갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한 이야기를 씁니다.</span>
+                  <span className="txt__writer">
+                    사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를
+                    갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한
+                    이야기를 씁니다.
+                  </span>
                   <div className="writer__keyword__wrap keyword__inside__wrap">
-                    <button className="keyword__item" data-keyword="패션">패션</button>
-                    <button className="keyword__item" data-keyword="자기계발">자기계발</button>
-                    <button className="keyword__item" data-url="/">더보기</button>
+                    <button className="keyword__item" data-keyword="패션">
+                      패션
+                    </button>
+                    <button className="keyword__item" data-keyword="자기계발">
+                      자기계발
+                    </button>
+                    <button className="keyword__item" data-url="/">
+                      더보기
+                    </button>
                   </div>
                 </a>
               </li>
               <li>
                 <a href="#" className="link__writers">
-                  <img className="img__brunch thumb__img" src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg" alt="이미지"/>
+                  <img
+                    className="img__brunch thumb__img"
+                    src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
+                    alt="이미지"
+                  />
                   <strong className="tit__writer">스마일펄</strong>
                   <span className="team__writer">에세이스트</span>
-                  <span className="txt__writer">사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를 갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한 이야기를 씁니다.</span>
+                  <span className="txt__writer">
+                    사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를
+                    갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한
+                    이야기를 씁니다.
+                  </span>
                   <div className="writer__keyword__wrap keyword__inside__wrap">
-                    <button className="keyword__item" data-keyword="패션">패션</button>
-                    <button className="keyword__item" data-keyword="자기계발">자기계발</button>
-                    <button className="keyword__item" data-url="/">더보기</button>
+                    <button className="keyword__item" data-keyword="패션">
+                      패션
+                    </button>
+                    <button className="keyword__item" data-keyword="자기계발">
+                      자기계발
+                    </button>
+                    <button className="keyword__item" data-url="/">
+                      더보기
+                    </button>
                   </div>
                 </a>
               </li>
               <li>
                 <a href="#" className="link__writers">
-                  <img className="img__brunch thumb__img" src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg" alt="이미지"/>
+                  <img
+                    className="img__brunch thumb__img"
+                    src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
+                    alt="이미지"
+                  />
                   <strong className="tit__writer">스마일펄</strong>
                   <span className="team__writer">에세이스트</span>
-                  <span className="txt__writer">사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를 갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한 이야기를 씁니다.</span>
+                  <span className="txt__writer">
+                    사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를
+                    갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에 관한
+                    이야기를 씁니다.
+                  </span>
                   <div className="writer__keyword__wrap keyword__inside__wrap">
-                    <button className="keyword__item" data-keyword="패션">패션</button>
-                    <button className="keyword__item" data-keyword="자기계발">자기계발</button>
-                    <button className="keyword__item" data-url="/">더보기</button>
+                    <button className="keyword__item" data-keyword="패션">
+                      패션
+                    </button>
+                    <button className="keyword__item" data-keyword="자기계발">
+                      자기계발
+                    </button>
+                    <button className="keyword__item" data-url="/">
+                      더보기
+                    </button>
                   </div>
                 </a>
               </li>
@@ -616,15 +840,15 @@ const Main = () => {
               </li>
             </ul>
           </div>
-          
+
           <div className="wrap__btn recommend_articles__btn">
-              <a href="#" className="btn__scroll btn__brunch btn__prev">
-                <span className="ico__brunch">이전 에디터 보기</span>
-              </a>
-              <a href="#" className="btn__scroll btn__brunch btn__next">
+            <a href="#" className="btn__scroll btn__brunch btn__prev">
+              <span className="ico__brunch">이전 에디터 보기</span>
+            </a>
+            <a href="#" className="btn__scroll btn__brunch btn__next">
               <span className="ico__brunch">다음 에디터 보기</span>
-              </a>
-            </div>
+            </a>
+          </div>
         </div>
 
         {/* 푸터 영역 */}
