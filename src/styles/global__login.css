@@ -237,96 +237,6 @@
     right: 198px;
   }
 }
-.layer_connect2 {
-  width: 360px;
-  height: 362px;
-  margin: -180px 0 0 -180px;
-}
-.layer_connect2 .layer_body {
-  margin: 40px auto 0;
-}
-.layer_connect2 .ico_signlogo {
-  display: block;
-  width: 52px;
-  height: 52px;
-  margin: 0 auto;
-  background-position: -80px -580px;
-}
-.layer_connect2 .link_connect {
-  width: 260px;
-  height: 40px;
-  border-radius: 2px;
-  box-sizing: border-box;
-}
-.layer_connect2 .txt_infocont2 {
-  margin-top: 10px;
-  line-height: 18px;
-  font-size: 13px;
-  text-align: center;
-}
-.layer_connect2 .txt_start {
-  overflow: visible;
-  display: block;
-  margin-top: 12px;
-  font-family: "Nanum Myeongjo", sans-serif;
-  font-size: 24px;
-  letter-spacing: -1px;
-  text-align: center;
-  color: #000;
-}
-
-.layer_connect2 .link_kakaolog .ico_ka {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  width: 20px;
-  height: 20px;
-  margin: -2px 8px 0 0;
-  background-position: -140px -570px;
-  vertical-align: middle;
-}
-
-.layer_connect .txt_infocont .link_notice {
-  display: inline-block;
-  margin-top: -2px;
-  font-size: 12px;
-  color: #666;
-  vertical-align: top;
-  text-decoration: underline;
-}
-.layer_connect .link_kakaolog {
-  display: block;
-  width: 330px;
-  height: 48px;
-  background: #ffe500;
-  font-family: "Noto Sans Light";
-  line-height: 48px;
-  color: #333;
-}
-.layer_connect .link_kakaolog .ico_ka {
-  width: 20px;
-  height: 20px;
-  margin: -2px 8px 0 0;
-  background-position: -140px -570px;
-  vertical-align: middle;
-}
-.layer_connect .wrap_link {
-  margin-top: 17px;
-  text-align: center;
-}
-.layer_connect .link_connect {
-  font-size: 12px;
-  color: #666;
-  text-decoration: underline;
-}
-.wrap_theme {
-  position: relative;
-  overflow: hidden;
-  min-width: 1000px;
-  height: 100%;
-  min-height: 700px;
-  margin: 0 auto;
-}
 [class*="wrap_joinmsg"] .txt_join {
   margin-top: 18px;
   line-height: 20px;
@@ -449,12 +359,6 @@
 }
 .motion_set3.fade_out3 .obj_element3_2 {
   animation-name: wrap_joinmsg3_2_out;
-}
-.motion_set3.fade_out3 .obj_element3_1,
-.motion_set3.fade_out3 .obj_element3_2,
-.motion_set3.fade_out3 .wrap_joinmsg3 {
-  animation-delay: 0s;
-  animation-duration: 0.5s;
 }
 
 .show_motion * {

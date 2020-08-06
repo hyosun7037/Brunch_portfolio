@@ -87,9 +87,6 @@ const NavNonmember = () => {
           <NavContentsMenu>
             <Link to="/now">브런치 나우</Link>
           </NavContentsMenu>
-          <NavContentsMenu>
-            <Link to="/">브런치 책방</Link>
-          </NavContentsMenu>
         </ul>
       </div>
       <div className="nav__Footer" style={{ position: "absolute" }}>

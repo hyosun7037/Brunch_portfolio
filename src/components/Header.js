@@ -37,6 +37,7 @@ const Logo = styled.h1`
   height: 22px;
   margin: 0;
   padding: 0;
+  background-position: ${(props) => props.backposition || "0 0"};
 `;
 
 const SideBtn = styled.button`
@@ -50,27 +51,33 @@ const SideBtn = styled.button`
   cursor: pointer;
 `;
 
-const Header = (props) => {
-  const { title } = props;
+const ServiceHeader = styled.div`
+  position: ${(props) => props.position || "relative"};
+  z-index: ${(props) => props.zIndex || "1"};
+  width: 100%;
+`;
+
+const Header = ({ position, backposition, title }) => {
   return (
-    <div className="service__header top">
+    <ServiceHeader position={position}>
       <div className="header__inner">
         <div clasName="sidebtn__logo">
           <Link to="/nowriter">
             <SideBtn></SideBtn>
           </Link>
           <Link to="/">
-            <Logo />
+            <Logo backposition={backposition} />
           </Link>
         </div>
         <div clasName="applybtn__search">
           <span>{title}</span>
-          <RoundBtn>작가신청</RoundBtn>
+          <RoundBtn>시작하기</RoundBtn>
           <Search></Search>
         </div>
       </div>
-    </div>
+    </ServiceHeader>
   );
 };
 
+export { ServiceHeader, Logo };
 export default Header;

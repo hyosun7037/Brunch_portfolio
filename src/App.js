@@ -5,6 +5,7 @@ import NavNonmem from "./components/NavNonmem";
 import { Route, Switch } from "react-router-dom";
 import BrunchNow from "./pages/BrunchNow";
 import GlobalLogin from "./pages/GlobalLogin";
+import Detail from "./pages/Detail";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/nowriter" component={NavNonmem} />
         <Route path="/now" component={BrunchNow} />
         <Route path="/login" component={GlobalLogin} />
+        <Route path="/detail" component={Detail} />
         <Route path="/" component={Main} />
       </Switch>
     </>

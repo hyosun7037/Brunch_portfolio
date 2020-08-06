@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/main.css";
-import { Route } from "react-router-dom";
-import Header from "../components/Header";
+import { Route, Link } from "react-router-dom";
+import Header, { ServiceHeader } from "../components/Header";
 import Footer from "../components/Footer";
 import styled from "styled-components";
 // import NavWriter from "../components/NavWriter";
@@ -48,7 +48,7 @@ const Main = () => {
                 alt="텍스트배너"
               />
             </Route>
-            {/* <a href="#">작은 배너</a> */}
+            {/* <Link to="/detail">작은 배너</Link> */}
           </li>
         </ul>
       </div>
@@ -81,7 +81,7 @@ const Main = () => {
                 <li>
                   <div className="wrap__pic wrap__pic1">
                     <div className="item__pic item__pic__type1">
-                      <a href="#">
+                      <Link to="/detail">
                         <img
                           src="//img1.daumcdn.net/thumb/C460x648.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/18C5/image/_xgHcZmsvPsvqhH5_qbFc617JzI.jpg"
                           width="100%"
@@ -100,11 +100,11 @@ const Main = () => {
                             </span>
                           </div>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                     <div className="item__pic item__pic__type2__3">
                       <div className="item__pic item__pic__type2">
-                        <a href="#">
+                        <Link to="/detail">
                           <img
                             src="//img1.daumcdn.net/thumb/C480x260.fjpg/?fname=https://t1.daumcdn.net/section/oc/2acfb8dcbbbb4b09bae794f3d2328461"
                             width="100%"
@@ -123,11 +123,11 @@ const Main = () => {
                               </span>
                             </div>
                           </div>
-                        </a>
+                        </Link>
                         <div className="mask"></div>
                       </div>
                       <div className="item__pic item__pic__type3">
-                        <a href="#">
+                        <Link to="/detail">
                           <img
                             src="//img1.daumcdn.net/thumb/C480x260.fjpg/?fname=https://t1.daumcdn.net/section/oc/864f6a17996542afbf477cb950244ac1"
                             width="100%"
@@ -148,7 +148,7 @@ const Main = () => {
                               </span>
                             </div>
                           </div>
-                        </a>
+                        </Link>
                         <div className="mask"></div>
                       </div>
                     </div>
@@ -158,7 +158,7 @@ const Main = () => {
                 <li>
                   <div className="wrap__pic wrap__pic2">
                     <div className="item__pic item__pic__type1">
-                      <a href="#">
+                      <Link to="/detail">
                         <img
                           src="//img1.daumcdn.net/thumb/C320x520.fjpg/?fname=https://t1.daumcdn.net/section/oc/78b1b4e8a4244ff4859dc791900e0d5d"
                           width="100%"
@@ -185,7 +185,7 @@ const Main = () => {
                             </span>
                           </div>
                         </div>
-                      </a>
+                      </Link>
                       <div className="mask"></div>
                     </div>
                     <div className="item__pic item__pic__type2"></div>
@@ -204,43 +204,43 @@ const Main = () => {
               </ul>
             </div>
             <div className="wrap__btn">
-              <a href="#" className="btn__scroll btn__brunch btn__prev">
+              <Link to="/detail" className="btn__scroll btn__brunch btn__prev">
                 <span className="ico__brunch">이전 에디터 보기</span>
-              </a>
-              <a href="#" className="btn__scroll btn__brunch btn__next">
+              </Link>
+              <Link to="/detail" className="btn__scroll btn__brunch btn__next">
                 <span className="ico__brunch">다음 에디터 보기</span>
-              </a>
+              </Link>
             </div>
             <div className="wrap__paging">
               <span className="link__page">
                 <ScreenOut>현재페이지</ScreenOut>
                 <span className="img__page txt__page1">01</span>
-              </span>{" "}
+              </span>
               {/*현재 활성화 페이지*/}
-              <a href="#" className="link__page">
+              <Link to="/detail" className="link__page">
                 <span className="img__page txt__page2">02</span>
-              </a>
-              <a href="#" className="link__page">
+              </Link>
+              <Link to="/detail" className="link__page">
                 <span className="img__page txt__page3">03</span>
-              </a>
-              <a href="#" className="link__page">
+              </Link>
+              <Link to="/detail" className="link__page">
                 <span className="img__page txt__page4">04</span>
-              </a>
-              <a href="#" className="link__page">
+              </Link>
+              <Link to="/detail" className="link__page">
                 <span className="img__page txt__page5">05</span>
-              </a>
-              <a href="#" className="link__page">
+              </Link>
+              <Link to="/detail" className="link__page">
                 <span className="img__page txt__page6">06</span>
-              </a>
-              <a href="#" className="link__page">
+              </Link>
+              <Link to="/detail" className="link__page">
                 <span className="img__page txt__page7">07</span>
-              </a>
-              <a href="#" className="link__page">
+              </Link>
+              <Link to="/detail" className="link__page">
                 <span className="img__page txt__page8">08</span>
-              </a>
-              <a href="#" className="link__page">
+              </Link>
+              <Link to="/detail" className="link__page">
                 <span className="img__page txt__page9">09</span>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -255,178 +255,250 @@ const Main = () => {
             <div className="keyword__list__wrap">
               <div className="keyword__list">
                 <div className="keyword__list__flex">
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="keyword__list__flex">
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="keyword__list__flex">
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
-                  <a href="#" className="keyword__item brunch__keyword__item">
+                  </Link>
+                  <Link
+                    to="/detail"
+                    className="keyword__item brunch__keyword__item"
+                  >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -447,7 +519,7 @@ const Main = () => {
           <div className="wrap__writers">
             <ul className="list__writers">
               <li>
-                <a href="#" className="link__writers">
+                <Link to="/detail" className="link__writers">
                   <img
                     className="img__brunch thumb__img"
                     src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
@@ -471,10 +543,10 @@ const Main = () => {
                       더보기
                     </button>
                   </div>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="link__writers">
+                <Link to="/detail" className="link__writers">
                   <img
                     className="img__brunch thumb__img"
                     src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
@@ -498,10 +570,10 @@ const Main = () => {
                       더보기
                     </button>
                   </div>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="link__writers">
+                <Link to="/detail" className="link__writers">
                   <img
                     className="img__brunch thumb__img"
                     src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
@@ -525,12 +597,12 @@ const Main = () => {
                       더보기
                     </button>
                   </div>
-                </a>
+                </Link>
               </li>
             </ul>
             <ul className="list__writers">
               <li>
-                <a href="#" className="link__writers">
+                <Link to="/detail" className="link__writers">
                   <img
                     className="img__brunch thumb__img"
                     src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
@@ -554,10 +626,10 @@ const Main = () => {
                       더보기
                     </button>
                   </div>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="link__writers">
+                <Link to="/detail" className="link__writers">
                   <img
                     className="img__brunch thumb__img"
                     src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
@@ -581,10 +653,10 @@ const Main = () => {
                       더보기
                     </button>
                   </div>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="link__writers">
+                <Link to="/detail" className="link__writers">
                   <img
                     className="img__brunch thumb__img"
                     src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
@@ -608,7 +680,7 @@ const Main = () => {
                       더보기
                     </button>
                   </div>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -616,9 +688,9 @@ const Main = () => {
 
         {/* 중간배너영역 */}
         <div className="ad__banner">
-          <a href="#" className=" screen__out">
+          <Link to="/detail" className=" screen__out">
             중간배너영역
-          </a>
+          </Link>
         </div>
 
         {/* 추천 글 영역 */}
@@ -632,7 +704,7 @@ const Main = () => {
           <div className="wrap__slide">
             <ul className="list__slide">
               <li>
-                <a href="#" className="link__slide">
+                <Link to="/detail" className="link__slide">
                   <div className="img__articles">
                     <img
                       src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
@@ -654,11 +726,11 @@ const Main = () => {
                     <span className="ico__by">by</span>
                     써니
                   </span>
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="link__slide">
+                <Link to="/detail" className="link__slide">
                   <div className="img__articles">
                     <img
                       src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
@@ -680,11 +752,11 @@ const Main = () => {
                     <span className="ico__by">by</span>
                     써니
                   </span>
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="link__slide">
+                <Link to="/detail" className="link__slide">
                   <div className="img__articles">
                     <img
                       src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
@@ -706,11 +778,11 @@ const Main = () => {
                     <span className="ico__by">by</span>
                     써니
                   </span>
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="link__slide">
+                <Link to="/detail" className="link__slide">
                   <div className="img__articles">
                     <img
                       src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
@@ -732,11 +804,11 @@ const Main = () => {
                     <span className="ico__by">by</span>
                     써니
                   </span>
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="link__slide">
+                <Link to="/detail" className="link__slide">
                   <div className="img__articles">
                     <img
                       src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
@@ -758,11 +830,11 @@ const Main = () => {
                     <span className="ico__by">by</span>
                     써니
                   </span>
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="link__slide">
+                <Link to="/detail" className="link__slide">
                   <div className="img__articles">
                     <img
                       src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
@@ -784,11 +856,11 @@ const Main = () => {
                     <span className="ico__by">by</span>
                     써니
                   </span>
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="link__slide">
+                <Link to="/detail" className="link__slide">
                   <div className="img__articles">
                     <img
                       src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
@@ -810,11 +882,11 @@ const Main = () => {
                     <span className="ico__by">by</span>
                     써니
                   </span>
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a href="#" className="link__slide">
+                <Link to="/detail" className="link__slide">
                   <div className="img__articles">
                     <img
                       src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
@@ -836,18 +908,18 @@ const Main = () => {
                     <span className="ico__by">by</span>
                     써니
                   </span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
           <div className="wrap__btn recommend_articles__btn">
-            <a href="#" className="btn__scroll btn__brunch btn__prev">
+            <Link to="/detail" className="btn__scroll btn__brunch btn__prev">
               <span className="ico__brunch">이전 에디터 보기</span>
-            </a>
-            <a href="#" className="btn__scroll btn__brunch btn__next">
+            </Link>
+            <Link to="/detail" className="btn__scroll btn__brunch btn__next">
               <span className="ico__brunch">다음 에디터 보기</span>
-            </a>
+            </Link>
           </div>
         </div>
 

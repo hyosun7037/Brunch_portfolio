@@ -1,0 +1,59 @@
+.wrap__article {
+  min-width: 1020px;
+}
+
+.wrap__cover {
+  width: 100%;
+  top: 0;
+  z-index: 0;
+}
+
+.cover__item {
+  position: relative;
+  max-height: none;
+}
+
+.cover__image {
+  background-image: url("http://t1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/1kRw/image/d0ZGfu3jqCeandvOx_SfULUH600.jpg");
+  display: block;
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 450px;
+}
+
+.cover__inner {
+  display: block;
+  background-color: #000;
+  opacity: 0.3;
+  height: 450px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.cover__cell {
+  position: absolute;
+  z-index: 11;
+  width: 700px;
+  right: 50%;
+  color: #fff;
+  font-weight: 300;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+}
+
+.cover__title {
+  margin-left: 0;
+  margin-bottom: 6px;
+  letter-spacing: -0.09em;
+  font-size: 34pt;
+  font-family: "Nanum Myeongjo", serif;
+  line-height: 40pt;
+  padding: 0;
+}
+
+.cover__sub__title {
+  font-weight: 100;
+}
