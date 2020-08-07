@@ -50,7 +50,7 @@ const RoundBtn = styled.button`
   font-weight: 500;
   color: #00c3bd;
   border: 1px solid #00c3bd;
-  margin-top: 13px;
+  margin-top: 24px;
   background-color: #fff;
   cursor: pointer;
 `;
@@ -89,12 +89,15 @@ const NavWriter = () => {
   return (
     <div className="nav__Wrap">
       <div className="nav__Header">
-        <ProfileImg></ProfileImg>
-        <ProfileName>써니</ProfileName>
-        <ProfileUrl>brunch.co.kr/@haha7037</ProfileUrl>
-        <RoundSmallBtn>글쓰기</RoundSmallBtn>
-
-        <RoundSmallBtn>작가신청</RoundSmallBtn>
+        <Link to="/profile">
+          <ProfileImg></ProfileImg>
+          <ProfileName>써니</ProfileName>
+          <ProfileUrl>brunch.co.kr/@haha7037</ProfileUrl>
+        </Link>
+        <Link to="/write">
+          <RoundSmallBtn>글쓰기</RoundSmallBtn>
+        </Link>
+        {/* <RoundSmallBtn>작가신청</RoundSmallBtn> */}
       </div>
 
       <div className="nav__Main">

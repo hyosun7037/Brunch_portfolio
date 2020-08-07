@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/detail.css";
-import DetailHeader from "../components/DetailHeader";
+import DetailHeader from "../components/Header/DetailHeader";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { IcoBy } from "./BrunchNow";
@@ -160,7 +160,15 @@ const Detail = () => {
                 어리석은 짓이었고 사실 잘 어울리지도 못했다.
               </ItemTypeText>
             </div>
-            <div className="wrap__body__info"></div>
+            <div className="wrap__body__info">
+              <div className="info__article wrap__keyword">
+                <ul className="list_keyword">
+                  <li>
+                    <Link to="link__keyword">친구</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <div className="article__body__bottom"></div>
           </WrapFrame>
         </div>

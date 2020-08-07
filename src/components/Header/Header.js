@@ -10,15 +10,14 @@ const Search = styled.button`
   background-position: -30px 0px;
   background-image: url("https://t1.daumcdn.net/brunch/static/img/help/pc/ico_view_cover.v4.png");
   border: none;
-  background-color: white;
-  margin-top: 5px;
+  background-color: rgba(0, 0, 0, 0);
 `;
 
 const RoundBtn = styled.button`
   border-radius: 16px;
   font-family: "Noto Sans KR";
   font-weight: 500;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
   width: 64px;
   height: 28px;
@@ -45,7 +44,7 @@ const SideBtn = styled.button`
   background-repeat: no-repeat;
   width: 27px;
   height: 20px;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0);
   border: none;
   margin-right: 11px;
   cursor: pointer;
@@ -57,21 +56,19 @@ const ServiceHeader = styled.div`
   width: 100%;
 `;
 
-const Header = ({ position, backposition, title }) => {
+const Header = ({ position, backposition }) => {
   return (
     <ServiceHeader position={position}>
       <div className="header__inner">
         <div clasName="sidebtn__logo">
-          <Link to="/nowriter">
+          <Link to="/writer">
             <SideBtn></SideBtn>
           </Link>
           <Link to="/">
             <Logo backposition={backposition} />
           </Link>
         </div>
-        <div clasName="applybtn__search">
-          <span>{title}</span>
-          <RoundBtn>시작하기</RoundBtn>
+        <div className="applybtn__search">
           <Search></Search>
         </div>
       </div>
@@ -79,5 +76,5 @@ const Header = ({ position, backposition, title }) => {
   );
 };
 
-export { ServiceHeader, Logo };
+export { ServiceHeader, Logo, RoundBtn };
 export default Header;

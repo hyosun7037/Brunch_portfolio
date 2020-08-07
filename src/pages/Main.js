@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/main.css";
 import { Route, Link } from "react-router-dom";
-import Header, { ServiceHeader } from "../components/Header";
+import Header, { ServiceHeader } from "../components/Header/Header";
 import Footer from "../components/Footer";
 import styled from "styled-components";
 // import NavWriter from "../components/NavWriter";

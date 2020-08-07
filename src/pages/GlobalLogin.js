@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../components/Header";
+import Header from "../components/Header/Header";
 import "../styles/global__login.css";
 
 const GlobalLogin = () => {
