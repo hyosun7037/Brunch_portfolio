@@ -12,7 +12,7 @@ const now__content = {
 const list__common = {
   width: "700px",
   margin: "0 auto",
-  paddingTop: "10px",
+  padding: "0px",
 };
 
 const list__common__li = {
@@ -32,15 +32,7 @@ const link__thumb = {
   marginTop: "5px",
 };
 
-const tit__subject = {
-  fontWeight: "normal",
-  display: "block",
-  fontSize: "20px",
-  lineHeight: "28px",
-  overflow: "hidden",
-  textOverflow: "ellipsis",
-  whiteSpace: "nowrap",
-};
+
 
 const desc__common = {
   display: "block",
@@ -51,6 +43,7 @@ const desc__common = {
   maxHeight: "43px",
   overflow: "hidden",
   textOverflow: "ellipsis",
+  fontWeight:'300'
 };
 
 const ico_bar = {
@@ -95,10 +88,20 @@ const ico__dot = {
   verticalAlign: "top",
 };
 
+const TitSub = styled.strong`
+  font-weight:300;
+  font-family:'Noto Sans KR';
+  display: block;
+  font-size:20px;
+  line-height:28px;
+  white-space:nowrap;
+`;
+
+
 const MyBrunch = () => {
   return (
     <>
-      <Header></Header>
+      <Header title="브런치 나우" height="100px"></Header>
       <main className="now__content" style={now__content}>
         <article className="now__body">
           <h2 className="screen__out">브런치</h2>
@@ -109,9 +112,9 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <strong className="tit__subject" style={tit__subject}>
+                  <TitSub>
                     위로인 줄 알았는데 자랑이었네
-                  </strong>
+                  </TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?
@@ -165,9 +168,9 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <strong className="tit__subject" style={tit__subject}>
+                  <TitSub>
                     위로인 줄 알았는데 자랑이었네
-                  </strong>
+                  </TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?
@@ -221,9 +224,9 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <strong className="tit__subject" style={tit__subject}>
+                  <TitSub>
                     위로인 줄 알았는데 자랑이었네
-                  </strong>
+                  </TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?
@@ -277,9 +280,9 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <strong className="tit__subject" style={tit__subject}>
+                  <TitSub>
                     위로인 줄 알았는데 자랑이었네
-                  </strong>
+                  </TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?
@@ -333,9 +336,9 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <strong className="tit__subject" style={tit__subject}>
+                  <TitSub>
                     위로인 줄 알았는데 자랑이었네
-                  </strong>
+                  </TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?
@@ -389,9 +392,9 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <strong className="tit__subject" style={tit__subject}>
+                  <TitSub>
                     위로인 줄 알았는데 자랑이었네
-                  </strong>
+                  </TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?
@@ -445,9 +448,9 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <strong className="tit__subject" style={tit__subject}>
+                  <TitSub>
                     위로인 줄 알았는데 자랑이었네
-                  </strong>
+                  </TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?
@@ -501,9 +504,9 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <strong className="tit__subject" style={tit__subject}>
+                  <TitSub>
                     위로인 줄 알았는데 자랑이었네
-                  </strong>
+                  </TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?

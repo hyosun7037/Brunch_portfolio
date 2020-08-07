@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/Header/Header";
-// import ProfileImg from "../components/NavWriter";
+import ProfileImg from "../components/NavWriter";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -16,6 +16,16 @@ const WrapProfile = styled.div`
   padding: 35px 0 0;
 `;
 
+// const ProfileImg = styled.div`
+//   overflow: hidden;
+//   position: absolute;
+//   top: -50px;
+//   right: 0;
+//   width: 100px;
+//   height: 100px;
+//   background-position: -250px -80px;
+//   border-radius: 100px;
+// `;
 
 const TitBloger = styled.strong`
   display: block;
@@ -103,27 +113,15 @@ const CardBanner = styled.div`
   margin:0 auto;
 `;
 
-const ProfileImg = styled.div`
-  overflow: hidden;
-  position: absolute;
-  top: -50px;
-  right: 0;
-  width: 100px;
-  height: 100px;
-  background-position: -250px -80px;
-  border-radius: 100px;
-`;
 
 const Profile = () => {
   return (
     <>
-      <Header position="fixed" title="프로필"></Header>
+      <Header position="fixed"></Header>
       <header>
         <CoverBloger />
         <WrapProfile>
-        <ProfileImg >
-          <img src="//img1.daumcdn.net/thumb/C100x100.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/aFZ0/image/0e47B_A7ISf1x9sYZ8wjsRZJZRA.jpg" alt="프로필 이미지" />
-        </ProfileImg>
+        <ProfileImg />
           <div className="wrap__profile__desc">
             <TitBloger>써니</TitBloger>
             <DescBloger>써니의 브런치입니다.</DescBloger>
