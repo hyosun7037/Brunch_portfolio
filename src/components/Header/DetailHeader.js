@@ -98,7 +98,7 @@ const DetailHeader = ({
     <ServiceHeader position={position}>
       <div className="header__inner">
         <div clasName="sidebtn__logo">
-          <Link to="/nowriter">
+          <Link to="/">
             <SideBtn
               sideBtnposition={sideBtnposition}
               sideBtnColor={sideBtnColor}

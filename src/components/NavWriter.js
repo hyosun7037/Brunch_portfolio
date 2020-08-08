@@ -102,7 +102,7 @@ const NavWriter = () => {
 
       <div className="nav__Main">
         <ul className="nav__Contents">
-          <Link to="/">
+          <Link to="/profile">
             <NavContentsMenu>내 브런치</NavContentsMenu>
           </Link>
           <Link to="/">

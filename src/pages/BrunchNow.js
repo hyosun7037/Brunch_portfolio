@@ -4,6 +4,7 @@ import "../styles/main.css";
 import "../index.css";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { ScreenOut } from "./Main";
 
 const now__content = {
   color: "#333",
@@ -32,8 +33,6 @@ const link__thumb = {
   marginTop: "5px",
 };
 
-
-
 const desc__common = {
   display: "block",
   paddingTop: "5px",
@@ -43,7 +42,7 @@ const desc__common = {
   maxHeight: "43px",
   overflow: "hidden",
   textOverflow: "ellipsis",
-  fontWeight:'300'
+  fontWeight: "300",
 };
 
 const ico_bar = {
@@ -89,14 +88,13 @@ const ico__dot = {
 };
 
 const TitSub = styled.strong`
-  font-weight:300;
-  font-family:'Noto Sans KR';
+  font-weight: 300;
+  font-family: "Noto Sans KR";
   display: block;
-  font-size:20px;
-  line-height:28px;
-  white-space:nowrap;
+  font-size: 20px;
+  line-height: 28px;
+  white-space: nowrap;
 `;
-
 
 const MyBrunch = () => {
   return (
@@ -104,7 +102,7 @@ const MyBrunch = () => {
       <Header title="브런치 나우" height="100px"></Header>
       <main className="now__content" style={now__content}>
         <article className="now__body">
-          <h2 className="screen__out">브런치</h2>
+          <ScreenOut>브런치</ScreenOut>
           <ul
             className="list__common list__feed list__now"
             style={list__common}
@@ -112,9 +110,7 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <TitSub>
-                    위로인 줄 알았는데 자랑이었네
-                  </TitSub>
+                  <TitSub>위로인 줄 알았는데 자랑이었네</TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?
@@ -168,9 +164,7 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <TitSub>
-                    위로인 줄 알았는데 자랑이었네
-                  </TitSub>
+                  <TitSub>위로인 줄 알았는데 자랑이었네</TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?
@@ -224,9 +218,7 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <TitSub>
-                    위로인 줄 알았는데 자랑이었네
-                  </TitSub>
+                  <TitSub>위로인 줄 알았는데 자랑이었네</TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?
@@ -280,9 +272,7 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <TitSub>
-                    위로인 줄 알았는데 자랑이었네
-                  </TitSub>
+                  <TitSub>위로인 줄 알았는데 자랑이었네</TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?
@@ -336,9 +326,7 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <TitSub>
-                    위로인 줄 알았는데 자랑이었네
-                  </TitSub>
+                  <TitSub>위로인 줄 알았는데 자랑이었네</TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?
@@ -392,9 +380,7 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <TitSub>
-                    위로인 줄 알았는데 자랑이었네
-                  </TitSub>
+                  <TitSub>위로인 줄 알았는데 자랑이었네</TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?
@@ -448,9 +434,7 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <TitSub>
-                    위로인 줄 알았는데 자랑이었네
-                  </TitSub>
+                  <TitSub>위로인 줄 알았는데 자랑이었네</TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?
@@ -504,9 +488,7 @@ const MyBrunch = () => {
             <li className="list__common__li" style={list__common__li}>
               <div className="cont__common">
                 <Link to="/detail" className="link__common">
-                  <TitSub>
-                    위로인 줄 알았는데 자랑이었네
-                  </TitSub>
+                  <TitSub>위로인 줄 알았는데 자랑이었네</TitSub>
                   <span className="desc__common" style={desc__common}>
                     <em className="tit__sub" style={{ fontStyle: "normal" }}>
                       성장하는 중.. 아마도?

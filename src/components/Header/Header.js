@@ -85,7 +85,7 @@ const Header = ({ position, backposition, title, height, searchposition }) => {
           console.log(ref.current);
           // ref.current = menuToggle;
           // ref.current = menuToggle;
-          setVisible(visible);
+          setVisible(!visible);
         }
       };
       document.addEventListener("mousedown", clickOutside);
@@ -117,11 +117,7 @@ const Header = ({ position, backposition, title, height, searchposition }) => {
           </div>
         </div>
       </ServiceHeader>
-      {visible && (
-        <Route to="/writer" component="NavWriter">
-          <NavWriter ref={menuToggle} />
-        </Route>
-      )}
+      {visible && <NavWriter ref={menuToggle} />}
     </>
   );
 };

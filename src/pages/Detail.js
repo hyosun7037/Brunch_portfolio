@@ -4,6 +4,7 @@ import DetailHeader from "../components/Header/DetailHeader";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { IcoBy } from "./BrunchNow";
+import { ScreenOut } from "./Main";
 
 const CoverCellInfo = styled.span`
   position: absolute;
@@ -54,6 +55,135 @@ const ItemTypeTit = styled.p`
 const ItemTypeText = styled(ItemTypeTit)`
   font-weight: 300;
   margin-bottom: 30px;
+`;
+
+const WrapBodyInfo = styled.div`
+  width: 700px;
+  margin: 80px auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const WrapKeyword = styled.div`
+  overflow: hidden;
+  padding-top: 6px;
+`;
+
+const ListKeyword = styled.ul`
+  display: flex;
+  padding: 0;
+  a {
+    margin-right: 8px;
+    font-family: "Noto Sans KR";
+    li {
+      display: block;
+      min-width: 14px;
+      height: 26px;
+      padding: 0 10px;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      font-size: 12px;
+      line-height: 26px;
+      color: #959595;
+      text-align: center;
+    }
+  }
+`;
+
+const BtnComment = styled.button`
+  margin-left: 8px;
+  padding: 10px 20px 8px 19px;
+  border: 1px solid #bbb;
+  font-size: 13px;
+  border-radius: 42px;
+  font-family: "Noto Sans KR";
+  color: #666;
+`;
+
+const IcoArticle = styled.span`
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-position: 0 0;
+  overflow: hidden;
+  background-image: url("http://t1.daumcdn.net/brunch9/static/images/pc/ico_article_181212_rtn.png");
+  background-size: 80px 80px;
+  line-height: 0;
+  text-indent: -9999px;
+  vertical-align: top;
+`;
+
+// 브런치 댓글창 클릭하면 display 속성 변경시키기
+const DetailComment = styled.div`
+  display: block;
+  padding-top: 44px;
+  background-color: #fff;
+  width: 700px;
+  margin: 0 auto;
+  padding: 0 0 80px;
+`;
+
+const CommentHead = styled.div`
+  width: 700px;
+  height: 30px;
+  strong {
+    font-family: "Noto Sans KR";
+    font-weight: 400;
+    padding-top: 4px;
+    margin-left: -1px;
+    span {
+      padding-left: 5px;
+      color: #00c3bd;
+    }
+  }
+`;
+
+const CommentContent = styled.div`
+  width: 700px;
+  margin: 0 auto;
+  div {
+    display: none;
+    button {
+      width: 100%;
+      height: 47px;
+      border-top: 1px solid #ddd;
+      font-size: 12px;
+      line-height: 47px;
+      color: #959595;
+    }
+  }
+  ul {
+    display: block;
+    width: 100%;
+    border-top: 1px solid #eee;
+  }
+`;
+
+const WrapCommentWrite = styled.div`
+  display: flex;
+  form {
+    position: relative;
+    border: 1px solid #eee;
+    outline: 0;
+    width: 624px;
+    margin: 0 auto;
+    .write__append {
+      padding: 14px 19px 0;
+      height: 44px;
+    }
+  }
+`;
+
+const LinkProfile = styled.div`
+  margin-left: 18px;
+  overflow: visible;
+  position: relative;
+  width: 42px;
+  height: 42px;
+  img {
+    border-radius: 50%;
+  }
 `;
 
 const Detail = () => {
@@ -160,16 +290,67 @@ const Detail = () => {
                 어리석은 짓이었고 사실 잘 어울리지도 못했다.
               </ItemTypeText>
             </div>
-            <div className="wrap__body__info">
-              <div className="info__article wrap__keyword">
-                <ul className="list_keyword">
-                  <li>
-                    <Link to="link__keyword">친구</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="article__body__bottom"></div>
+            <WrapBodyInfo>
+              {/* 브런치 키워드 목록 */}
+              <WrapKeyword>
+                <ScreenOut>키워드</ScreenOut>
+                <ListKeyword>
+                  <Link to="/keyword/마음일기" className="link__keyword">
+                    <li>마음일기</li>
+                  </Link>
+                  <Link to="/keyword/수면장애" className="link__keyword">
+                    <li>수면장애</li>
+                  </Link>
+                  <Link to="/keyword/불면" className="link__keyword">
+                    <li>불면</li>
+                  </Link>
+                </ListKeyword>
+              </WrapKeyword>
+              {/* 댓글버튼 */}
+              <span className="wrap__comment__btn">
+                <BtnComment>
+                  <IcoArticle></IcoArticle>
+                  <span>댓글</span>
+                  <span className="num__comment"></span>
+                </BtnComment>
+              </span>
+            </WrapBodyInfo>
+            {/* 댓글창 클릭하면 display 상태 변경 */}
+            <div
+              className="article__body__bottom"
+              style={{ paddingTop: "82px" }}
+            ></div>
+            <DetailComment>
+              <ScreenOut>댓글</ScreenOut>
+              <CommentHead>
+                <strong>
+                  댓글<span>0</span>
+                </strong>
+              </CommentHead>
+              <CommentContent>
+                <div>
+                  <button>이전 댓글 보기</button>
+                </div>
+                <ul></ul>
+              </CommentContent>
+              <WrapCommentWrite>
+                <LinkProfile>
+                  <img
+                    src="//img1.daumcdn.net/thumb/C42x42.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/aFZ0/image/0e47B_A7ISf1x9sYZ8wjsRZJZRA.jpg"
+                    alt="프로필 이미지"
+                  />
+                </LinkProfile>
+                <form method="post">
+                  <input type="hidden" name="sticker" />
+                  <fieldset style={{ border: "none" }}>
+                    <div>
+                      <span className="wrap__area"></span>
+                      <div className="write__append"></div>
+                    </div>
+                  </fieldset>
+                </form>
+              </WrapCommentWrite>
+            </DetailComment>
           </WrapFrame>
         </div>
       </div>
