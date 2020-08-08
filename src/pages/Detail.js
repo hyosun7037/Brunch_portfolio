@@ -155,7 +155,6 @@ const CommentContent = styled.div`
   }
   ul {
     display: block;
-    width: 100%;
     border-top: 1px solid #eee;
   }
 `;
@@ -183,6 +182,61 @@ const LinkProfile = styled.div`
   height: 42px;
   img {
     border-radius: 50%;
+  }
+`;
+
+const WriteAppend = styled.div`
+  padding:14px 0px 0px;
+`;
+
+// 댓글 작성영역
+const TfArea = styled.div`
+  width:590px;
+  min-height:45px;
+  border:none;
+  line-height:22px;
+  color:#666;
+  background:0 0;
+  white-space:pre-wrap;
+  outline:transparent dotted;
+  z-index:1;
+  font-family:'Noto Sans KR';
+  font-weight:300;
+  font-size:13px;
+  padding-top:5px;
+`;
+
+const BtnDefault = styled.button`
+  width:56px;
+  height:30px;
+  margin-left:5px;
+  border:1px solid #bbb;
+  border-radius:32px;
+  font-size:12px;
+  line-height:28px;
+  color:#666;
+`;
+
+// 작가 프로필 이름
+const LinkAuthorName = styled.a`
+  display:block;
+  font-size:28px;
+  overflow:hidden;
+  width:588px;
+  font-weight:300;
+  font-family:'Noto Sans KR';
+  white-space:nowrap;
+`;
+
+// 작가 프로필 이미지
+const LinkAuthorImg = styled.a`
+  position:absolute;
+  top:-22px;
+  right:0;
+  img{
+    border-radius:100px;
+    width:100px;
+    height:100px;
   }
 `;
 
@@ -344,13 +398,55 @@ const Detail = () => {
                   <input type="hidden" name="sticker" />
                   <fieldset style={{ border: "none" }}>
                     <div>
-                      <span className="wrap__area"></span>
-                      <div className="write__append"></div>
+                      <span className="wrap__area">
+                        <TfArea contentEditable>공감과 응원의 댓글은 작가에게 큰 힘이 됩니다.</TfArea>
+                        <textarea className="tf__area" style={{display:'none'}}></textarea>
+                      </span>
+                      <WriteAppend>
+                        <div className="wrap__btn" style={{textAlign:'right'}}>
+                          <BtnDefault type="submit">확인</BtnDefault>
+                        </div>
+                      </WriteAppend>
                     </div>
                   </fieldset>
                 </form>
               </WrapCommentWrite>
             </DetailComment>
+            {/* 프로필*/}
+            <div className="wrap__author" style={{padding:'0 0 80px', backgroundColor:'#fbfbfb', position:'relative', zIndex:'10'}}>
+              <div className="inner__author" style={{position:'relative', width:'700px', margin:'0 auto', padding:'31px 0'}}>
+                {/* 작가 프로필 */}
+                <div className="author__profile">
+                  <strong>
+                    {/* 작가 프로필 이름 */}
+                    <Link to="/profile">
+                      <LinkAuthorName>spielraummm</LinkAuthorName>
+                      </Link>
+                  </strong>
+                  {/* 작가 프로필 이미지 */}
+                  <Link to="/profile">
+                    <LinkAuthorImg>
+                      <img src="http://img1.daumcdn.net/thumb/C100x100.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/aFZ0/image/0e47B_A7ISf1x9sYZ8wjsRZJZRA.jpg" alt="작가 프로필 이미지" />
+                    </LinkAuthorImg>
+                    </Link>
+                </div>
+                {/* 작가 상세 소개 */}
+                <div className="author__desc" style={{marginTop:'21px', fontSize:'13px', color:'#666'}}>
+                  <Link to="/profile">
+                    <div className="author__book" ㄴ style={{fontFamily:'Noto Sans KR', fontSize:'13px', color:'#959595', fontWeight:'300'}}>
+                      <span className="txt__author__book">spielraummm</span>
+                      <span className="txt__author__book">저자</span>
+                    </div>
+                    {/* 이메일 */}
+                    <p className="txt__desc" style={{color:'#959595',fontWeight:'300', lineHeight:'2'}}>나만의 공간  haha7037@naver.com</p>
+                  </Link>
+                </div>
+                {/* 구독자 */}
+                <div className="wrap__subs" style={{marginTop:'34px'}}></div>
+              </div>
+            </div>
+            {/* 관련글 */}
+            <div className="wrap__relative__article"></div>
           </WrapFrame>
         </div>
       </div>

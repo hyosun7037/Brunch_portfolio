@@ -7,12 +7,13 @@ import BrunchNow from "../../pages/BrunchNow";
 import GlobalLogin from "../../pages/GlobalLogin";
 import Search from "../../pages/Search";
 import Main from "../../pages/Main";
+import NavWriter from "../NavWriter";
 
 const Route = () => {
   return (
     <>
       <Switch>
-        {/* <Route path="/writer" component={NavWriter} /> */}
+        <Route path="/writer" component={NavWriter} />
         {/* <Route path="/nowriter" component={NavNonmem} /> */}
         <Route path="/profile" component={Profile} />
         <Route path="/write" component={Write} />

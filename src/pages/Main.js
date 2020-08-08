@@ -41,13 +41,13 @@ const Main = () => {
       <div className="wrap__banner">
         <ul className="list__banner">
           <li className="item__banner">
-            <Route path="/" component={Main}>
+            <Link to ="/">
               <img
                 className="txt__banner"
                 src="https://t1.daumcdn.net/section/oc/f105e8040e3b46de8492b4815a95092c"
                 alt="텍스트배너"
               />
-            </Route>
+            </Link>
             {/* <Link to="/detail">작은 배너</Link> */}
           </li>
         </ul>

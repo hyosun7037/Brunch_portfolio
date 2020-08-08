@@ -105,7 +105,7 @@ const NavWriter = () => {
           <Link to="/profile">
             <NavContentsMenu>내 브런치</NavContentsMenu>
           </Link>
-          <Link to="/">
+          <Link to="/ready">
             <NavContentsMenu>작가의 서랍</NavContentsMenu>
           </Link>
           <NavContentMenuLine /> {/*중간라인, 나중에 수정할 예정*/}
@@ -115,10 +115,10 @@ const NavWriter = () => {
           <Link to="/now">
             <NavContentsMenu>브런치 나우</NavContentsMenu>
           </Link>
-          <Link to="/">
+          <Link to="/library">
             <NavContentsMenu>글 읽는 서재</NavContentsMenu>
           </Link>
-          <Link to="/">
+          <Link to="/feed">
             <NavContentsMenu>피드</NavContentsMenu>
           </Link>
         </ul>

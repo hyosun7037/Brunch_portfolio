@@ -117,7 +117,8 @@ const Header = ({ position, backposition, title, height, searchposition }) => {
           </div>
         </div>
       </ServiceHeader>
-      {visible && <NavWriter ref={menuToggle} />}
+<NavWriter></NavWriter>
+      {/* {visible && <NavWriter ref={menuToggle} />} */}
     </>
   );
 };
