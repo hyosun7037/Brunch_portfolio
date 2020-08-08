@@ -23,7 +23,7 @@ const App = () => {
         <Route path="/detail" component={Detail} />
         <Route path="/login" component={GlobalLogin} />
         <Route path="/search" component={Search} />
-        <Route path="/" component={Main} />
+        <Route path="/" component={Main} exact={true} />
       </Switch>
     </>
   );

@@ -2,18 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const Search = styled.button`
-  margin: 0 0 0 16px;
-  display: inline-block;
-  width: 22px;
-  height: 19px;
-  background-position: -30px 0px;
-  background-image: url("https://t1.daumcdn.net/brunch/static/img/help/pc/ico_view_cover.v4.png");
-  border: none;
-  background-color: white;
-  margin-top: 5px;
-`;
-
 const RoundBtn = styled.button`
   border-radius: 16px;
   font-family: "Noto Sans KR";

@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import NavWriter from '../NavWriter';
-import { Drawer, Button } from 'antd';
+import { Link, Redirect, Route } from "react-router-dom";
+import NavWriter from "../NavWriter";
+import { Drawer, Button } from "antd";
 
 const SearchBtn = styled.button`
   margin: 0 0 0 16px;
@@ -54,9 +54,9 @@ const SideBtn = styled.button`
 `;
 
 const HeaderTitle = styled.span`
-  font-weight:300;
-  font-family:'Noto Sans KR';
-  font-size:17px;
+  font-weight: 300;
+  font-family: "Noto Sans KR";
+  font-size: 17px;
 `;
 
 const ServiceHeader = styled.div`
@@ -66,62 +66,62 @@ const ServiceHeader = styled.div`
   height: ${(props) => props.height || "inherit"};
 `;
 
-
-
-const Header = ({position, backposition, title, height, searchposition}) => {
+const Header = ({ position, backposition, title, height, searchposition }) => {
   const [visible, setVisible] = useState(false);
   const toggle = useRef(null);
   const menuToggle = useRef(null);
-  
-  
-  // const [state, setState] = useState({visible:false});
 
+  // const [state, setState] = useState({visible:false});
 
   const ClickIn = () => {
     setVisible(!visible);
   };
-  
+
   const ClickOut = (ref) => {
-    useEffect(()=> {
-      const clickOutside = (event) =>{
-        if(ref.current && !ref.current.contains(event.target)){
+    useEffect(() => {
+      const clickOutside = (e) => {
+        if (ref.current && !ref.current.contains(e.target)) {
+          console.log(e.target);
           console.log(ref.current);
-          setVisible(visible);
-          ref.current.target = menuToggle;
           // ref.current = menuToggle;
+          // ref.current = menuToggle;
+          setVisible(visible);
         }
-      }
+      };
       document.addEventListener("mousedown", clickOutside);
-      return () =>{
+      return () => {
         document.removeEventListener("mousedown", clickOutside);
-      }
+      };
     }, [ref]);
-  }
+  };
 
   ClickOut(toggle);
-  
+
   return (
     <>
-    <ServiceHeader position={position} height={height}>
-      <div className="header__inner">
-        <div clasName="sidebtn__logo">
-          <Link to="/writer">
-            <SideBtn ref={toggle} onClick={ClickIn}>
-            </SideBtn>
-          </Link>
-          <Link to="/">
-            <Logo backposition={backposition} />
-          </Link>
+      <ServiceHeader position={position} height={height}>
+        <div className="header__inner">
+          <div clasName="sidebtn__logo">
+            <Link to="/">
+              <SideBtn ref={toggle} onClick={ClickIn}></SideBtn>
+            </Link>
+            <Link to="/">
+              <Logo backposition={backposition} />
+            </Link>
+          </div>
+          <HeaderTitle>{title}</HeaderTitle>
+          <div className="applybtn__search">
+            <Link to="/search">
+              <SearchBtn searchposition={searchposition}></SearchBtn>
+            </Link>
+          </div>
         </div>
-        <HeaderTitle>{title}</HeaderTitle>
-        <div className="applybtn__search">
-          <Link to="/search">
-            <SearchBtn searchposition={searchposition}></SearchBtn>
-          </Link>
-        </div>
-      </div>
-    </ServiceHeader>
-      {visible && <NavWriter ref={menuToggle}/>}
+      </ServiceHeader>
+      {visible && (
+        <Route to="/writer" component="NavWriter">
+          <NavWriter ref={menuToggle} />
+        </Route>
+      )}
     </>
   );
 };

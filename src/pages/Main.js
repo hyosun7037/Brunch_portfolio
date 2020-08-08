@@ -929,5 +929,5 @@ const Main = () => {
     </>
   );
 };
-
+export { ScreenOut };
 export default Main;

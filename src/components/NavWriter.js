@@ -84,7 +84,7 @@ const ProfileUrl = styled.p`
   vertical-align: top;
 `;
 
-const NavWriter = (ref) => {
+const NavWriter = () => {
   // a 태그 나중에 수정예정
   return (
     <div className="nav__Wrap">
@@ -124,11 +124,13 @@ const NavWriter = (ref) => {
         </ul>
         <div className="nav__Footer">
           <GrayBtn>설정</GrayBtn>
-          <Link to="/login"><GrayBtn>로그아웃</GrayBtn></Link>
+          <Link to="/login">
+            <GrayBtn>로그아웃</GrayBtn>
+          </Link>
         </div>
       </div>
     </div>
   );
 };
-export {ProfileName};
+export { ProfileName };
 export default NavWriter;
