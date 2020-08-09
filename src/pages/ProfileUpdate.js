@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../components/Header/Header";
-import ProfileImg from "../components/NavWriter";
+import Header from "components/Header/Header";
+import ProfileImg from "components/NavWriter";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -16,16 +16,6 @@ const WrapProfile = styled.div`
   padding: 35px 0 0;
 `;
 
-// const ProfileImg = styled.div`
-//   overflow: hidden;
-//   position: absolute;
-//   top: -50px;
-//   right: 0;
-//   width: 100px;
-//   height: 100px;
-//   background-position: -250px -80px;
-//   border-radius: 100px;
-// `;
 
 const TitBloger = styled.strong`
   display: block;

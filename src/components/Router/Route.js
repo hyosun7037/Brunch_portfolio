@@ -1,13 +1,13 @@
 import React from "react";
 import { Switch } from "antd";
-import Profile from "../../pages/Profile";
-import Write from "../write/Write";
-import Detail from "../../pages/Detail";
-import BrunchNow from "../../pages/BrunchNow";
-import GlobalLogin from "../../pages/GlobalLogin";
-import Search from "../../pages/Search";
-import Main from "../../pages/Main";
-import NavWriter from "../NavWriter";
+import Profile from "pages/Profile";
+import Write from "write/Write";
+import Detail from "pages/Detail";
+import BrunchNow from "pages/BrunchNow";
+import GlobalLogin from "pages/GlobalLogin";
+import Search from "pages/Search";
+import Main from "pages/Main";
+import NavWriter from "NavWriter";
 
 const Route = () => {
   return (

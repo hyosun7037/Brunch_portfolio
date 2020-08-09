@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import "../styles/nav.css";
+import "styles/nav.css";
 
 const NavContentsMenu = styled.li`
   font-size: 14px;

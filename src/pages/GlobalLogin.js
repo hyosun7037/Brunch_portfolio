@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../components/Header/Header";
-import "../styles/global__login.css";
+import Header from "components/Header/Header";
+import "styles/global__login.css";
 
 const GlobalLogin = () => {
   return (

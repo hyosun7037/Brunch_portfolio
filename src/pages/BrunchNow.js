@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../components/Header/Header";
-import "../styles/main.css";
-import "../index.css";
+import Header from "components/Header/Header";
+import "styles/main.css";
+import "index.css";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ScreenOut } from "./Main";
+import { ScreenOut } from "pages/Main";
 
 const now__content = {
   color: "#333",

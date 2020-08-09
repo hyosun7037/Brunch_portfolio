@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../components/Header/Header";
-// import ProfileImg from "../components/NavWriter";
+import Header from "components/Header/Header";
+// import ProfileImg from "components/NavWriter";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 

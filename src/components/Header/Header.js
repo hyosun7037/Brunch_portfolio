@@ -1,8 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import { Link, Redirect, Route } from "react-router-dom";
-import NavWriter from "../NavWriter";
-import { Drawer, Button } from "antd";
+import { Link} from "react-router-dom";
+import NavWriter from "components/NavWriter";
 
 const SearchBtn = styled.button`
   margin: 0 0 0 16px;
@@ -16,21 +15,21 @@ const SearchBtn = styled.button`
   cursor: pointer;
 `;
 
-const RoundBtn = styled.button`
-  border-radius: 16px;
-  font-family: "Noto Sans KR";
-  font-weight: 500;
-  background-color: rgba(0, 0, 0, 0);
-  cursor: pointer;
-  width: 64px;
-  height: 28px;
-  border: 1px solid #959595;
-  font-family: "Noto Sans Light", sans-serif;
-  margin-top: -5px;
-  color: #959595;
-  font-size: 12px;
-  text-align: center;
-`;
+// const RoundBtn = styled.button`
+//   border-radius: 16px;
+//   font-family: "Noto Sans KR";
+//   font-weight: 500;
+//   background-color: rgba(0, 0, 0, 0);
+//   cursor: pointer;
+//   width: 64px;
+//   height: 28px;
+//   border: 1px solid #959595;
+//   font-family: "Noto Sans Light", sans-serif;
+//   margin-top: -5px;
+//   color: #959595;
+//   font-size: 12px;
+//   text-align: center;
+// `;
 
 const Logo = styled.h1`
   background-image: url("https://t1.daumcdn.net/brunch/static/img/help/pc/logo_service2_v1.png");
@@ -69,7 +68,7 @@ const ServiceHeader = styled.div`
 const Header = ({ position, backposition, title, height, searchposition }) => {
   const [visible, setVisible] = useState(false);
   const toggle = useRef(null);
-  const menuToggle = useRef(null);
+  // const menuToggle = useRef(null);
 
   // const [state, setState] = useState({visible:false});
 

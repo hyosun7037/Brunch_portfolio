@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
-import Header from "../components/Header/Header";
+import Header from "components/Header/Header";
 import styled from "styled-components";
-import { ScreenOut } from "./Main";
+import { ScreenOut } from "pages/Main";
 import { Link } from "react-router-dom";
 
 const Box = styled.div`

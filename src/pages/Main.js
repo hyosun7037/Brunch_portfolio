@@ -1,10 +1,10 @@
 import React from "react";
-import "../styles/main.css";
-import { Route, Link } from "react-router-dom";
-import Header, { ServiceHeader } from "../components/Header/Header";
-import Footer from "../components/Footer";
+import "styles/main.css";
+import { Link } from "react-router-dom";
+import Header from "components/Header/Header";
+import Footer from "components/Footer";
 import styled from "styled-components";
-// import NavWriter from "../components/NavWriter";
+// import NavWriter from "/components/NavWriter";
 
 const ScreenOut = styled.h2`
   margin: 0;
@@ -255,10 +255,32 @@ const Main = () => {
             <div className="keyword__list__wrap">
               <div className="keyword__list">
                 <div className="keyword__list__flex">
-                  <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                  <Link to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </Link>
+                  <Link to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </Link>
+                  <Link to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
+                    <span className="keyword__item__txt">
+                      지구한바퀴
+                      <br />
+                      세계여행
+                    </span>
+                  </Link>
+                  <Link to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -266,9 +288,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item" >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -276,9 +297,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -286,9 +306,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -296,39 +315,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
-                    <span className="keyword__item__txt">
-                      지구한바퀴
-                      <br />
-                      세계여행
-                    </span>
-                  </Link>
-                  <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
-                    <span className="keyword__item__txt">
-                      지구한바퀴
-                      <br />
-                      세계여행
-                    </span>
-                  </Link>
-                  <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
-                    <span className="keyword__item__txt">
-                      지구한바퀴
-                      <br />
-                      세계여행
-                    </span>
-                  </Link>
-                  <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -338,9 +326,8 @@ const Main = () => {
                 </div>
                 <div className="keyword__list__flex">
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -348,9 +335,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -358,9 +344,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -368,9 +353,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -378,9 +362,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -388,9 +371,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item" >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -398,9 +380,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -408,9 +389,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -420,9 +400,8 @@ const Main = () => {
                 </div>
                 <div className="keyword__list__flex">
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -430,9 +409,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item" >
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -440,9 +418,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -450,9 +427,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -460,9 +436,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -470,9 +445,8 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
@@ -480,19 +454,16 @@ const Main = () => {
                     </span>
                   </Link>
                   <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                    to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
                       세계여행
                     </span>
                   </Link>
-                  <Link
-                    to="/detail"
-                    className="keyword__item brunch__keyword__item"
-                  >
+                  <Link to="/keyword_detail"
+                    className="keyword__item brunch__keyword__item">
                     <span className="keyword__item__txt">
                       지구한바퀴
                       <br />
