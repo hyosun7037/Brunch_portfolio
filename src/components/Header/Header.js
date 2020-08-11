@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { Link} from "react-router-dom";
 import NavWriter from "components/NavWriter";
+// import NavWriter from "components/NavWriter";
 
 const SearchBtn = styled.button`
   margin: 0 0 0 16px;
@@ -15,21 +16,6 @@ const SearchBtn = styled.button`
   cursor: pointer;
 `;
 
-// const RoundBtn = styled.button`
-//   border-radius: 16px;
-//   font-family: "Noto Sans KR";
-//   font-weight: 500;
-//   background-color: rgba(0, 0, 0, 0);
-//   cursor: pointer;
-//   width: 64px;
-//   height: 28px;
-//   border: 1px solid #959595;
-//   font-family: "Noto Sans Light", sans-serif;
-//   margin-top: -5px;
-//   color: #959595;
-//   font-size: 12px;
-//   text-align: center;
-// `;
 
 const Logo = styled.h1`
   background-image: url("https://t1.daumcdn.net/brunch/static/img/help/pc/logo_service2_v1.png");
@@ -65,44 +51,43 @@ const ServiceHeader = styled.div`
   height: ${(props) => props.height || "inherit"};
 `;
 
-const Header = ({ position, backposition, title, height, searchposition }) => {
+const Header = ({ position, backposition, title, height, searchposition,}) => {
   const [visible, setVisible] = useState(false);
-  const toggle = useRef(null);
-  // const menuToggle = useRef(null);
+  // const toggle = useRef(null);
+  const menuToggle = useRef(null);
+  const ref = useRef(null);
 
-  // const [state, setState] = useState({visible:false});
 
-  const ClickIn = () => {
-    setVisible(!visible);
+  // 클릭하면 실행 (메뉴 열림)
+  const ClickIn = (ref) => {
+    setVisible(!visible); // true로 변경됨!
+    console.log(ref.target)
+    // return { ref, visible, setVisible };
+  }; 
+
+  const clickOutside = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setVisible(false);
+    }
   };
 
-  const ClickOut = (ref) => {
-    useEffect(() => {
-      const clickOutside = (e) => {
-        if (ref.current && !ref.current.contains(e.target)) {
-          console.log(e.target);
-          console.log(ref.current);
-          // ref.current = menuToggle;
-          // ref.current = menuToggle;
-          setVisible(!visible);
-        }
-      };
-      document.addEventListener("mousedown", clickOutside);
-      return () => {
-        document.removeEventListener("mousedown", clickOutside);
-      };
-    }, [ref]);
-  };
-
-  ClickOut(toggle);
+  useEffect(() => {
+    document.addEventListener("click", clickOutside, true);
+    return () => {
+      document.removeEventListener("click", clickOutside, true);
+    };
+  });
+ 
+ 
 
   return (
     <>
       <ServiceHeader position={position} height={height}>
         <div className="header__inner">
-          <div clasName="sidebtn__logo">
+          <div className="sidebtn__logo">
             <Link to="/">
-              <SideBtn ref={toggle} onClick={ClickIn}></SideBtn>
+              <SideBtn ref={ref} onClick={ClickIn}></SideBtn>
+              {/* <SideBtn ref={toggle} onClick={props.onToggleMenu}></SideBtn> */}
             </Link>
             <Link to="/">
               <Logo backposition={backposition} />
@@ -115,12 +100,16 @@ const Header = ({ position, backposition, title, height, searchposition }) => {
             </Link>
           </div>
         </div>
-      </ServiceHeader>
-<NavWriter></NavWriter>
-      {/* {visible && <NavWriter ref={menuToggle} />} */}
+      </ServiceHeader> 
+      {/* <NavWriter ref={menuToggle} className={visible? `${styles.navLinks} ${styles.showNav}` : `${styles.navLinks}`} /> */}
+
+      {visible && <NavWriter ref={menuToggle} />}
+      {!visible && <></>}
     </>
   );
 };
 
-// export {ServiceHeader, Logo, RoundBtn, SearchBtn };
+export {ServiceHeader, Logo, SideBtn, SearchBtn };
 export default Header;
+
+

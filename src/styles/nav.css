@@ -48,3 +48,19 @@
     margin: 40px auto 9px;
     background-position: -1px 54px;
 }
+
+.nav-links {
+  list-style-type: none;
+  transition: var(--mainTransition);
+  height: 0;
+  overflow: hidden;
+}
+.show-nav {
+  height: 100vh;
+  text-align: left;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+}

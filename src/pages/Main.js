@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "styles/main.css";
 import { Link } from "react-router-dom";
 import Header from "components/Header/Header";
@@ -34,7 +34,13 @@ const RoundBtnBigActive = styled(RoundBtnBig)`
   border: 1px solid #00c6bd;
 `;
 
+
 const Main = () => {
+  const [toggle, setToggle] = useState(false);
+
+  const toggleMenu = () => {
+    setToggle(!toggle)
+  }
   return (
     <>
       {/* <NavWriter></NavWriter> */}
@@ -55,7 +61,7 @@ const Main = () => {
       {/*탑배너영역*/}
 
       <div className="main__container">
-        <Header></Header>
+        <Header onToggleMenu={toggleMenu}></Header>
         <main>
           {/* 인트로 브런치 텍스트 영역*/}
           <ScreenOut>브런치 본문</ScreenOut>
@@ -670,7 +676,7 @@ const Main = () => {
             RECOMMEND ARTICLES
           </h3>
           <p className="desc__brunch">
-            <span class="txt__brunch screen__out">추천글보기</span>
+            <span className="txt__brunch screen__out">추천글보기</span>
           </p>
           <div className="wrap__slide">
             <ul className="list__slide">

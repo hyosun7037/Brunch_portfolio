@@ -97,7 +97,7 @@ const DetailHeader = ({
   return (
     <ServiceHeader position={position}>
       <div className="header__inner">
-        <div clasName="sidebtn__logo">
+        <div className="sidebtn__logo">
           <Link to="/">
             <SideBtn
               sideBtnposition={sideBtnposition}
@@ -108,7 +108,7 @@ const DetailHeader = ({
             <Logo backposition={backposition} />
           </Link>
         </div>
-        <div clasName="applybtn__search">
+        <div className="applybtn__search">
           <span>{title}</span>
         </div>
         <WrapCoverType>

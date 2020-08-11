@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "styles/nav.css";
+import cn from "classnames";
+
 
 const NavContentsMenu = styled.li`
   font-size: 15px;
@@ -84,8 +86,8 @@ const ProfileUrl = styled.p`
   vertical-align: top;
 `;
 
-const NavWriter = () => {
-  // a 태그 나중에 수정예정
+const NavWriter = (props) => {
+ 
   return (
     <div className="nav__Wrap">
       <div className="nav__Header">
