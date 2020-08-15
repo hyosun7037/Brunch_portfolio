@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+// 메인페이지
+
+import React from "react";
 import "styles/main.css";
 import { Link } from "react-router-dom";
 import Header from "components/Header/Header";
@@ -36,11 +38,6 @@ const RoundBtnBigActive = styled(RoundBtnBig)`
 
 
 const Main = () => {
-  const [toggle, setToggle] = useState(false);
-
-  const toggleMenu = () => {
-    setToggle(!toggle)
-  }
   return (
     <>
       {/* <NavWriter></NavWriter> */}
@@ -61,7 +58,7 @@ const Main = () => {
       {/*탑배너영역*/}
 
       <div className="main__container">
-        <Header onToggleMenu={toggleMenu}></Header>
+        <Header></Header>
         <main>
           {/* 인트로 브런치 텍스트 영역*/}
           <ScreenOut>브런치 본문</ScreenOut>
@@ -496,7 +493,7 @@ const Main = () => {
           <div className="wrap__writers">
             <ul className="list__writers">
               <li>
-                <Link to="/detail" className="link__writers">
+                <Link to="/author" className="link__writers">
                   <img
                     className="img__brunch thumb__img"
                     src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
@@ -523,7 +520,7 @@ const Main = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/detail" className="link__writers">
+                <Link to="/author" className="link__writers">
                   <img
                     className="img__brunch thumb__img"
                     src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
@@ -550,7 +547,7 @@ const Main = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/detail" className="link__writers">
+                <Link to="/author" className="link__writers">
                   <img
                     className="img__brunch thumb__img"
                     src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
@@ -579,7 +576,7 @@ const Main = () => {
             </ul>
             <ul className="list__writers">
               <li>
-                <Link to="/detail" className="link__writers">
+                <Link to="/author" className="link__writers">
                   <img
                     className="img__brunch thumb__img"
                     src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
@@ -606,7 +603,7 @@ const Main = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/detail" className="link__writers">
+                <Link to="/author" className="link__writers">
                   <img
                     className="img__brunch thumb__img"
                     src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
@@ -633,7 +630,7 @@ const Main = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/detail" className="link__writers">
+                <Link to="/author" className="link__writers">
                   <img
                     className="img__brunch thumb__img"
                     src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"

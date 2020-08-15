@@ -51,18 +51,15 @@ const ServiceHeader = styled.div`
   height: ${(props) => props.height || "inherit"};
 `;
 
-const Header = ({ position, backposition, title, height, searchposition,}) => {
+const Header = ({ position, backposition, title, height, searchposition}) => {
   const [visible, setVisible] = useState(false);
-  // const toggle = useRef(null);
-  const menuToggle = useRef(null);
   const ref = useRef(null);
 
 
   // 클릭하면 실행 (메뉴 열림)
   const ClickIn = (ref) => {
-    setVisible(!visible); // true로 변경됨!
-    console.log(ref.target)
-    // return { ref, visible, setVisible };
+    setVisible(true); // true로 변경됨!
+    console.log(ref.target);
   }; 
 
   const clickOutside = (event) => {
@@ -78,17 +75,13 @@ const Header = ({ position, backposition, title, height, searchposition,}) => {
     };
   });
  
- 
 
   return (
     <>
       <ServiceHeader position={position} height={height}>
         <div className="header__inner">
           <div className="sidebtn__logo">
-            <Link to="/">
               <SideBtn ref={ref} onClick={ClickIn}></SideBtn>
-              {/* <SideBtn ref={toggle} onClick={props.onToggleMenu}></SideBtn> */}
-            </Link>
             <Link to="/">
               <Logo backposition={backposition} />
             </Link>
@@ -101,9 +94,7 @@ const Header = ({ position, backposition, title, height, searchposition,}) => {
           </div>
         </div>
       </ServiceHeader> 
-      {/* <NavWriter ref={menuToggle} className={visible? `${styles.navLinks} ${styles.showNav}` : `${styles.navLinks}`} /> */}
-
-      {visible && <NavWriter ref={menuToggle} />}
+      {visible && <NavWriter/>}
       {!visible && <></>}
     </>
   );

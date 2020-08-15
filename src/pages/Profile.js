@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const CoverBloger = styled.div`
-  height: 320px;
-  background-color: #f8f8f8;
+  height:${(props) => props.coverHeight || "320px"};
+  background-color: ${(props) => props.coverBg || "#f8f8f8"};
 `;
 
 const WrapProfile = styled.div`
@@ -114,12 +114,12 @@ const ProfileImg = styled.div`
   border-radius: 100px;
 `;
 
-const Profile = () => {
+const Profile = (coverBg, coverHeight) => {
   return (
     <>
       <Header position="fixed" title="프로필"></Header>
       <header>
-        <CoverBloger />
+        <CoverBloger coverBg={coverBg} coverHeight={coverHeight} />
         <WrapProfile>
         <ProfileImg >
           <img src="//img1.daumcdn.net/thumb/C100x100.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/aFZ0/image/0e47B_A7ISf1x9sYZ8wjsRZJZRA.jpg" alt="프로필 이미지" />
@@ -159,4 +159,5 @@ const Profile = () => {
   );
 };
 
+export {CoverBloger, ProfileImg, BlogCount, TxtG, NumCount, BtnType};
 export default Profile;

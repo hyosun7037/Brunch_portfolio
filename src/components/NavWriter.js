@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "styles/nav.css";
-import cn from "classnames";
 
 
 const NavContentsMenu = styled.li`
@@ -86,7 +85,7 @@ const ProfileUrl = styled.p`
   vertical-align: top;
 `;
 
-const NavWriter = (props) => {
+const NavWriter = () => {
  
   return (
     <div className="nav__Wrap">

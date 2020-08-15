@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import NavWriter from "components/NavWriter";
 
 const RoundBtn = styled.button`
   border-radius: 16px;
@@ -45,14 +46,35 @@ const ServiceHeader = styled.div`
   width: 100%;
 `;
 
-const Header = ({ position, backposition, title }) => {
+const Header = ({ position, backposition, title}) => {
+  const [visible, setVisible] = useState(false);
+  const menuToggle = useRef(null);
+  const ref = useRef(null);
+
+
+  // 클릭하면 실행 (메뉴 열림)
+  const ClickIn = (ref) => {
+    setVisible(true); // true로 변경됨!
+  }; 
+
+  const clickOutside = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", clickOutside, true);
+    return () => {
+      document.removeEventListener("click", clickOutside, true);
+    };
+  });
   return (
+    <>
     <ServiceHeader position={position}>
       <div className="header__inner">
         <div clasName="sidebtn__logo">
-          <Link to="/writer">
-            <SideBtn></SideBtn>
-          </Link>
+        <SideBtn ref={ref} onClick={ClickIn}></SideBtn>
           <Link to="/">
             <Logo backposition={backposition} />
           </Link>
@@ -63,6 +85,9 @@ const Header = ({ position, backposition, title }) => {
         </div>
       </div>
     </ServiceHeader>
+     {visible && <NavWriter ref={menuToggle} />}
+     {!visible && <></>}
+     </>
   );
 };
 
