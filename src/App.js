@@ -13,7 +13,7 @@ import Detail from "pages/Detail/Detail";
 import KeywordDetail from "pages/Detail/KeywordDetail";
 import Author from "pages/Author";
 import AuthorDrawer from "pages/AuthorDrawer";
-import LinkData from "assets/LinkData";
+import Library from "pages/Library";
 // import LinkData from "assets/LinkData";
 
 
@@ -34,6 +34,8 @@ const App = () => {
         <Route path="/ready" component={AuthorDrawer} />
         {/* 브런치 나우 */}
         <Route path="/now" component={BrunchNow} />
+        {/* 글 읽는 서재 */}
+        <Route path="/library" component={Library} />
         {/* 상세 */}
         <Route path="/detail" component={Detail} />
         {/* 키워드 상세 */}
