@@ -1,3 +1,4 @@
+// 프로필 페이지
 import React from "react";
 import Header from "components/Header/Header";
 // import ProfileImg from "components/NavWriter";
@@ -114,12 +115,12 @@ const ProfileImg = styled.div`
   border-radius: 100px;
 `;
 
-const Profile = (coverBg, coverHeight) => {
+const Profile = () => {
   return (
     <>
       <Header position="fixed" title="프로필"></Header>
       <header>
-        <CoverBloger coverBg={coverBg} coverHeight={coverHeight} />
+        <CoverBloger coverBg="#f8f8f8" coverHeight="320px" />
         <WrapProfile>
         <ProfileImg >
           <img src="//img1.daumcdn.net/thumb/C100x100.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/aFZ0/image/0e47B_A7ISf1x9sYZ8wjsRZJZRA.jpg" alt="프로필 이미지" />
@@ -144,7 +145,7 @@ const Profile = (coverBg, coverHeight) => {
             <Link to="/write">
               <BtnType type="button">글쓰기</BtnType>
             </Link>
-            <Link to="/profile">
+            <Link to="/profile_update">
               <BtnType2 type="button">프로필 편집</BtnType2>
             </Link>
             <MoreControl></MoreControl>

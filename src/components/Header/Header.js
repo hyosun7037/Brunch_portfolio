@@ -1,21 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import { Link} from "react-router-dom";
+import {Link} from "react-router-dom";
 import NavWriter from "components/NavWriter";
+
 // import NavWriter from "components/NavWriter";
 
 const SearchBtn = styled.button`
   margin: 0 0 0 16px;
-  display: inline-block;
+  display: ${(props) => props.searchDisplay || "inline-block"};
   width: 22px;
-  height: 19px;
+  height: ${(props) => props.SearchHeight || "19px"};
   background-position: ${(props) => props.searchposition || "-30px 0"};
   background-image: url("https://t1.daumcdn.net/brunch/static/img/help/pc/ico_view_cover.v4.png");
   border: none;
   background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
 `;
-
 
 const Logo = styled.h1`
   background-image: url("https://t1.daumcdn.net/brunch/static/img/help/pc/logo_service2_v1.png");
@@ -51,10 +51,9 @@ const ServiceHeader = styled.div`
   height: ${(props) => props.height || "inherit"};
 `;
 
-const Header = ({ position, backposition, title, height, searchposition}) => {
+const Header = ({ position, backposition, title, height, searchposition, SearchHeight, searchDisplay}) => {
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
-
 
   // 클릭하면 실행 (메뉴 열림)
   const ClickIn = (ref) => {
@@ -86,10 +85,12 @@ const Header = ({ position, backposition, title, height, searchposition}) => {
               <Logo backposition={backposition} />
             </Link>
           </div>
-          <HeaderTitle>{title}</HeaderTitle>
+          <HeaderTitle>
+            {title}
+          </HeaderTitle>
           <div className="applybtn__search">
             <Link to="/search">
-              <SearchBtn searchposition={searchposition}></SearchBtn>
+              <SearchBtn searchposition={searchposition} SearchHeight={SearchHeight} searchDisplay={searchDisplay}></SearchBtn>
             </Link>
           </div>
         </div>
@@ -100,7 +101,7 @@ const Header = ({ position, backposition, title, height, searchposition}) => {
   );
 };
 
-export {ServiceHeader, Logo, SideBtn, SearchBtn };
+export {ServiceHeader, Logo, SideBtn };
 export default Header;
 
 

@@ -1,5 +1,4 @@
 // 메인페이지
-
 import React from "react";
 import "styles/main.css";
 import { Link } from "react-router-dom";
@@ -40,7 +39,6 @@ const RoundBtnBigActive = styled(RoundBtnBig)`
 const Main = () => {
   return (
     <>
-      {/* <NavWriter></NavWriter> */}
       <div className="wrap__banner">
         <ul className="list__banner">
           <li className="item__banner">

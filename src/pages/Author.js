@@ -5,6 +5,8 @@ import { CoverBloger, ProfileImg, BlogCount, TxtG, NumCount, BtnType} from 'page
 import styled from "styled-components";
 import { ScreenOut } from './Main';
 import { Link } from 'react-router-dom';
+// import AuthorInfo from 'components/authorContents/AuthorInfo';
+import AuthrorWriting from 'components/authorContents/AuthrorWriting';
 
 const WrapProfile = styled.div`
   position:relative;
@@ -80,7 +82,7 @@ const Author = () => {
             <input className="profileId" type="hidden" value="작가이름"/>
             <input className="profileUserId" type="hidden" value="작가 userId" />
             <input className="profileUserName" type="hidden" value="작가 userName" />
-            <header>
+            <nav>
                 <CoverBloger coverHeight="200px"/>
                 <WrapProfile>
                     <ProfileImg>
@@ -127,7 +129,9 @@ const Author = () => {
                         </li>
                     </ul>
                 </TabContents>
-            </header>
+            </nav>
+            {/* <AuthorInfo /> */}
+            <AuthrorWriting />
         </div>
     );
 };

@@ -1,3 +1,4 @@
+// 공통 로그인 페이지
 import React from "react";
 import Header from "components/Header/Header";
 import "styles/global__login.css";
