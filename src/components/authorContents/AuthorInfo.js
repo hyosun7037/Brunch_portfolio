@@ -1,51 +1,8 @@
 // 작가소개 페이지
 import React from 'react';
-import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import { AuthorIntro, TitIntro, DescIntro, ListTag } from 'styles/StyledComponentAll';
 
-// 각 소개 단락
-const AuthorIntro = styled.div`
-  padding-top:34px;
-  width:700px;
-  margin:0 auto;
-`;
-
-// 타이틀
-const TitIntro = styled.strong`
-  display: block;
-  font-weight:400;
-  font-size:12px;
-`;
-
-// 내용
-const DescIntro = styled.p`
-  padding-top:22px;
-  font-weight:200;
-  font-size:13px;
-  line-height:24px;
-  color:#666;
-`;
-
-// 소개 태그
-const ListTag = styled.ul`
-  overflow:hidden;
-  padding-top:13px;
-  padding-left:0px;
-  display:flex;
-  justify-content:flex-start;
-    li{
-        margin-right:8px;
-        a{
-            display:inline-block;
-            padding:4px 10px;
-            border:1px solid #ddd;
-            border-radius:20px;
-            font-size:12px;
-            color:#959595;
-            letter-spacing:-1px;
-        }
-    }
-`;
 const AuthorInfo = () => {
     return (
         <div>

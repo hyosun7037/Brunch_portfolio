@@ -3,98 +3,13 @@ import React from "react";
 import Header from "components/Header/Header";
 import "styles/main.css";
 import "index.css";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { ScreenOut } from "pages/Main";
-
-const ListCommon = styled.ul`
-  width:700px;
-  margin:0 auto;
-  padding:0px;
-  li{
-    width:100%;
-    padding:25px 0 30px;
-    border-bottom:1px solid #eee;
-    display: flex;
-    justify-content:space-between;
-  }
-`;
-
-const LinkThumb = styled.a`
-  position:relative;
-  width:120px;
-  height:120px;
-  margin-left:40px;
-  background-position:0 -280px;
-  margin-top:5px;
-`;
-
-
-const DescCommon = styled.span`
-  display:block;
-  padding-top:5px;
-  font-size:14px;
-  line-height:22px;
-  color:#666;
-  max-height:43px;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  font-weight:300;
-`;
-
-
-const IcoBar = styled.span`
-  display:inline-block;
-  width:1px;
-  height:14px;
-  margin:4px 10px 0 10px;
-  background-color:#bfbfbf;
-  vertical-align:top;
-`;
-
-const AppendCommon = styled.div`
-  width:100%;
-  padding-top:18px;
-  font-size:12px;
-  color:#959595;
-  font-family:'Noto Sans KR';
-`;
-
+import { ScreenOut, ListCommon, LinkThumb, DescCommon, IcoBar, AppendCommon, IcoBy, IcoDot, TitSub } from "styles/StyledComponentAll";
 
 const link__category = {
   paddingRight: "5px",
   color: "#00c3bd",
 };
-
-const IcoBy = styled.span`
-  margin-top: 3px;
-  width: 14px;
-  height: 13px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 12px;
-  padding-right: 3px;
-  margin-right: 3px;
-`;
-
-const IcoDot = styled.span`
-  width:2px;
-  height:2px;
-  margin:8px 6px 11px;
-  background-color:#bfbfbf;
-  vertical-align:top;
-`;
-
-
-const TitSub = styled.strong`
-  font-weight: 300;
-  font-family: "Noto Sans KR";
-  display: block;
-  font-size: 20px;
-  line-height: 28px;
-  white-space: nowrap;
-`;
 
 const MyBrunch = () => {
   return (
@@ -527,5 +442,4 @@ const MyBrunch = () => {
   );
 };
 
-export { IcoBy, ListCommon, TitSub, DescCommon, IcoBar, AppendCommon, LinkThumb, IcoDot };
 export default MyBrunch;

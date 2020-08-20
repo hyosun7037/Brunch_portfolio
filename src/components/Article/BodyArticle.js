@@ -1,34 +1,5 @@
 import React from 'react';
-import styled from "styled-components";
-
-
-const Blockquote = styled.blockquote`
-  text-align: center;
-  background-image: url("http://t1.daumcdn.net/brunch/static/img/help/pc/img_blockquote_type1_small.png");
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  padding: 25px 0 0;
-  font-size: 15pt;
-  color: #333;
-  line-height: 35px;
-  margin: 80px auto;
-  font-weight: 300;
-`;
-
-const ItemTypeTit = styled.p`
-  width: 700px;
-  min-width: 700px;
-  margin: 0 auto;
-  font-size: 15px;
-  line-height: 30px;
-  letter-spacing: 0.8px;
-  font-weight: 500;
-`;
-
-const ItemTypeText = styled(ItemTypeTit)`
-  font-weight: 300;
-  margin-bottom: 30px;
-`;
+import { Blockquote,  ItemTypeTit, ItemTypeText } from 'styles/StyledComponentAll';
 
 const BodyArticle = () => {
     return (

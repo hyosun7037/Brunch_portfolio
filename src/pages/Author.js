@@ -1,74 +1,12 @@
 // 작가페이지
 import React from 'react';
 import Header from 'components/Header/Header';
-import { CoverBloger, ProfileImg, BlogCount, TxtG, NumCount, BtnType} from 'pages/Profile';
-import styled from "styled-components";
-import { ScreenOut } from './Main';
 import { Link } from 'react-router-dom';
+
 // import AuthorInfo from 'components/authorContents/AuthorInfo';
 import AuthrorWriting from 'components/authorContents/AuthrorWriting';
+import { WrapProfile, TabContents, ScreenOut, CoverBloger, ProfileImg, TitBloger, AuthorName, TxtInfo, BlogCount, TxtG, NumCount, BtnType} from 'styles/StyledComponentAll';
 
-const WrapProfile = styled.div`
-  position:relative;
-  width:700px;
-  margin:0 auto 94px;
-  padding:35px 0 0 ;
-  font-weight:300;
-`;
-
-const TitBloger = styled.strong`
-  display:block;
-  padding-right:170px;
-  font-weight:300;
-  font-size:28px;
-  line-height:34px;
-`;
-
-const AuthorName = styled.span`
-  display: block;
-  padding-top:5px;
-  font-size:13px;
-  line-height:20px;
-  color:#959595;
-`;
-
-const TxtInfo = styled.span`
-  font-size:13px;
-  line-height:20px;
-  color:#959595;
-`;
-
-const TabContents = styled.div`
-  position:relative;
-  width:700px;
-  margin:0 auto;
-  ul{
-      height:58px;
-      border-top:1px solid #eee;
-      display: flex;
-      padding:0;
-      li{
-          width:50%;
-          a{
-              display:block;
-              width:100%;
-              height:24px;
-              margin-top:-1px;
-              padding:16px 0 17px;
-              border-top:1px solid transparent;
-              font-size:16px;
-              text-align:center;
-              text-decoration:none;
-              span{
-                  display:inline-block;
-                  position:relative;
-                  padding:0 7px;
-                  line-height:1.5;
-              }
-          }
-      }
-  }
-`;
 
 const on = {
     borderColor:'#333',

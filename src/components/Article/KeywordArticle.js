@@ -1,33 +1,6 @@
 import React from 'react';
-import styled from "styled-components";
-import { ScreenOut } from 'pages/Main';
 import { Link } from 'react-router-dom';
-
-const WrapKeyword = styled.div`
-  overflow: hidden;
-  padding-top: 6px;
-`;
-
-const ListKeyword = styled.ul`
-  display: flex;
-  padding: 0;
-  a {
-    margin-right: 8px;
-    font-family: "Noto Sans KR";
-    li {
-      display: block;
-      min-width: 14px;
-      height: 26px;
-      padding: 0 10px;
-      border: 1px solid #ddd;
-      border-radius: 15px;
-      font-size: 12px;
-      line-height: 26px;
-      color: #959595;
-      text-align: center;
-    }
-  }
-`;
+import { WrapKeyword, ScreenOut, ListKeyword } from 'styles/StyledComponentAll';
 
 const KeywordArticle = () => {
     return (

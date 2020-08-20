@@ -1,29 +1,14 @@
 // 작가의 서랍 페이지
 import React, { Component } from 'react';
 import Header from 'components/Header/Header';
-import styled from "styled-components";
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import AuthrorWriting from 'components/authorContents/AuthrorWriting';
+import { Wrapper, DrawerBtn } from 'styles/StyledComponentAll';
+import { POSTS_URL } from 'config';
+import { DrawerBanner } from 'images/ImgAll';
 
-const Wrapper = styled.div`
-  width:700px;
-  margin:0 auto;
-  img{
-      width:100%;
-  }
-`;
-
-const DrawerBtn = styled.button`
-  outline:none;
-  border:none;
-  color:#666;
-  font-size:17px;
-  letter-spacing:-1px;
-  white-space:nowrap;
-  margin-right:10px;
-`;
-
+// 활성화 되면 스타일 적용
 const active = {
     color:'#00c3bd',
     borderBottom:'2px solid #00c3bc',
@@ -38,7 +23,7 @@ class AuthorDrawer extends Component{
         }
     }
 
-    getApi = () => { axios.get("http://localhost:8080/brunch/posts") 
+    getApi = () => { axios.get(`${POSTS_URL}`) 
     .then(res => {return this.setState({ data: res.data }) }) 
     .catch(res => console.log(res)) }
 
@@ -60,7 +45,7 @@ class AuthorDrawer extends Component{
         {/* 작가의 서랍 배너 */}
         <Wrapper>
             <Link to="/" style={{display:'block', marginTop:'50px', borderBottom:'1px solid #eee'}}>
-                <img src="https://t1.daumcdn.net/brunch/static/img/banner/pc_ready_banner_type2@2x.png" alt="브런치 작가"/>
+                <DrawerBanner />
             </Link> 
         </Wrapper>
         {/* 목록뿌리기 */}

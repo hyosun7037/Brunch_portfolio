@@ -4,37 +4,9 @@ import "styles/main.css";
 import { Link } from "react-router-dom";
 import Header from "components/Header/Header";
 import Footer from "components/Footer";
-import styled from "styled-components";
+import { TxtBanner } from "images/ImgAll";
+import { RoundBtnBig, RoundBtnBigActive, ScreenOut } from "styles/StyledComponentAll";
 // import NavWriter from "/components/NavWriter";
-
-const ScreenOut = styled.h2`
-  margin: 0;
-  text-indent: -9999px;
-  overflow: hidden;
-  position: absolute;
-  width: 0;
-  height: 0;
-`;
-
-const RoundBtnBig = styled.button`
-  display: inline-block;
-  margin: 0 2px;
-  border-radius: 25px;
-  padding: 7px 16px 6px;
-  border: 1px solid #eee;
-  background: #fff;
-  font-size: 15px;
-  line-height: 15px;
-  font-family: "Noto Sans KR";
-  color: #959595;
-  cursor: pointer;
-`;
-
-const RoundBtnBigActive = styled(RoundBtnBig)`
-  color: #00c6bd;
-  border: 1px solid #00c6bd;
-`;
-
 
 const Main = () => {
   return (
@@ -43,11 +15,7 @@ const Main = () => {
         <ul className="list__banner">
           <li className="item__banner">
             <Link to ="/">
-              <img
-                className="txt__banner"
-                src="https://t1.daumcdn.net/section/oc/f105e8040e3b46de8492b4815a95092c"
-                alt="텍스트배너"
-              />
+              <TxtBanner />
             </Link>
             {/* <Link to="/detail">작은 배너</Link> */}
           </li>
@@ -901,5 +869,5 @@ const Main = () => {
     </>
   );
 };
-export { ScreenOut };
+
 export default Main;

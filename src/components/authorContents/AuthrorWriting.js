@@ -2,8 +2,8 @@
 // 나중에 DB 넣고 다 수정하기!!!
 import React from "react";
 import PropTypes from "prop-types";
-import { ListCommon, TitSub, DescCommon, IcoBar, AppendCommon, IcoBy, IcoDot, LinkThumb } from 'pages/BrunchNow';
 import { Link } from "react-router-dom";
+import { ListCommon, TitSub, DescCommon, IcoBar, AppendCommon, IcoBy, IcoDot, LinkThumb } from "styles/StyledComponentAll";
 
 function AuthrorWriting({content, title, subTitle, postType}) {
   return (
