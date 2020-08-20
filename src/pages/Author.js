@@ -1,19 +1,41 @@
 // 작가페이지
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Header from 'components/Header/Header';
 import { Link } from 'react-router-dom';
 
 // import AuthorInfo from 'components/authorContents/AuthorInfo';
 import AuthrorWriting from 'components/authorContents/AuthrorWriting';
 import { WrapProfile, TabContents, ScreenOut, CoverBloger, ProfileImg, TitBloger, AuthorName, TxtInfo, BlogCount, TxtG, NumCount, BtnType} from 'styles/StyledComponentAll';
+import AuthorInfo from 'components/authorContents/AuthorInfo';
 
-
-const on = {
-    borderColor:'#333',
-    color:'#333'
+const active = {
+    color:'#333',
+    borderColor:"#333"
 }
 
-const Author = () => {
+const Author = (TabContentsBt) => {
+    const [visible, setVisible] = useState(false);
+    const ref1 = useRef(null); // 작가소개
+    const ref2 = useRef(null); // 글
+
+    const ClickIn = (ref1) => {
+        setVisible(false); // true로 변경됨!
+        console.log(ref1.target);
+        
+      }; 
+
+      const ClickIn2 = (ref2) => {
+        setVisible(true); // true로 변경됨!
+        console.log(ref2.target);
+      }; 
+
+      useEffect(() => {
+        document.addEventListener("click", active);
+        return () =>{
+            document.removeEventListener("click", active);
+        };
+    });
+
     return (
         <div>
             <Header position="fixed" />
@@ -55,22 +77,23 @@ const Author = () => {
                 <TabContents>
                     <ScreenOut>작가프로필 하위메뉴</ScreenOut>
                     <ul className="list__Tab">
-                        <li className="on">
-                            <Link to="/info" className="link__tab" style={on}>
-                                <span className="txt__tab">작가소개</span>
-                            </Link> 
+                        <li>
+                            <button onClick={ClickIn} ref={ref1}>
+                                <span>작가소개</span>
+                            </button>
+
                         </li>
                         <li>
-                            <Link to="/info" className="link__tab">
-                                <span className="txt__tab">글 10</span>
-                            </Link> 
+                            <button onClick={ClickIn2}ref={ref2}>
+                                <span>글 10</span>
+                            </button>
                         </li>
                     </ul>
                 </TabContents>
             </nav>
-            {/* <AuthorInfo /> */}
-            <AuthrorWriting />
-        </div>
+            {!visible && <AuthorInfo />}
+            {visible && <AuthrorWriting />}
+            </div> 
     );
 };
 

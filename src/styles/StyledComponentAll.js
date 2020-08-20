@@ -75,16 +75,31 @@ const TabContents = styled.div`
       padding:0;
       li{
           width:50%;
-          a{
+          button{
               display:block;
               width:100%;
               height:24px;
               margin-top:-1px;
               padding:16px 0 17px;
-              border-top:1px solid transparent;
+              /* border-top:1px solid transparent; */
+              /* border-top: ${(props) => props.TabContentsBt || "1px solid transparent"}; */
+              border-top: ${(props) => props.TabContentsBt || "1px solid #f8f8f8"};
               font-size:16px;
               text-align:center;
               text-decoration:none;
+              outline:none;
+              border-left:0;
+              border-right:0;
+              border-bottom:0;
+              cursor:pointer;
+              &:hover{
+                border-top:1px solid #333;
+                color:#333;
+              }
+              &:active{
+                border-top:1px solid #333;
+                color:#333;
+              }
               span{
                   display:inline-block;
                   position:relative;
