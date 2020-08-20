@@ -182,7 +182,7 @@ const IcoBy = styled.span`
   height: 13px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.5);
+  color: ${(props) => props.IcoByColor || "rgba(255, 255, 255, 0.5)"};
   font-size: 12px;
   padding-right: 3px;
   margin-right: 3px;
@@ -305,6 +305,7 @@ const WrapLIst = styled.ul`
 const RecentList = styled.li`
     display:flex;
     width:450px;
+    height:104px;
     margin-right: ${(props) => props.RecentListMarginR || "0px"};
     padding:19px 0 20px 0;
     overflow:hidden;
@@ -319,9 +320,16 @@ const RecentList = styled.li`
     }
 `;
 
+const InnerLikeit = styled.div`
+  margin:0 auto;
+  width:960px;
+  position:relative;
+  padding:31px 0 40px;
+`;
+
 const IcoLikeitClip = styled.span`
   position:absolute;
-  top:-40px;
+  top:-8px;
   right:0;
   width:46px;
   height:38px;
@@ -333,7 +341,22 @@ const IcoLikeitClip = styled.span`
   vertical-align:top;
 `;
 
-export { IcoLikeitClip, Container, LibraryMenuWrap, TitLibrary, TxtMenu, MenuLibrary, TitLibraryLink, ICoArr, WrapLIst, RecentList }
+const TitLib = styled.h2`
+  font-size:28px;
+  font-weight:400;
+  letter-spacing:-.8px;
+  color:#333;
+  font-family:'Nanum Myeongjo',serif;
+`;
+
+const LinkThumbImg = styled.a`
+  display:inline-block;
+  width:100px;
+  height:100px;
+  margin:5px 0 0 30px;
+`;
+
+export {LinkThumbImg, TitLib, InnerLikeit, IcoLikeitClip, Container, LibraryMenuWrap, TitLibrary, TxtMenu, MenuLibrary, TitLibraryLink, ICoArr, WrapLIst, RecentList }
 
 
 // Profile.js
