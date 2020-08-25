@@ -46,11 +46,10 @@ const ServiceHeader = styled.div`
   width: 100%;
 `;
 
-const Header = ({ position, backposition, title}) => {
+const Header = ({ position, backposition, title, onPublish, oncancel}) => {
   const [visible, setVisible] = useState(false);
   const menuToggle = useRef(null);
   const ref = useRef(null);
-
 
   // 클릭하면 실행 (메뉴 열림)
   const ClickIn = (ref) => {
@@ -69,19 +68,22 @@ const Header = ({ position, backposition, title}) => {
       document.removeEventListener("click", clickOutside, true);
     };
   });
+
+
   return (
     <>
     <ServiceHeader position={position}>
       <div className="header__inner">
-        <div clasName="sidebtn__logo">
+        <div className="sidebtn__logo">
         <SideBtn ref={ref} onClick={ClickIn}></SideBtn>
           <Link to="/">
             <Logo backposition={backposition} />
           </Link>
         </div>
-        <div clasName="applybtn__search">
+        <div className="applybtn__search">
           <span>{title}</span>
-          <RoundBtn>저장</RoundBtn>
+          <RoundBtn style={{marginRight:"10px"}}>저장</RoundBtn>
+          <RoundBtn >취소</RoundBtn>
         </div>
       </div>
     </ServiceHeader>

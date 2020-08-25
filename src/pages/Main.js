@@ -14,6 +14,9 @@ import { POSTS_URL } from "config";
 import Axios from "axios";
 import EditorPic from "components/Main/EditorPic";
 
+import { TAG_URL } from "config";
+import Tag from "components/Main/Tag";
+
 // ScreenOut은 해당 섹션을 구분하기 위함. text-indent로 옆으로 다 빼놓음!
 class Main extends Component {
   constructor(props) {
@@ -23,22 +26,33 @@ class Main extends Component {
     };
   }
 
-  getApi = () => {
+  // post data
+  postsApi = () => {
     Axios.get(`${POSTS_URL}`)
       .then((res) => {
         return this.setState({ data: res.data });
       })
       .catch((res) => console.log(res));
-  };
+    };
 
-  componentDidMount() {
-    this.getApi();
-  }
-
-  render() {
-    const { data } = this.state;
-    return (
-      <>
+    // tag data
+  tagApi = () => {
+      Axios.get(`${TAG_URL}`)
+        .then((res) => {
+          return this.setState({ data: res.data });
+        })
+        .catch((res) => console.log(res));
+      };
+    
+    componentDidMount() {
+      this.postsApi();
+      this.tagApi();
+    }
+    
+    render() {
+      const { data } = this.state;
+      return (
+        <>
         {/*탑배너영역*/}
         <div className="wrap__banner">
           <ul className="list__banner">
@@ -70,7 +84,9 @@ class Main extends Component {
               </p>
             </div>
 
+
             {/* 에디터픽 영역*/}
+            {/* 데이터 다 맞게 넣으면 형태도 같이 수정하기 */}
             <ScreenOut>에디터픽</ScreenOut>
             <div className="editor__pic">
               <div className="wrap__slide">
@@ -86,8 +102,7 @@ class Main extends Component {
                       content={post.content}
                     />
                   ))}
-
-                  <li>
+                  {/* <li>
                     <div className="wrap__pic wrap__pic2">
                       <div className="item__pic item__pic__type1">
                         <Link to="/detail">
@@ -133,6 +148,7 @@ class Main extends Component {
                       <div className="item__pic item__pic__type4"></div>
                     </div>
                   </li>
+                */}
                 </ul>
               </div>
               <div className="wrap__btn">
@@ -155,30 +171,30 @@ class Main extends Component {
                   <span className="img__page txt__page1">01</span>
                 </span>
                 {/*현재 활성화 페이지*/}
-                <Link to="/detail" className="link__page">
+                <button className="link__page">
                   <span className="img__page txt__page2">02</span>
-                </Link>
-                <Link to="/detail" className="link__page">
+                </button>
+                <button className="link__page">
                   <span className="img__page txt__page3">03</span>
-                </Link>
-                <Link to="/detail" className="link__page">
+                </button>
+                <button className="link__page">
                   <span className="img__page txt__page4">04</span>
-                </Link>
-                <Link to="/detail" className="link__page">
+                </button>
+                <button className="link__page">
                   <span className="img__page txt__page5">05</span>
-                </Link>
-                <Link to="/detail" className="link__page">
+                </button>
+                <button className="link__page">
                   <span className="img__page txt__page6">06</span>
-                </Link>
-                <Link to="/detail" className="link__page">
+                </button>
+                <button className="link__page">
                   <span className="img__page txt__page7">07</span>
-                </Link>
-                <Link to="/detail" className="link__page">
+                </button>
+                <button className="link__page">
                   <span className="img__page txt__page8">08</span>
-                </Link>
-                <Link to="/detail" className="link__page">
+                </button>
+                <button className="link__page">
                   <span className="img__page txt__page9">09</span>
-                </Link>
+                </button>
               </div>
             </div>
 
@@ -192,255 +208,27 @@ class Main extends Component {
               </p>
               <div className="keyword__list__wrap">
                 <div className="keyword__list">
-                  <div className="keyword__list__flex">
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
+                  <div className="keyword__list__grid">
+                  
+                  {/* DB <br> 파싱 - 좀더 생각해보기 */}
+                  {/* {data.replace('\n', '<br>')}
+                  {data.split('\n').map(line => {
+                    return (<span>{line}<br/></span>)
+                  })} */}
+
+                  {data.map((tag) => (
+                    <Tag
+                      key={tag.id}
+                      id={tag.id}
+                      postId={tag.postId}
+                      tag={tag.tag}
+                      userId={tag.userId}
+                    />
+                  ))}
                   </div>
-                  <div className="keyword__list__flex">
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                  </div>
-                  <div className="keyword__list__flex">
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                    <Link
-                      to="/keyword_detail"
-                      className="keyword__item brunch__keyword__item"
-                    >
-                      <span className="keyword__item__txt">
-                        지구한바퀴
-                        <br />
-                        세계여행
-                      </span>
-                    </Link>
-                  </div>
-                </div>
               </div>
             </div>
+          </div>
           </main>
 
           {/*브런치 추천작가 영역*/}

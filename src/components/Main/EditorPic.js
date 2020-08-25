@@ -9,7 +9,7 @@ const EditorPic = ({ title, content, userId }) => {
         <div className="wrap__pic wrap__pic1">
           <div className="item__pic item__pic__type1">
             <Link to="/detail">
-              <img
+                <img
                 src={content}
                 width="100%"
                 height="100%"
@@ -20,17 +20,19 @@ const EditorPic = ({ title, content, userId }) => {
                   <strong className="tit__pic">{title}</strong>
                   <span className="info__by">
                     <span className="ico__by">by</span>
+                 
                     {userId}
                   </span>
                 </div>
               </div>
             </Link>
           </div>
+          
           <div className="item__pic item__pic__type2__3">
             <div className="item__pic item__pic__type2">
               <Link to="/detail">
                 <img
-                  src="//img1.daumcdn.net/thumb/C480x260.fjpg/?fname=https://t1.daumcdn.net/section/oc/2acfb8dcbbbb4b09bae794f3d2328461"
+                  src=""
                   width="100%"
                   height="100%"
                   alt="에디터 픽 사진2"
@@ -76,6 +78,7 @@ const EditorPic = ({ title, content, userId }) => {
               <div className="mask"></div>
             </div>
           </div>
+        
         </div>
       </li>
     </>

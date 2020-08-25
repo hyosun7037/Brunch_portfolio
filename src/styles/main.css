@@ -295,10 +295,14 @@ header {
 
 .wrap__paging .link__page {
   display: inline-block;
-  height: 31px;
+  /* height: 31px; */
   padding: 0 11px;
   vertical-align: top;
+  outline: none;
+  border:none;
+  cursor: pointer;
 }
+
 
 .wrap__paging span .img__page {
   height: 12px;
@@ -398,12 +402,18 @@ header {
   position: relative;
 }
 
+.keyword__list__grid {
+  width:100%;
+  display:grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
 .keyword__list__flex {
   display: flex;
 }
 .keyword__item {
   /* position: absolute; */
-  width: 119px;
+  /* width: 119px; */
   height: 119px;
   text-align: center;
   border: 1px solid #eee;

@@ -1,7 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "quill/dist/quill.bubble.css";
 import styled from "styled-components";
 import Quill from "quill";
+import Axios from "axios";
 
 const EditorBlock = styled.div`
   max-width: 920px;
@@ -58,13 +59,21 @@ const Line = styled.p`
   margin-bottom: 20px;
 `;
 
-const Editor = () => {
-  const quillElement = useRef(null); // Quill을 적용할 DivElement 설정
-  const quillInstance = useRef(null); // Quill 인스턴스 설정
 
+const Editor = () => {
+  const [quillData, setQuillData] = useState('');
+  const [state, setState] = useState({
+    title:'',
+    subTitle:'',
+    content:'',
+  })
+
+  const quillElement = useRef(null); // Quill을 적용할 DivElement 설정
+  // const quillInstance = useRef(null); // Quill 인스턴스 설정
   useEffect(() => {
-    quillInstance.current = new Quill(quillElement.current, {
+    const quill = new Quill(quillElement.current, {
       theme: "bubble",
+      placeholder:'내용을 작성하세요',
       modules: {
         // 더 많은 옵션
         toolbar: [
@@ -73,22 +82,67 @@ const Editor = () => {
           ["blockquote", "image"],
           [{ align: "justify" }, { align: "center" }, { align: "right" }],
           [{ color: [] }, { background: [] }],
+          ['clean']
         ],
+        clipboard: {
+          matchVisual: false
+      }
       },
     });
-    quillInstance.current.focus();
-  }, []);
+    // quill에 text-change 이벤트 핸들러 등록
+    // http://quilljs.com/docs/api/#events 문서 참고
+    quill.on('text-change', (delta, oldDelta, source) => {
+      if(source === 'user'){
+        const dataText = quill.root.innerHTML;
+        setQuillData(dataText);
+        console.log(dataText);
+      }
+    });
+    quill.focus();
+  }, [quillElement]);
+  
+  
+  const handleChange = (e) =>{
+    setState({
+      ...state,
+    [e.target.name] : e.target.value
+  });
+  console.log("이거는 타이틀 값" + e.target.name);
+};
 
-  return (
+  const save = (e) => {
+    e.preventDefault();
+  const data = {
+    title: state.title,
+    subTitle: state.subTitle,
+    content: quillData,
+}
+  Axios({
+    method:'post',
+    headers: { 'content-type': 'application/json' },
+    url:'http://localhost:8080/brunch/saveposts',
+    data : JSON.stringify(data),
+    dataType:'json'
+  }).then(function(res){
+    console.log('결과값' + res);
+  }).catch(function(err){
+    console.log(err);
+  });
+  
+}
+
+return (
     <EditorBlock>
-      <TitleInput placeholder="제목을 입력하세요" />
-      <SubInput placeholder="소제목을 입력하세요" />
+      <TitleInput placeholder="제목을 입력하세요" type="text" name="title" value={state.title} onChange={handleChange}/>
+      <SubInput placeholder="소제목을 입력하세요" type="text" name="subTitle" value={state.subTitle} onChange={handleChange}/>
       <Line></Line>
       <QuilWrapper>
-        <div ref={quillElement} />
+        <div ref={quillElement}/>
+        <button type="submit" value="submit" onClick={save}>저장</button>
       </QuilWrapper>
     </EditorBlock>
   );
 };
 
-export default Editor;
+export {QuilWrapper};
+export default React.memo(Editor);
