@@ -82,7 +82,7 @@ const Header = ({ position, backposition, title}) => {
         </div>
         <div className="applybtn__search">
           <span>{title}</span>
-          <RoundBtn style={{marginRight:"10px"}}>저장</RoundBtn>
+          {/* <RoundBtn style={{marginRight:"10px"}}>저장</RoundBtn> */}
         </div>
       </div>
     </ServiceHeader>

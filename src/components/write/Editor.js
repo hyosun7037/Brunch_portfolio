@@ -10,7 +10,7 @@ const EditorBlock = styled.div`
   max-width: 920px;
   margin: 0 auto;
   padding-top: 15rem;
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
   position:relative;
   /* height: 450px; */
 `;
@@ -38,6 +38,11 @@ const SubInput = styled.input`
   &::placeholder {
     color: #bfbfbf;
   }
+`;
+
+const RoundBtnWrap = styled.div`
+  display:flex;
+  justify-content:flex-end;
 `;
 
 const QuilWrapper = styled.div`
@@ -142,7 +147,9 @@ return (
       <QuilWrapper>
         <div ref={quillElement}/>
       </QuilWrapper>
-      <RoundBtn type="submit" value="submit" onClick={save}>저장</RoundBtn>
+      <RoundBtnWrap>
+        <RoundBtn type="submit" value="submit" onClick={save}>저장</RoundBtn>
+      </RoundBtnWrap>
     </EditorBlock>
   );
 };

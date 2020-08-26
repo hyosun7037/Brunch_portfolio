@@ -4,7 +4,7 @@ import Header from "components/Header/Header";
 // import ProfileImg from "components/NavWriter";
 import { Link } from "react-router-dom";
 import { TitBloger, WrapProfile, CoverBloger, DescBloger, BlogCount, TxtG, NumCount, WrapProfileBtn, BtnType, BtnType2, MoreControl, CardBanner, ProfileImg } from "styles/StyledComponentAll";
-import { ProfileImgURL } from "images/ImgAll"; 
+import { ProfileImgURL } from "images/ImgAll";
 
 const Profile = () => {
   return (
@@ -13,9 +13,7 @@ const Profile = () => {
       <header>
         <CoverBloger coverBg="#f8f8f8" coverHeight="320px" />
         <WrapProfile>
-        <ProfileImg >
-            <ProfileImgURL />
-        </ProfileImg>
+        <ProfileImgURL />
           <div className="wrap__profile__desc">
             <TitBloger>써니</TitBloger>
             <DescBloger>써니의 브런치입니다.</DescBloger>

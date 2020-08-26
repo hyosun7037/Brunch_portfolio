@@ -11,6 +11,7 @@ const KeyBtn = styled.button`
 `;
 
 const Tag = ({tag}) => {
+  console.log(tag);
     return (
         <>
           <KeyBtn

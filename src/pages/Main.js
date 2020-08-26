@@ -12,7 +12,6 @@ import {
 } from "styles/StyledComponentAll";
 import Axios from "axios";
 import EditorPic from "components/Main/EditorPic";
-
 import { VIEWTAG_URL } from "config";
 import Tag from "components/Main/Tag";
 import { VIEWPOSTS_URL } from "config";
@@ -22,35 +21,37 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      dataPost: [],
+      dataTag: []
     };
   }
 
   // post data
   postsApi = () => {
     Axios.get(`${VIEWPOSTS_URL}`)
-      .then((res) => {
-        return this.setState({ data: res.data });
-      })
-      .catch((res) => console.log(res));
-    };
-
-    // tag data
+    .then((res) => {
+      return this.setState({ dataPost: res.data });
+    })
+    .catch((res) => console.log(res));
+  };
+  
+  // tag data
   tagApi = () => {
-      Axios.get(`${VIEWTAG_URL}`)
-        .then((res) => {
-          return this.setState({ data: res.data });
-        })
-        .catch((res) => console.log(res));
-      };
-    
+    Axios.get(`${VIEWTAG_URL}`)
+    .then((res) => {
+      return this.setState({ dataTag: res.data });
+    })
+    .catch((res) => console.log(res));
+  };
+  
     componentDidMount() {
       this.postsApi();
       this.tagApi();
     }
     
     render() {
-      const { data } = this.state;
+      const { dataPost } = this.state;
+      const { dataTag } = this.state;
       return (
         <>
         {/*탑배너영역*/}
@@ -91,11 +92,11 @@ class Main extends Component {
             <div className="editor__pic">
               <div className="wrap__slide">
                 <ul className="list__slide">
-                  {data.map((post) => (
+                  {dataPost.map((post) => (
                     <EditorPic
                       key={post.id}
-                      userId={post.userId}
                       id={post.id}
+                      userId={post.userId}
                       title={post.title}
                       subTitle={post.subTitle}
                       postType={post.postType}
@@ -216,7 +217,7 @@ class Main extends Component {
                     return (<span>{line}<br/></span>)
                   })} */}
 
-                  {data.map((tag) => (
+                  {dataTag.map((tag) => (
                     <Tag
                       key={tag.id}
                       id={tag.id}
@@ -275,11 +276,11 @@ class Main extends Component {
                   <Link to="/author" className="link__writers">
                     <img
                       className="img__brunch thumb__img"
-                      src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
+                      src="https://img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/1c8F/image/dz_jGrbongNv8YXNldFjEVh5fkE.jpg"
                       alt="이미지"
                     />
-                    <strong className="tit__writer">스마일펄</strong>
-                    <span className="team__writer">에세이스트</span>
+                    <strong className="tit__writer">꿈꾸는 자본가</strong>
+                    <span className="team__writer">칼럼니스트</span>
                     <span className="txt__writer">
                       사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를
                       갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에
@@ -302,11 +303,11 @@ class Main extends Component {
                   <Link to="/author" className="link__writers">
                     <img
                       className="img__brunch thumb__img"
-                      src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
+                      src="https://img1.daumcdn.net/thumb/C120x120.fpng/?fname=http://t1.daumcdn.net/brunch/service/user/a8W8/image/Ex2nDrRao4Onhgcu2RvOwVRIVgo.png"
                       alt="이미지"
                     />
-                    <strong className="tit__writer">스마일펄</strong>
-                    <span className="team__writer">에세이스트</span>
+                    <strong className="tit__writer">정태현 작가</strong>
+                    <span className="team__writer">출간작가</span>
                     <span className="txt__writer">
                       사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를
                       갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에
@@ -331,15 +332,14 @@ class Main extends Component {
                   <Link to="/author" className="link__writers">
                     <img
                       className="img__brunch thumb__img"
-                      src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
+                      src="https://img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/7cQm/image/ARnSVQzjCFwYaGfU7WBWCN95S9U.jpg"
                       alt="이미지"
                     />
-                    <strong className="tit__writer">스마일펄</strong>
-                    <span className="team__writer">에세이스트</span>
+                    <strong className="tit__writer">도시탐색자</strong>
+                    <span className="team__writer">도시와커뮤니티연구소 컨설턴트</span>
                     <span className="txt__writer">
-                      사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를
-                      갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에
-                      관한 이야기를 씁니다.
+                    흔들리는 서울의 골목길 출간, 주택, 도시, 그리고 커뮤니티를 관찰하고 연구하고 있습니다. 
+                    오랜만에 마주한, 다소 낯설지만 익숙해지고 있는 서울과 여러 도시를 탐색 중 입니다.
                     </span>
                     <div className="writer__keyword__wrap keyword__inside__wrap">
                       <button className="keyword__item" data-keyword="패션">
@@ -358,15 +358,14 @@ class Main extends Component {
                   <Link to="/author" className="link__writers">
                     <img
                       className="img__brunch thumb__img"
-                      src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
+                      src="https://img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/2TZp/image/lNmc1blYItZbASn44j-er7DkzWs.jpg"
                       alt="이미지"
                     />
-                    <strong className="tit__writer">스마일펄</strong>
-                    <span className="team__writer">에세이스트</span>
+                    <strong className="tit__writer">CYRENE</strong>
+                    <span className="team__writer">프리랜서</span>
                     <span className="txt__writer">
-                      사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를
-                      갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에
-                      관한 이야기를 씁니다.
+                    여행을 일상처럼, 일상을 여행처럼 살아내는 것을 목표로 하루하루를 살아가는 중이다.
+                    (월: 결혼과 이혼의 풍경 / 수: 박사의 공부법 / 금:한국에서 남자로 사는 것에 대하여)
                     </span>
                     <div className="writer__keyword__wrap keyword__inside__wrap">
                       <button className="keyword__item" data-keyword="패션">
@@ -385,10 +384,10 @@ class Main extends Component {
                   <Link to="/author" className="link__writers">
                     <img
                       className="img__brunch thumb__img"
-                      src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
+                      src="https://img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/1YcW/image/w2BgeAPqH9ZjO-jee2wIAs2kKxg.jpg"
                       alt="이미지"
                     />
-                    <strong className="tit__writer">스마일펄</strong>
+                    <strong className="tit__writer">하몬</strong>
                     <span className="team__writer">에세이스트</span>
                     <span className="txt__writer">
                       사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를

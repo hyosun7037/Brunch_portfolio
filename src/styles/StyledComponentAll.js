@@ -464,8 +464,9 @@ const ProfileImg = styled.div`
   position: absolute;
   top: -50px;
   right: 0;
-  width: 100px;
-  height: 100px;
+  background-image: url('//t1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8dBW/image/SXRzOq1hp418gFXqQVyqUJx1Dh0.jpg');
+  width:${(props) => props.ProfileImgWidth || "100px"};
+  height:${(props) => props.ProfileImgHeight || "100px"};
   background-position: -250px -80px;
   border-radius: 100px;
 `;

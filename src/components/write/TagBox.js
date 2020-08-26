@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
-import Axios from 'axios';
-import { VIEWTAG_URL } from 'config';
+// import axios from 'axios';
+// import { VIEWTAG_URL } from 'config';
 
 const TagBoxBlock = styled.div`
   /* width: 100%; */
@@ -10,6 +10,8 @@ const TagBoxBlock = styled.div`
   border-top: 1px solid #bfbfbf;
   padding-top: 2rem;
   padding-bottom:2rem;
+  /* display:flex;
+  justify-content:flex-end; */
   h4 {
     color: #bfbfbf;
     margin-top: 0;
@@ -63,7 +65,7 @@ const TagListBlock = styled.div`
 `;
 
 // React.memo를 사용하여 tag 값이 바뀔 때만 리렌더링되도록 처리
-const TagItem = React.memo(({ tag, onRemove, onChangeTags }) => (
+const TagItem = React.memo(({ tag, onRemove }) => (
   <Tag onClick={() => onRemove(tag)}>#{tag}</Tag>
 ));
 
@@ -119,24 +121,24 @@ const TagBox = ({ tags, onChangeTags }) => {
   }, [tags]);
 
 
-const save = (e) => {
-  e.preventDefault();
-  const data = {
-    tag: localTags,
-  }
-  Axios({
-    method:'post',
-    headers: { 'content-type': 'application/json' },
-    url:`${VIEWTAG_URL}`,
-    data : JSON.stringify(data),
-    dataType:'json'
-  }).then(function(res){
-    console.log('결과값' + res);
-    console.log('결과값' + localTags);
-  }).catch(function(err){
-    console.log(err);
-  });
-}
+// const save = (e) => {
+//   e.preventDefault();
+//   const data = {
+//     tag: localTags,
+//   }
+//   axios({
+//     method:'post',
+//     headers: { 'content-type': 'application/json' },
+//     url:`${VIEWTAG_URL}`,
+//     data : JSON.stringify(data),
+//     dataType:'json'
+//   }).then(function(res){
+//     console.log('결과값' + res);
+//     console.log('결과값' + localTags);
+//   }).catch(function(err){
+//     console.log(err);
+//   });
+// }
 
 
   return (
@@ -149,7 +151,7 @@ const save = (e) => {
           value={input}
           onChange={onChange}
         />
-        <button type="submit" value="submit" onClick={save}>추가</button>
+        <button type="submit" value="submit">추가</button>
       </TagForm>
       <TagList tags={localTags} onRemove={onRemove} />
     </TagBoxBlock>

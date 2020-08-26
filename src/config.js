@@ -1,3 +1,4 @@
+// 데이터 저장
 export const POSTS_URL = "http://localhost:8080/brunch/post";
 
 export const VIEWPOSTS_URL = "http://localhost:8080/brunch/viewposts";

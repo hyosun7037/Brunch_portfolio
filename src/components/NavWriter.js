@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "styles/nav.css";
+import { ProfileImgURL } from "images/ImgAll";
 
 
 const NavContentsMenu = styled.li`
@@ -26,7 +27,7 @@ const NavContentMenuLine = styled.li`
 `;
 
 const NavLogo = styled.div`
-  background-image: url("https://t1.daumcdn.net/brunch/static/img/help/pc/logo_service2_v1.png");
+  /* background-image: url("https://t1.daumcdn.net/brunch/static/img/help/pc/logo_service2_v1.png"); */
   background-color: #f8f8f8;
   width: 48px;
   height: 48px;
@@ -37,7 +38,6 @@ const NavLogo = styled.div`
 const ProfileImg = styled(NavLogo)`
   width: 60px;
   height: 60px;
-  background-image: url("//img1.daumcdn.net/thumb/C100x100.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/aFZ0/image/0e47B_A7ISf1x9sYZ8wjsRZJZRA.jpg"); /*임시설정, 나중에 수정 예정*/
   border-radius: 60px;
   background-position: 0;
 `;
@@ -91,7 +91,9 @@ const NavWriter = () => {
     <div className="nav__Wrap">
       <div className="nav__Header">
         <Link to="/profile">
-          <ProfileImg></ProfileImg>
+          <ProfileImg>
+            <ProfileImgURL />
+          </ProfileImg>
           <ProfileName>써니</ProfileName>
           <ProfileUrl>brunch.co.kr/@haha7037</ProfileUrl>
         </Link>
