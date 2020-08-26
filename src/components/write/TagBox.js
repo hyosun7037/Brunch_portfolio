@@ -1,5 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import styled from 'styled-components';
+import Axios from 'axios';
+import { VIEWTAG_URL } from 'config';
 
 const TagBoxBlock = styled.div`
   /* width: 100%; */
@@ -7,6 +9,7 @@ const TagBoxBlock = styled.div`
   margin:0 auto;
   border-top: 1px solid #bfbfbf;
   padding-top: 2rem;
+  padding-bottom:2rem;
   h4 {
     color: #bfbfbf;
     margin-top: 0;
@@ -107,7 +110,7 @@ const TagBox = ({ tags, onChangeTags }) => {
       insertTag(input.trim()); // 앞뒤 공백 없앤 후 등록
       setInput(''); // input 초기화
     },
-    [input, insertTag],
+    [input, insertTag]
   );
 
   // tags 값이 바뀔 때
@@ -115,16 +118,38 @@ const TagBox = ({ tags, onChangeTags }) => {
     setLocalTags(tags);
   }, [tags]);
 
+
+const save = (e) => {
+  e.preventDefault();
+  const data = {
+    tag: localTags,
+  }
+  Axios({
+    method:'post',
+    headers: { 'content-type': 'application/json' },
+    url:`${VIEWTAG_URL}`,
+    data : JSON.stringify(data),
+    dataType:'json'
+  }).then(function(res){
+    console.log('결과값' + res);
+    console.log('결과값' + localTags);
+  }).catch(function(err){
+    console.log(err);
+  });
+}
+
+
   return (
     <TagBoxBlock>
-      <h4>태그</h4>
+      {/* <h4>태그</h4> */}
       <TagForm onSubmit={onSubmit}>
         <input
+          name="tag"
           placeholder="태그를 입력하세요"
           value={input}
           onChange={onChange}
         />
-        <button type="submit">추가</button>
+        <button type="submit" value="submit" onClick={save}>추가</button>
       </TagForm>
       <TagList tags={localTags} onRemove={onRemove} />
     </TagBoxBlock>

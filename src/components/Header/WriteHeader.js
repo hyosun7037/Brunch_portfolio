@@ -46,7 +46,7 @@ const ServiceHeader = styled.div`
   width: 100%;
 `;
 
-const Header = ({ position, backposition, title, onPublish, oncancel}) => {
+const Header = ({ position, backposition, title}) => {
   const [visible, setVisible] = useState(false);
   const menuToggle = useRef(null);
   const ref = useRef(null);
@@ -69,7 +69,7 @@ const Header = ({ position, backposition, title, onPublish, oncancel}) => {
     };
   });
 
-
+  
   return (
     <>
     <ServiceHeader position={position}>
@@ -83,7 +83,6 @@ const Header = ({ position, backposition, title, onPublish, oncancel}) => {
         <div className="applybtn__search">
           <span>{title}</span>
           <RoundBtn style={{marginRight:"10px"}}>저장</RoundBtn>
-          <RoundBtn >취소</RoundBtn>
         </div>
       </div>
     </ServiceHeader>
@@ -93,4 +92,5 @@ const Header = ({ position, backposition, title, onPublish, oncancel}) => {
   );
 };
 
+export {RoundBtn}
 export default Header;

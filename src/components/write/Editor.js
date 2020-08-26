@@ -3,13 +3,16 @@ import "quill/dist/quill.bubble.css";
 import styled from "styled-components";
 import Quill from "quill";
 import Axios from "axios";
+import { POSTS_URL } from "config";
+import { RoundBtn } from "components/Header/WriteHeader";
 
 const EditorBlock = styled.div`
   max-width: 920px;
   margin: 0 auto;
   padding-top: 15rem;
   padding-bottom: 5rem;
-  height: 450px;
+  position:relative;
+  /* height: 450px; */
 `;
 
 const TitleInput = styled.input`
@@ -102,7 +105,7 @@ const Editor = () => {
   }, [quillElement]);
   
   
-  const handleChange = (e) =>{
+ const handleChange = (e) =>{
     setState({
       ...state,
     [e.target.name] : e.target.value
@@ -110,9 +113,9 @@ const Editor = () => {
   console.log("이거는 타이틀 값" + e.target.name);
 };
 
-  const save = (e) => {
+    const save = (e) => {
     e.preventDefault();
-  const data = {
+    const data = {
     title: state.title,
     subTitle: state.subTitle,
     content: quillData,
@@ -120,7 +123,7 @@ const Editor = () => {
   Axios({
     method:'post',
     headers: { 'content-type': 'application/json' },
-    url:'http://localhost:8080/brunch/saveposts',
+    url:`${POSTS_URL}`,
     data : JSON.stringify(data),
     dataType:'json'
   }).then(function(res){
@@ -138,8 +141,8 @@ return (
       <Line></Line>
       <QuilWrapper>
         <div ref={quillElement}/>
-        <button type="submit" value="submit" onClick={save}>저장</button>
       </QuilWrapper>
+      <RoundBtn type="submit" value="submit" onClick={save}>저장</RoundBtn>
     </EditorBlock>
   );
 };

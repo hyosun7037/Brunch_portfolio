@@ -10,12 +10,12 @@ import {
   RoundBtnBigActive,
   ScreenOut,
 } from "styles/StyledComponentAll";
-import { POSTS_URL } from "config";
 import Axios from "axios";
 import EditorPic from "components/Main/EditorPic";
 
-import { TAG_URL } from "config";
+import { VIEWTAG_URL } from "config";
 import Tag from "components/Main/Tag";
+import { VIEWPOSTS_URL } from "config";
 
 // ScreenOut은 해당 섹션을 구분하기 위함. text-indent로 옆으로 다 빼놓음!
 class Main extends Component {
@@ -28,7 +28,7 @@ class Main extends Component {
 
   // post data
   postsApi = () => {
-    Axios.get(`${POSTS_URL}`)
+    Axios.get(`${VIEWPOSTS_URL}`)
       .then((res) => {
         return this.setState({ data: res.data });
       })
@@ -37,7 +37,7 @@ class Main extends Component {
 
     // tag data
   tagApi = () => {
-      Axios.get(`${TAG_URL}`)
+      Axios.get(`${VIEWTAG_URL}`)
         .then((res) => {
           return this.setState({ data: res.data });
         })
