@@ -26,21 +26,14 @@ const ProfileUpdata = () => {
           <WrapProfile>
             <ProfileImgURL />
             <form
-              style={{ position: "relative" }}
+              style={{ position: "relative", cursor: "pointer" }}
               enctype="multipart/form-data"
               encoding="multipart/form-data"
               method="post"
             >
               <BtnUpload>
-                <label for="profileImage" class="text_hide">
-                  이미지 업로드
-                </label>
-                <input
-                  class="profileUserImageFrame ing_file"
-                  type="file"
-                  name="file"
-                  accept="image/*"
-                />
+                <label for="profileImage">이미지 업로드</label>
+                <input type="file" name="file" accept="image/*" />
               </BtnUpload>
             </form>
             <div className="wrap__profile__desc">

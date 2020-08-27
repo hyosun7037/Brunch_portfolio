@@ -53,7 +53,7 @@ const QuilWrapper = styled.div`
     font-size: 1.125rem;
     line-height: 1.5;
     font-style: normal;
-    &.::placeholder {
+    &::placeholder {
       font-size: 14px;
     }
   }
