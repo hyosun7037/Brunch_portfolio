@@ -36,161 +36,209 @@ export { ScreenOut, RoundBtnBig, RoundBtnBigActive };
 
 // Author.js
 const WrapProfile = styled.div`
-  position:relative;
-  width:700px;
-  margin:0 auto 94px;
-  padding:35px 0 0 ;
-  font-weight:300;
+  position: relative;
+  width: 700px;
+  margin: 0 auto 94px;
+  padding: 70px;
+  font-weight: 300;
+  background: #fff;
 `;
 
 const TitBloger = styled.strong`
-  display:block;
-  padding-right:170px;
-  font-weight:300;
-  font-size:28px;
-  line-height:34px;
+  display: block;
+  padding-right: 170px;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 34px;
+  padding-top: 10px;
+`;
+
+// 프로필 편집
+const TitBlogerTxtArea = styled.textarea`
+  display: block;
+  padding-right: 200px;
+  font-weight: 300;
+  font-size: 28px;
+  line-height: 34px;
+  padding-top: 10px;
+  border: none;
+  font-family: "Noto Sans KR";
+  font-weight: 300;
+  outline: none;
+  resize: none;
+  padding-left: 10px;
+`;
+
+const TitBlogerTxtAreaSmall = styled(TitBlogerTxtArea)`
+  font-size: 16px;
+  width: 500px;
+  border: 1px solid #f4f4f4;
+  margin-bottom: 30px;
+  height: 150px;
+`;
+
+// 이미지 업로드
+const BtnUpload = styled.span`
+  position: absolute;
+  right: -13px;
+  bottom: -70px;
+  width: 42px;
+  height: 42px;
+  background-position: 0 -210px;
+  display: inline-block;
+  overflow: hidden;
+  background-image: url("//t1.daumcdn.net/brunch9/static/images/pc/ico_brunch_v1_200824.png");
+  background-repeat: no-repeat;
+  line-height: 0;
+  text-indent: -9999px;
+  vertical-align: top;
 `;
 
 const AuthorName = styled.span`
   display: block;
-  padding-top:5px;
-  font-size:13px;
-  line-height:20px;
-  color:#959595;
+  padding-top: 5px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #959595;
 `;
 
 const TxtInfo = styled.span`
-  font-size:13px;
-  line-height:20px;
-  color:#959595;
+  font-size: 13px;
+  line-height: 20px;
+  color: #959595;
 `;
 
 const TabContents = styled.div`
-  position:relative;
-  width:700px;
-  margin:0 auto;
-  ul{
-      height:58px;
-      border-top:1px solid #eee;
-      display: flex;
-      padding:0;
-      li{
-          width:50%;
-          button{
-              display:block;
-              width:100%;
-              height:24px;
-              margin-top:-1px;
-              padding:16px 0 17px;
-              /* border-top:1px solid transparent; */
-              /* border-top: ${(props) => props.TabContentsBt || "1px solid transparent"}; */
-              border-top: ${(props) => props.TabContentsBt || "1px solid #f8f8f8"};
-              font-size:16px;
-              text-align:center;
-              text-decoration:none;
-              outline:none;
-              border-left:0;
-              border-right:0;
-              border-bottom:0;
-              cursor:pointer;
-              &:hover{
-                border-top:1px solid #333;
-                color:#333;
-              }
-              &:active{
-                border-top:1px solid #333;
-                color:#333;
-              }
-              span{
-                  display:inline-block;
-                  position:relative;
-                  padding:0 7px;
-                  line-height:1.5;
-              }
-          }
+  position: relative;
+  width: 700px;
+  margin: 0 auto;
+  ul {
+    height: 58px;
+    border-top: 1px solid #eee;
+    display: flex;
+    padding: 0;
+    li {
+      width: 50%;
+      button {
+        display: block;
+        width: 100%;
+        height: 24px;
+        margin-top: -1px;
+        padding: 16px 0 17px;
+        /* border-top:1px solid transparent; */
+        /* border-top: ${(props) =>
+          props.TabContentsBt || "1px solid transparent"}; */
+        border-top: ${(props) => props.TabContentsBt || "1px solid #f8f8f8"};
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+        cursor: pointer;
+        &:hover {
+          border-top: 1px solid #333;
+          color: #333;
+        }
+        &:active {
+          border-top: 1px solid #333;
+          color: #333;
+        }
+        span {
+          display: inline-block;
+          position: relative;
+          padding: 0 7px;
+          line-height: 1.5;
+        }
       }
+    }
   }
 `;
 
-export {WrapProfile, TitBloger, AuthorName, TxtInfo, TabContents}
-
+export {
+  WrapProfile,
+  TitBloger,
+  AuthorName,
+  TxtInfo,
+  TabContents,
+  TitBlogerTxtArea,
+  TitBlogerTxtAreaSmall,
+  BtnUpload,
+};
 
 // AuthorDrawer.js
 const Wrapper = styled.div`
-  width:700px;
-  margin:0 auto;
-  img{
-      width:100%;
+  width: 700px;
+  margin: 0 auto;
+  img {
+    width: 100%;
   }
 `;
 
 const DrawerBtn = styled.button`
-  outline:none;
-  border:none;
-  color:#666;
-  font-size:17px;
-  letter-spacing:-1px;
-  white-space:nowrap;
-  margin-right:10px;
+  outline: none;
+  border: none;
+  color: #666;
+  font-size: 17px;
+  letter-spacing: -1px;
+  white-space: nowrap;
+  margin-right: 10px;
 `;
 
-export{Wrapper,DrawerBtn}
-
+export { Wrapper, DrawerBtn };
 
 // BrunchNow.js
 const ListCommon = styled.ul`
-  width:700px;
-  margin:0 auto;
-  padding:0px;
-  li{
-    width:100%;
-    padding:25px 0 30px;
-    border-bottom:1px solid #eee;
+  width: 700px;
+  margin: 0 auto;
+  padding: 0px;
+  li {
+    width: 100%;
+    padding: 25px 0 30px;
+    border-bottom: 1px solid #eee;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
   }
 `;
 
 const LinkThumb = styled.a`
-  position:relative;
-  width:120px;
-  height:120px;
-  margin-left:40px;
-  background-position:0 -280px;
-  margin-top:5px;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-left: 40px;
+  background-position: 0 -280px;
+  margin-top: 5px;
 `;
-
 
 const DescCommon = styled.span`
-  display:block;
-  padding-top:5px;
-  font-size:14px;
-  line-height:22px;
-  color:#666;
-  max-height:43px;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  font-weight:300;
+  display: block;
+  padding-top: 5px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #666;
+  max-height: 43px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 300;
 `;
 
-
 const IcoBar = styled.span`
-  display:inline-block;
-  width:1px;
-  height:14px;
-  margin:4px 10px 0 10px;
-  background-color:#bfbfbf;
-  vertical-align:top;
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  margin: 4px 10px 0 10px;
+  background-color: #bfbfbf;
+  vertical-align: top;
 `;
 
 const AppendCommon = styled.div`
-  width:100%;
-  padding-top:18px;
-  font-size:12px;
-  color:#959595;
-  font-family:'Noto Sans KR';
+  width: 100%;
+  padding-top: 18px;
+  font-size: 12px;
+  color: #959595;
+  font-family: "Noto Sans KR";
 `;
-
 
 const IcoBy = styled.span`
   margin-top: 3px;
@@ -205,13 +253,12 @@ const IcoBy = styled.span`
 `;
 
 const IcoDot = styled.span`
-  width:2px;
-  height:2px;
-  margin:8px 6px 11px;
-  background-color:#bfbfbf;
-  vertical-align:top;
+  width: 2px;
+  height: 2px;
+  margin: 8px 6px 11px;
+  background-color: #bfbfbf;
+  vertical-align: top;
 `;
-
 
 const TitSub = styled.strong`
   font-weight: 300;
@@ -222,163 +269,188 @@ const TitSub = styled.strong`
   white-space: nowrap;
 `;
 
-export {ListCommon, LinkThumb, DescCommon, IcoBar, AppendCommon, IcoBy, IcoDot, TitSub}
+export {
+  ListCommon,
+  LinkThumb,
+  DescCommon,
+  IcoBar,
+  AppendCommon,
+  IcoBy,
+  IcoDot,
+  TitSub,
+};
 
 // Library.js
 const Container = styled.div`
-  &::before{
-    position:absolute;
-    top:0;
-    z-index:100;
-    display:block;
-    width:50px;
-    height:129px;
-    left:50%;
-    margin-left:-522px;
-    content:'';
-    background-image:url("http://img1.daumcdn.net/thumb/C108x270/?fname=http://t1.daumcdn.net/brunch9/static/images/pcrtn/bg_library.png");
-    background-size:cover;
-    }
+  &::before {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    display: block;
+    width: 50px;
+    height: 129px;
+    left: 50%;
+    margin-left: -522px;
+    content: "";
+    background-image: url("http://img1.daumcdn.net/thumb/C108x270/?fname=http://t1.daumcdn.net/brunch9/static/images/pcrtn/bg_library.png");
+    background-size: cover;
+  }
 `;
 
 const LibraryMenuWrap = styled.div`
-    position:relative;
-    width:960px;
-    margin:0 auto;
-    padding-bottom:25px;
-    display: flex;
-    justify-content:space-between;
-    align-items:center;
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  padding-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const TitLibrary = styled.h2`
-    margin-left:20px;
-    font-size:28px;
-    font-weight:400;
-    letter-spacing:-1.8px;
-    line-height:36px;
-    color:#888;
-    font-family:'Nanum Myeongo', serif;
+  margin-left: 20px;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -1.8px;
+  line-height: 36px;
+  color: #888;
+  font-family: "Nanum Myeongo", serif;
 `;
 
 const TxtMenu = styled.span`
-  color:#666;
-  font-size:14px;
-  font-family:'Noto Sans KR', sans-serif;
+  color: #666;
+  font-size: 14px;
+  font-family: "Noto Sans KR", sans-serif;
 `;
 
 const MenuLibrary = styled.div`
-  ul{
-      display:flex;
-      justify-content: space-around;
-      align-items:center;
-      font-family:'Noto Sans KR', sans-serif;
-      li{
-        margin-right:10px;
-        font-weight:200;
-      }
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Noto Sans KR", sans-serif;
+    li {
+      margin-right: 10px;
+      font-weight: 200;
+    }
   }
 `;
 
 const TitLibraryLink = styled.h3`
-    display:block;
-    width:960px;
-    height:30px;
-    margin:0 auto;
-    font-size:14px;
-    color:#222;
-    font-family:'Noto Sans KR', sans-serif;
-    font-weight:300;
-    a{
-        display:inline-block;
-        height:100%;
-        padding:6px 20px 0 0 ;
-        letter-spacing:-.3px;
-        box-sizing:border-box;
-    }
+  display: block;
+  width: 960px;
+  height: 30px;
+  margin: 0 auto;
+  font-size: 14px;
+  color: #222;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 300;
+  a {
+    display: inline-block;
+    height: 100%;
+    padding: 6px 20px 0 0;
+    letter-spacing: -0.3px;
+    box-sizing: border-box;
+  }
 `;
 
 const ICoArr = styled.span`
-    display:inline-block;
-    width:7px;
-    height:12px;
-    margin:4px 0 0 6px;
-    background-position:-130px -710px;
-    background-image:url('http://t1.daumcdn.net/brunch9/static/images/pc/ico_brunch_v1_191224.png');
+  display: inline-block;
+  width: 7px;
+  height: 12px;
+  margin: 4px 0 0 6px;
+  background-position: -130px -710px;
+  background-image: url("http://t1.daumcdn.net/brunch9/static/images/pc/ico_brunch_v1_191224.png");
 `;
 
 const WrapLIst = styled.ul`
-    display:flex;
-    justify-content:space-between;
-    width:960px;
-    margin:0 auto;
-    padding-left:0;
-    font-family:'Noto Sans KR', sans-serif;
-    color:#333;
-    font-weight:300;
+  display: flex;
+  justify-content: space-between;
+  width: 960px;
+  margin: 0 auto;
+  padding-left: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  color: #333;
+  font-weight: 300;
 `;
 
 const RecentList = styled.li`
-    display:flex;
-    width:450px;
-    height:104px;
-    margin-right: ${(props) => props.RecentListMarginR || "0px"};
-    padding:19px 0 20px 0;
-    overflow:hidden;
-    border-bottom:1px solid #eee;
-    font-family:'Noto Sans KR', sans-serif;
-    strong{
-        font-weight:400;
-        display:block;
-        font-size:16px;
-        line-height:30px;
-        letter-spacing:-1px;
-    }
+  display: flex;
+  width: 450px;
+  height: 104px;
+  margin-right: ${(props) => props.RecentListMarginR || "0px"};
+  padding: 19px 0 20px 0;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+  font-family: "Noto Sans KR", sans-serif;
+  strong {
+    font-weight: 400;
+    display: block;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: -1px;
+  }
 `;
 
 const InnerLikeit = styled.div`
-  margin:0 auto;
-  width:960px;
-  position:relative;
-  padding:31px 0 40px;
+  margin: 0 auto;
+  width: 960px;
+  position: relative;
+  padding: 31px 0 40px;
 `;
 
 const IcoLikeitClip = styled.span`
-  position:absolute;
-  top:-8px;
-  right:0;
-  width:46px;
-  height:38px;
-  background-position:-80px -710px;
-  display:inline-block;
+  position: absolute;
+  top: -8px;
+  right: 0;
+  width: 46px;
+  height: 38px;
+  background-position: -80px -710px;
+  display: inline-block;
   overflow: hidden;
-  background:url("http://t1.daumcdn.net/brunch9/static/images/pc/ico_brunch_v1_191224.png");
-  line-height:0;
-  vertical-align:top;
+  background: url("http://t1.daumcdn.net/brunch9/static/images/pc/ico_brunch_v1_191224.png");
+  line-height: 0;
+  vertical-align: top;
 `;
 
 const TitLib = styled.h2`
-  font-size:28px;
-  font-weight:400;
-  letter-spacing:-.8px;
-  color:#333;
-  font-family:'Nanum Myeongjo',serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+  color: #333;
+  font-family: "Nanum Myeongjo", serif;
 `;
 
 const LinkThumbImg = styled.a`
-  display:inline-block;
-  width:100px;
-  height:100px;
-  margin:5px 0 0 30px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 5px 0 0 30px;
 `;
 
-export {LinkThumbImg, TitLib, InnerLikeit, IcoLikeitClip, Container, LibraryMenuWrap, TitLibrary, TxtMenu, MenuLibrary, TitLibraryLink, ICoArr, WrapLIst, RecentList }
-
+export {
+  LinkThumbImg,
+  TitLib,
+  InnerLikeit,
+  IcoLikeitClip,
+  Container,
+  LibraryMenuWrap,
+  TitLibrary,
+  TxtMenu,
+  MenuLibrary,
+  TitLibraryLink,
+  ICoArr,
+  WrapLIst,
+  RecentList,
+};
 
 // Profile.js
 const CoverBloger = styled.div`
-  height:${(props) => props.coverHeight || "320px"};
+  height: ${(props) => props.coverHeight || "320px"};
   background-color: ${(props) => props.coverBg || "#f8f8f8"};
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const DescBloger = styled.pre`
@@ -398,6 +470,7 @@ const BlogCount = styled.dl`
   padding: 22px 200px 0 0;
   font-size: 12px;
   color: #959595;
+  border-top: 1px solid #f4f4f4;
 `;
 
 const TxtG = styled.em`
@@ -418,7 +491,8 @@ const WrapProfileBtn = styled.div`
   right: 0;
   bottom: 2px;
   height: 36px;
-  padding-right: 19px;
+  /* padding-right: 19px; */
+  padding: 30px;
 `;
 
 const BtnType = styled.button`
@@ -453,10 +527,10 @@ const MoreControl = styled.div`
 `;
 
 const CardBanner = styled.div`
-  overflow:hidden;
-  width:700px;
-  height:100px;
-  margin:0 auto;
+  overflow: hidden;
+  width: 700px;
+  height: 100px;
+  margin: 0 auto;
 `;
 
 const ProfileImg = styled.div`
@@ -464,14 +538,25 @@ const ProfileImg = styled.div`
   position: absolute;
   top: -50px;
   right: 0;
-  background-image: url('//t1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8dBW/image/SXRzOq1hp418gFXqQVyqUJx1Dh0.jpg');
-  width:${(props) => props.ProfileImgWidth || "100px"};
-  height:${(props) => props.ProfileImgHeight || "100px"};
+  background-image: url("//t1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8dBW/image/SXRzOq1hp418gFXqQVyqUJx1Dh0.jpg");
+  width: ${(props) => props.ProfileImgWidth || "100px"};
+  height: ${(props) => props.ProfileImgHeight || "100px"};
   background-position: -250px -80px;
   border-radius: 100px;
 `;
-export { CoverBloger, DescBloger, BlogCount, TxtG, NumCount, WrapProfileBtn, BtnType, BtnType2, MoreControl, CardBanner, ProfileImg }
-
+export {
+  CoverBloger,
+  DescBloger,
+  BlogCount,
+  TxtG,
+  NumCount,
+  WrapProfileBtn,
+  BtnType,
+  BtnType2,
+  MoreControl,
+  CardBanner,
+  ProfileImg,
+};
 
 // Search.js
 const Box = styled.div`
@@ -622,8 +707,24 @@ const RecList = styled.ul`
     font-family: "Noto Sans KR";
   }
 `;
-export { Box, BoxInner, WrapSerach, TxtSearch, SearchForm, ButtonSearch, IcoSearch, SuggestGuide, MoveUp, WrapList, DescG, RecKeyword, ThumbImg, TitWriter, TxtWriter, RecList}
-
+export {
+  Box,
+  BoxInner,
+  WrapSerach,
+  TxtSearch,
+  SearchForm,
+  ButtonSearch,
+  IcoSearch,
+  SuggestGuide,
+  MoveUp,
+  WrapList,
+  DescG,
+  RecKeyword,
+  ThumbImg,
+  TitWriter,
+  TxtWriter,
+  RecList,
+};
 
 // Detail.js
 const CoverCellInfo = styled.span`
@@ -647,7 +748,7 @@ const WrapFrame = styled.div`
   }
   margin: 0 40px;
   min-width: 700px;
-  margin-bottom:100px;
+  margin-bottom: 100px;
 `;
 
 // 브런치 댓글창 클릭하면 display 속성 변경시키기
@@ -722,79 +823,92 @@ const LinkProfile = styled.div`
 `;
 
 const WriteAppend = styled.div`
-  padding:14px 0px 0px;
+  padding: 14px 0px 0px;
 `;
 
 const WrapKeywordArticle = styled.div`
-  margin:0 auto;
-  width:700px;
-  display:flex;
-  justify-content:space-between;
+  margin: 0 auto;
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
 `;
 
 // 댓글 작성영역
 const TfArea = styled.div`
-  width:590px;
-  min-height:45px;
-  border:none;
-  line-height:22px;
-  color:#666;
-  background:0 0;
-  white-space:pre-wrap;
-  outline:transparent dotted;
-  z-index:1;
-  font-family:'Noto Sans KR';
-  font-weight:300;
-  font-size:13px;
-  padding-top:5px;
+  width: 590px;
+  min-height: 45px;
+  border: none;
+  line-height: 22px;
+  color: #666;
+  background: 0 0;
+  white-space: pre-wrap;
+  outline: transparent dotted;
+  z-index: 1;
+  font-family: "Noto Sans KR";
+  font-weight: 300;
+  font-size: 13px;
+  padding-top: 5px;
 `;
 
 const BtnDefault = styled.button`
-  width:56px;
-  height:30px;
-  margin-left:5px;
-  border:1px solid #bbb;
-  border-radius:32px;
-  font-size:12px;
-  line-height:28px;
-  color:#666;
+  width: 56px;
+  height: 30px;
+  margin-left: 5px;
+  border: 1px solid #bbb;
+  border-radius: 32px;
+  font-size: 12px;
+  line-height: 28px;
+  color: #666;
 `;
-
 
 // 이전글
 const WrapPageArticle = styled.div`
-  position:fixed;
-  z-index:100;
-  bottom:0;
-  width:100%;
-  height:59px;
-  border-top:1px solid #eee;
-  background:#fff;
-  a{
-    padding:0 30px;
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  width: 100%;
+  height: 59px;
+  border-top: 1px solid #eee;
+  background: #fff;
+  a {
+    padding: 0 30px;
     display: flex;
-    span{
-      margin-right:13px;
-      font-size:12px;
-      line-height:60px;
-      font-family:'Noto Sans KR';
-      color:#959595;
+    span {
+      margin-right: 13px;
+      font-size: 12px;
+      line-height: 60px;
+      font-family: "Noto Sans KR";
+      color: #959595;
     }
-    strong{
-      font-weight:300;
-      font-size:15px;
-      line-height:60px;
-      font-weight:'Noto Sans KR', sans-serif;
-      max-width:350px;
-      display:inline-block;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      font-style:normal;
+    strong {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 60px;
+      font-weight: "Noto Sans KR", sans-serif;
+      max-width: 350px;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-style: normal;
     }
   }
 `;
-export { CoverCellInfo,  TxtAuthor, WrapFrame, DetailComment, CommentHead, CommentContent, WrapCommentWrite, LinkProfile, WriteAppend, WrapKeywordArticle, TfArea, BtnDefault, WrapPageArticle }
+export {
+  CoverCellInfo,
+  TxtAuthor,
+  WrapFrame,
+  DetailComment,
+  CommentHead,
+  CommentContent,
+  WrapCommentWrite,
+  LinkProfile,
+  WriteAppend,
+  WrapKeywordArticle,
+  TfArea,
+  BtnDefault,
+  WrapPageArticle,
+};
 
 // component
 
@@ -802,49 +916,49 @@ export { CoverCellInfo,  TxtAuthor, WrapFrame, DetailComment, CommentHead, Comme
 
 // 작가 프로필 이름
 const LinkAuthorName = styled.a`
-  display:block;
-  font-size:28px;
-  overflow:hidden;
-  width:588px;
-  font-weight:300;
-  font-family:'Noto Sans KR';
-  white-space:nowrap;
+  display: block;
+  font-size: 28px;
+  overflow: hidden;
+  width: 588px;
+  font-weight: 300;
+  font-family: "Noto Sans KR";
+  white-space: nowrap;
 `;
 
 // 작가 프로필 이미지
 const LinkAuthorImg = styled.a`
-  position:absolute;
-  top:-22px;
-  right:0;
-  img{
-    border-radius:100px;
-    width:100px;
-    height:100px;
+  position: absolute;
+  top: -22px;
+  right: 0;
+  img {
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
   }
 `;
 
 // 구독자
 const InfoSubs = styled.span`
-  span{
-    font-size:14px;
-    font-family:'Noto Sans KR';
-    color:#666;
-    font-weight:300;
+  span {
+    font-size: 14px;
+    font-family: "Noto Sans KR";
+    color: #666;
+    font-weight: 300;
   }
 `;
 
 // 구독하기 버튼
 const BtnFollow = styled.button`
-  width:80px;
-  border:1px solid #00c3bd;
-  border-radius:40px;
-  font-size:13px;
-  font-family:'Noto Sans KR';
-  color:#00c3bd;
-  background:#fff;
-  height:32px;
+  width: 80px;
+  border: 1px solid #00c3bd;
+  border-radius: 40px;
+  font-size: 13px;
+  font-family: "Noto Sans KR";
+  color: #00c3bd;
+  background: #fff;
+  height: 32px;
 `;
-export { LinkAuthorName,  LinkAuthorImg, InfoSubs, BtnFollow }
+export { LinkAuthorName, LinkAuthorImg, InfoSubs, BtnFollow };
 
 // BodyArticle.js
 const Blockquote = styled.blockquote`
@@ -874,8 +988,7 @@ const ItemTypeText = styled(ItemTypeTit)`
   font-weight: 300;
   margin-bottom: 30px;
 `;
-export { Blockquote,  ItemTypeTit, ItemTypeText }
-
+export { Blockquote, ItemTypeTit, ItemTypeText };
 
 // CommentArticle.js
 const BtnComment = styled.button`
@@ -901,7 +1014,7 @@ const IcoArticle = styled.span`
   text-indent: -9999px;
   vertical-align: top;
 `;
-export { BtnComment, IcoArticle }
+export { BtnComment, IcoArticle };
 
 // KeywordArticle.js
 const WrapKeyword = styled.div`
@@ -929,132 +1042,131 @@ const ListKeyword = styled.ul`
     }
   }
 `;
-export { WrapKeyword, ListKeyword }
+export { WrapKeyword, ListKeyword };
 
 // WrapArticle.js
 // 관련글 Wrapper
 const Wrap = styled.div`
-  max-width:'1020px';
-  margin:'0 auto';
-  &::before{
-    position:absolute;
-    left:0;
-    width:100%;
-    height:75px;
-    background:#fbfbfb;
-    content:'';  
+  max-width: "1020px";
+  margin: "0 auto";
+  &::before {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background: #fbfbfb;
+    content: "";
   }
 `;
 
-// 관련글 
+// 관련글
 const ListRelativeArticle = styled.ul`
   display: flex;
   position: relative;
-  margin:0 auto;
-  max-width:1020px;
-  
-  li{
-    width:300px;
-    margin:0 20px 35px;
-    p{
-      width:100%;
-      height:170px;
-      background-size:cover;
-      background-position:50% 50%;
-      background-image:url('//img1.daumcdn.net/thumb/C270x320.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/16iq/image/oFp1jZBJKKtPaY5g_DZ59MzMUc4.jpg');
+  margin: 0 auto;
+  max-width: 1020px;
+
+  li {
+    width: 300px;
+    margin: 0 20px 35px;
+    p {
+      width: 100%;
+      height: 170px;
+      background-size: cover;
+      background-position: 50% 50%;
+      background-image: url("//img1.daumcdn.net/thumb/C270x320.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/16iq/image/oFp1jZBJKKtPaY5g_DZ59MzMUc4.jpg");
     }
-    strong{
-      display:block;
-      overflow:hidden;
-      max-height:62px;
-      margin-top:26px;
-      font-weight:400;
-      font-size:24px;
-      line-height:32px;
-      font-family:"Nanum Myeongjo", serif;
-      word-break:break-all;
-      letter-spacing:-1.2px;
+    strong {
+      display: block;
+      overflow: hidden;
+      max-height: 62px;
+      margin-top: 26px;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 32px;
+      font-family: "Nanum Myeongjo", serif;
+      word-break: break-all;
+      letter-spacing: -1.2px;
     }
   }
 `;
 
 // 관련글 상세
 const WrapRelatedDesc = styled.span`
-  display:-webkit-box;
-  overflow:hidden;
-  max-height:66px;
-  margin-top:8px;
-  font-size:13px;
-  font-family:'Noto Sans KR', sans-serif;
-  text-overflow:ellipsis;
-  -webkit-line-clamp:3;
-  -webkit-box-orient:vertical;
-    span{
-      display:inline;
-      position:relative;
-      line-height:24px;
-      font-family:'Noto Sans Light', sans-serif;
-      color:#959595;
-    }
-`;
-
-
-// 작가이름
-const InfoAuthor = styled.span`
-  display:inline-block;
-  margin-top:15px;
-  span{
-    color:#959595;
-    font-size:13px;
-    font-family:'Noto Sans KR', sans-serif;
-    margin-top:15px;
+  display: -webkit-box;
+  overflow: hidden;
+  max-height: 66px;
+  margin-top: 8px;
+  font-size: 13px;
+  font-family: "Noto Sans KR", sans-serif;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  span {
+    display: inline;
+    position: relative;
+    line-height: 24px;
+    font-family: "Noto Sans Light", sans-serif;
+    color: #959595;
   }
 `;
 
-export { Wrap, ListRelativeArticle, WrapRelatedDesc, InfoAuthor }
+// 작가이름
+const InfoAuthor = styled.span`
+  display: inline-block;
+  margin-top: 15px;
+  span {
+    color: #959595;
+    font-size: 13px;
+    font-family: "Noto Sans KR", sans-serif;
+    margin-top: 15px;
+  }
+`;
+
+export { Wrap, ListRelativeArticle, WrapRelatedDesc, InfoAuthor };
 
 // AuthorInfo.js
 // 각 소개 단락
 const AuthorIntro = styled.div`
-  padding-top:34px;
-  width:700px;
-  margin:0 auto;
+  padding-top: 34px;
+  width: 700px;
+  margin: 0 auto;
 `;
 
 // 타이틀
 const TitIntro = styled.strong`
   display: block;
-  font-weight:400;
-  font-size:12px;
+  font-weight: 400;
+  font-size: 12px;
 `;
 
 // 내용
 const DescIntro = styled.p`
-  padding-top:22px;
-  font-weight:200;
-  font-size:13px;
-  line-height:24px;
-  color:#666;
+  padding-top: 22px;
+  font-weight: 200;
+  font-size: 13px;
+  line-height: 24px;
+  color: #666;
 `;
 
 // 소개 태그
 const ListTag = styled.ul`
-  overflow:hidden;
-  padding-top:13px;
-  padding-left:0px;
-  display:flex;
-  justify-content:flex-start;
-    li{
-        margin-right:8px;
-        a{
-            display:inline-block;
-            padding:4px 10px;
-            border:1px solid #ddd;
-            border-radius:20px;
-            font-size:12px;
-            color:#959595;
-            letter-spacing:-1px;
-        }
+  overflow: hidden;
+  padding-top: 13px;
+  padding-left: 0px;
+  display: flex;
+  justify-content: flex-start;
+  li {
+    margin-right: 8px;
+    a {
+      display: inline-block;
+      padding: 4px 10px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      font-size: 12px;
+      color: #959595;
+      letter-spacing: -1px;
     }
+  }
 `;
-export { AuthorIntro, TitIntro, DescIntro, ListTag }
+export { AuthorIntro, TitIntro, DescIntro, ListTag };
