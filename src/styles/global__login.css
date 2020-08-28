@@ -31,12 +31,18 @@
   left: 50%;
   margin: -200px 0 0 -170px;
 }
+
+.list_start {
+  margin-top: 100px;
+}
+
 .list_start li {
   overflow: hidden;
   margin-bottom: 15px;
 }
 
 .list_start .link_connect {
+  cursor: pointer;
   display: flex;
   position: relative;
   width: 240px;
@@ -116,7 +122,7 @@
   animation-duration: 0.5s;
   opacity: 0;
   width: 400px;
-  height: 500px;
+  height: 440px;
   margin: inherit;
   top: 50%;
   left: auto;
@@ -128,7 +134,7 @@
 }
 .sign_kakao .list_start {
   width: 260px;
-  margin: 40px auto 0;
+  margin: 50px auto 0;
   padding: 0;
 }
 

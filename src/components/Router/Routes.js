@@ -16,28 +16,28 @@ import AuthorDrawer from "pages/AuthorDrawer";
 import Library from "pages/Library";
 // import LinkData from "assets/LinkData";
 
-
 const Routes = () => {
   return (
     <>
       <Switch>
-
-
         {/* <Route path="/writer" component={NavWriter} /> */}
         {/* <Route path="/nowriter" component={NavNonmem} /> */}
         {/* 프로필 */}
-        <Route path={["/@:snsId/:profile","/profile"]} component={Profile} />
+        <Route path={["/@:snsId/:profile", "/profile"]} component={Profile} />
         {/* 프로필 편집 */}
-        <Route path={["/@:snsId/:profile_update","/profile_update"]} component={ProfileUpdate} />
+        <Route
+          path={["/@:snsId/:profile_update", "/profile_update"]}
+          component={ProfileUpdate}
+        />
         {/* 글쓰기 */}
-        <Route path={["/@:snsId/:write","/write"]} component={Write} />
-       
+        <Route path={["/@:snsId/:write", "/write"]} component={Write} />
+
         {/* 작가의 서랍 */}
-        <Route path={["/@:snsId/:ready","/ready"]} component={AuthorDrawer} />
+        <Route path={["/@:snsId/:ready", "/ready"]} component={AuthorDrawer} />
         {/* 브런치 나우 */}
         <Route path="/now" component={BrunchNow} />
         {/* 글 읽는 서재 */}
-        <Route path={["/@:snsId/:library","/library"]} component={Library} />
+        <Route path={["/@:snsId/:library", "/library"]} component={Library} />
         {/* 상세 */}
         <Route path="/detail" component={Detail} />
         {/* 키워드 상세 */}

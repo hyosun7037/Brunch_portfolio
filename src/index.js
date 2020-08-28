@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
-import App from "./App";
-// import Routes from "./components/Router/Routes";
+// import App from "./App";
+import Routes from "./components/Router/Routes";
 import rootReducer from "modules";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
@@ -15,8 +15,8 @@ ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
       <BrowserRouter>
-        {/* <Routes /> */}
-        <App />
+        <Routes />
+        {/* <App /> */}
       </BrowserRouter>
     </React.StrictMode>
   </Provider>,
