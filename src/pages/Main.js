@@ -28,15 +28,37 @@ class Main extends Component {
     };
   }
 
-  // postlist data
+  // postlist data - get
+  // postListApi = () => {
+  //   Axios.get(`${POSTLIST_URL}`)
+  //     .then((res) => {
+  //       return this.setState({ dataPostList: res.data });
+  //     })
+  //     .catch((res) => console.log(res));
+  // };
+
+  // postlist data - get
+  // postListApi = () => {
+  //   Axios.get(`${POSTLIST_URL}`)
+  //     .then((res) => {
+  //       return this.setState({ dataPostList: res.data });
+  //     })
+  //     .catch((res) => console.log(res));
+  // };
+
+  // postlist data - get
   postListApi = () => {
-    Axios.get(`${POSTLIST_URL}`)
+    Axios.get(`${POSTLIST_URL}`, {
+      headers: {
+        Authorization: localStorage.getItem("Authentication"),
+      },
+    })
       .then((res) => {
+        console.log(localStorage.getItem("Authentication"));
         return this.setState({ dataPostList: res.data });
       })
       .catch((res) => console.log(res));
   };
-
   // post data
   postsApi = () => {
     Axios.get(`${VIEWPOSTS_URL}`)

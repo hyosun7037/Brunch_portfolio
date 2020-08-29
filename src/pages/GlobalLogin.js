@@ -15,6 +15,7 @@ const GlobalLogin = ({ history }) => {
             console.log("닉네임 : ", response.kakao_account.profile.nickname);
             console.log("이메일 : ", response.kakao_account.email);
             console.log("id : ", response.id);
+            const email = response.kakao_account.email;
             fetch("http://192.168.0.101:8080/brunch/oauth/jwt/kakao", {
               method: "post",
               headers: {
@@ -27,9 +28,11 @@ const GlobalLogin = ({ history }) => {
               .then(function (jwtToken) {
                 return jwtToken.text();
               })
-              .then(function (jwtToken) {
+              .then(function (jwtToken, response) {
+                // const email = response.kakao_account.email;
                 // localStorage.setItem("Authentication", "Bearer " + jwtToken);
                 localStorage.setItem("Authentication", jwtToken);
+                localStorage.setItem("Email", email);
                 alert("작가님 환영합니다!");
                 history.push("/");
                 console.log(jwtToken);
