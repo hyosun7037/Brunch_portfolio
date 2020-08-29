@@ -28,7 +28,8 @@ const GlobalLogin = ({ history }) => {
                 return jwtToken.text();
               })
               .then(function (jwtToken) {
-                localStorage.setItem("Authentication", "Bearer " + jwtToken);
+                // localStorage.setItem("Authentication", "Bearer " + jwtToken);
+                localStorage.setItem("Authentication", jwtToken);
                 alert("작가님 환영합니다!");
                 history.push("/");
                 console.log(jwtToken);

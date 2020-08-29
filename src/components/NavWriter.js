@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "styles/nav.css";
 import { ProfileImgURL } from "images/ImgAll";
 
-
 const NavContentsMenu = styled.li`
   font-size: 15px;
   color: #777;
@@ -86,7 +85,10 @@ const ProfileUrl = styled.p`
 `;
 
 const NavWriter = () => {
- 
+  const logout = () => {
+    localStorage.removeItem(localStorage.Authentication);
+    console.log(localStorage.Authentication);
+  };
   return (
     <div className="nav__Wrap">
       <div className="nav__Header">
@@ -128,7 +130,7 @@ const NavWriter = () => {
         <div className="nav__Footer">
           <GrayBtn>설정</GrayBtn>
           <Link to="/login">
-            <GrayBtn>로그아웃</GrayBtn>
+            <GrayBtn onClick={logout}>로그아웃</GrayBtn>
           </Link>
         </div>
       </div>

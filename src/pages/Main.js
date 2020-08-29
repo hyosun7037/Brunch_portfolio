@@ -15,6 +15,7 @@ import EditorPic from "components/Main/EditorPic";
 import { VIEWTAG_URL } from "config";
 import Tag from "components/Main/Tag";
 import { VIEWPOSTS_URL } from "config";
+import { POSTLIST_URL } from "config";
 
 // ScreenOut은 해당 섹션을 구분하기 위함. text-indent로 옆으로 다 빼놓음!
 class Main extends Component {
@@ -22,38 +23,50 @@ class Main extends Component {
     super(props);
     this.state = {
       dataPost: [],
-      dataTag: []
+      dataTag: [],
+      dataPostList: [],
     };
   }
+
+  // postlist data
+  postListApi = () => {
+    Axios.get(`${POSTLIST_URL}`)
+      .then((res) => {
+        return this.setState({ dataPostList: res.data });
+      })
+      .catch((res) => console.log(res));
+  };
 
   // post data
   postsApi = () => {
     Axios.get(`${VIEWPOSTS_URL}`)
-    .then((res) => {
-      return this.setState({ dataPost: res.data });
-    })
-    .catch((res) => console.log(res));
+      .then((res) => {
+        return this.setState({ dataPost: res.data });
+      })
+      .catch((res) => console.log(res));
   };
-  
+
   // tag data
   tagApi = () => {
     Axios.get(`${VIEWTAG_URL}`)
-    .then((res) => {
-      return this.setState({ dataTag: res.data });
-    })
-    .catch((res) => console.log(res));
+      .then((res) => {
+        return this.setState({ dataTag: res.data });
+      })
+      .catch((res) => console.log(res));
   };
-  
-    componentDidMount() {
-      this.postsApi();
-      this.tagApi();
-    }
-    
-    render() {
-      const { dataPost } = this.state;
-      const { dataTag } = this.state;
-      return (
-        <>
+
+  componentDidMount() {
+    this.postsApi();
+    this.tagApi();
+    this.postListApi();
+  }
+
+  render() {
+    // const { dataPost } = this.state;
+    const { dataTag } = this.state;
+    const { dataPostList } = this.state;
+    return (
+      <>
         {/*탑배너영역*/}
         <div className="wrap__banner">
           <ul className="list__banner">
@@ -85,22 +98,21 @@ class Main extends Component {
               </p>
             </div>
 
-
             {/* 에디터픽 영역*/}
             {/* 데이터 다 맞게 넣으면 형태도 같이 수정하기 */}
             <ScreenOut>에디터픽</ScreenOut>
             <div className="editor__pic">
               <div className="wrap__slide">
                 <ul className="list__slide">
-                  {dataPost.map((post) => (
+                  {dataPostList.map((post) => (
                     <EditorPic
                       key={post.id}
                       id={post.id}
-                      userId={post.userId}
+                      nickName={post.nickName}
                       title={post.title}
                       subTitle={post.subTitle}
-                      postType={post.postType}
                       content={post.content}
+                      // postType={post.postType}
                     />
                   ))}
                   {/* <li>
@@ -210,26 +222,25 @@ class Main extends Component {
               <div className="keyword__list__wrap">
                 <div className="keyword__list">
                   <div className="keyword__list__grid">
-                  
-                  {/* DB <br> 파싱 - 좀더 생각해보기 */}
-                  {/* {data.replace('\n', '<br>')}
+                    {/* DB <br> 파싱 - 좀더 생각해보기 */}
+                    {/* {data.replace('\n', '<br>')}
                   {data.split('\n').map(line => {
                     return (<span>{line}<br/></span>)
                   })} */}
 
-                  {dataTag.map((tag) => (
-                    <Tag
-                      key={tag.id}
-                      id={tag.id}
-                      postId={tag.postId}
-                      tag={tag.tag}
-                      userId={tag.userId}
-                    />
-                  ))}
+                    {dataTag.map((tag) => (
+                      <Tag
+                        key={tag.id}
+                        id={tag.id}
+                        postId={tag.postId}
+                        tag={tag.tag}
+                        userId={tag.userId}
+                      />
+                    ))}
                   </div>
+                </div>
               </div>
             </div>
-          </div>
           </main>
 
           {/*브런치 추천작가 영역*/}
@@ -336,10 +347,13 @@ class Main extends Component {
                       alt="이미지"
                     />
                     <strong className="tit__writer">도시탐색자</strong>
-                    <span className="team__writer">도시와커뮤니티연구소 컨설턴트</span>
+                    <span className="team__writer">
+                      도시와커뮤니티연구소 컨설턴트
+                    </span>
                     <span className="txt__writer">
-                    흔들리는 서울의 골목길 출간, 주택, 도시, 그리고 커뮤니티를 관찰하고 연구하고 있습니다. 
-                    오랜만에 마주한, 다소 낯설지만 익숙해지고 있는 서울과 여러 도시를 탐색 중 입니다.
+                      흔들리는 서울의 골목길 출간, 주택, 도시, 그리고 커뮤니티를
+                      관찰하고 연구하고 있습니다. 오랜만에 마주한, 다소 낯설지만
+                      익숙해지고 있는 서울과 여러 도시를 탐색 중 입니다.
                     </span>
                     <div className="writer__keyword__wrap keyword__inside__wrap">
                       <button className="keyword__item" data-keyword="패션">
@@ -364,8 +378,9 @@ class Main extends Component {
                     <strong className="tit__writer">CYRENE</strong>
                     <span className="team__writer">프리랜서</span>
                     <span className="txt__writer">
-                    여행을 일상처럼, 일상을 여행처럼 살아내는 것을 목표로 하루하루를 살아가는 중이다.
-                    (월: 결혼과 이혼의 풍경 / 수: 박사의 공부법 / 금:한국에서 남자로 사는 것에 대하여)
+                      여행을 일상처럼, 일상을 여행처럼 살아내는 것을 목표로
+                      하루하루를 살아가는 중이다. (월: 결혼과 이혼의 풍경 / 수:
+                      박사의 공부법 / 금:한국에서 남자로 사는 것에 대하여)
                     </span>
                     <div className="writer__keyword__wrap keyword__inside__wrap">
                       <button className="keyword__item" data-keyword="패션">
