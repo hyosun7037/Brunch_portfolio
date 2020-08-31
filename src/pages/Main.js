@@ -16,6 +16,8 @@ import { VIEWTAG_URL } from "config";
 import Tag from "components/Main/Tag";
 import { VIEWPOSTS_URL } from "config";
 import { POSTLIST_URL } from "config";
+import { USER_URL } from "config";
+import WritersInfo from "components/Main/WritersInfo";
 
 // ScreenOut은 해당 섹션을 구분하기 위함. text-indent로 옆으로 다 빼놓음!
 class Main extends Component {
@@ -25,6 +27,7 @@ class Main extends Component {
       dataPost: [],
       dataTag: [],
       dataPostList: [],
+      dataUser: [],
     };
   }
 
@@ -55,6 +58,7 @@ class Main extends Component {
     })
       .then((res) => {
         console.log(localStorage.getItem("Authentication"));
+        console.log(localStorage.getItem("Email"));
         return this.setState({ dataPostList: res.data });
       })
       .catch((res) => console.log(res));
@@ -77,16 +81,26 @@ class Main extends Component {
       .catch((res) => console.log(res));
   };
 
+  userApi = () => {
+    Axios.get(`${USER_URL}`)
+      .then((res) => {
+        return this.setState({ dataUser: res.data });
+      })
+      .catch((res) => console.log(res));
+  };
+
   componentDidMount() {
     this.postsApi();
     this.tagApi();
     this.postListApi();
+    this.userApi();
   }
 
   render() {
     // const { dataPost } = this.state;
     const { dataTag } = this.state;
     const { dataPostList } = this.state;
+    const { dataUser } = this.state;
     return (
       <>
         {/*탑배너영역*/}
@@ -278,87 +292,15 @@ class Main extends Component {
             </div>
             <div className="wrap__writers">
               <ul className="list__writers">
-                <li>
-                  <Link to="/author" className="link__writers">
-                    <img
-                      className="img__brunch thumb__img"
-                      src="//img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/8Ac0/image/RTGd_cBTy0wS41nMywxjLG3bZss.jpg"
-                      alt="이미지"
-                    />
-                    <strong className="tit__writer">스마일펄</strong>
-                    <span className="team__writer">에세이스트</span>
-                    <span className="txt__writer">
-                      사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를
-                      갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에
-                      관한 이야기를 씁니다.
-                    </span>
-                    <div className="writer__keyword__wrap keyword__inside__wrap">
-                      <button className="keyword__item" data-keyword="패션">
-                        패션
-                      </button>
-                      <button className="keyword__item" data-keyword="자기계발">
-                        자기계발
-                      </button>
-                      <button className="keyword__item" data-url="/">
-                        더보기
-                      </button>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/author" className="link__writers">
-                    <img
-                      className="img__brunch thumb__img"
-                      src="https://img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/1c8F/image/dz_jGrbongNv8YXNldFjEVh5fkE.jpg"
-                      alt="이미지"
-                    />
-                    <strong className="tit__writer">꿈꾸는 자본가</strong>
-                    <span className="team__writer">칼럼니스트</span>
-                    <span className="txt__writer">
-                      사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를
-                      갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에
-                      관한 이야기를 씁니다.
-                    </span>
-                    <div className="writer__keyword__wrap keyword__inside__wrap">
-                      <button className="keyword__item" data-keyword="패션">
-                        패션
-                      </button>
-                      <button className="keyword__item" data-keyword="자기계발">
-                        자기계발
-                      </button>
-                      <button className="keyword__item" data-url="/">
-                        더보기
-                      </button>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/author" className="link__writers">
-                    <img
-                      className="img__brunch thumb__img"
-                      src="https://img1.daumcdn.net/thumb/C120x120.fpng/?fname=http://t1.daumcdn.net/brunch/service/user/a8W8/image/Ex2nDrRao4Onhgcu2RvOwVRIVgo.png"
-                      alt="이미지"
-                    />
-                    <strong className="tit__writer">정태현 작가</strong>
-                    <span className="team__writer">출간작가</span>
-                    <span className="txt__writer">
-                      사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를
-                      갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에
-                      관한 이야기를 씁니다.
-                    </span>
-                    <div className="writer__keyword__wrap keyword__inside__wrap">
-                      <button className="keyword__item" data-keyword="패션">
-                        패션
-                      </button>
-                      <button className="keyword__item" data-keyword="자기계발">
-                        자기계발
-                      </button>
-                      <button className="keyword__item" data-url="/">
-                        더보기
-                      </button>
-                    </div>
-                  </Link>
-                </li>
+                {dataUser.map((user) => (
+                  <WritersInfo
+                    key={user.id}
+                    id={user.id}
+                    bio={user.bio}
+                    nickName={user.nickName}
+                    profileImage={user.profileImage}
+                  />
+                ))}
               </ul>
               <ul className="list__writers">
                 <li>

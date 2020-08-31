@@ -1,8 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "styles/nav.css";
 import { ProfileImgURL } from "images/ImgAll";
+import Axios from "axios";
+import { USER_URL } from "config";
 
 const NavContentsMenu = styled.li`
   font-size: 15px;
@@ -84,58 +86,85 @@ const ProfileUrl = styled.p`
   vertical-align: top;
 `;
 
-const NavWriter = () => {
-  const logout = () => {
-    localStorage.removeItem(localStorage.Authentication);
-    console.log(localStorage.Authentication);
-  };
-  return (
-    <div className="nav__Wrap">
-      <div className="nav__Header">
-        <Link to="/profile">
-          <ProfileImg>
-            <ProfileImgURL />
-          </ProfileImg>
-          <ProfileName>써니</ProfileName>
-          <ProfileUrl>brunch.co.kr/@haha7037</ProfileUrl>
-        </Link>
-        <Link to="/write">
-          <RoundSmallBtn>글쓰기</RoundSmallBtn>
-        </Link>
-        {/* <RoundSmallBtn>작가신청</RoundSmallBtn> */}
-      </div>
+// console.log("ProfileInfo :::" + ProfileInfo);
+class NavWriter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataProfileInfo: [],
+    };
+  }
 
-      <div className="nav__Main">
-        <ul className="nav__Contents">
+  ProfileInfoApi = () => {
+    const email = localStorage.getItem("Email"); // 이메일
+    console.log("email :::" + email);
+    Axios.post(`${USER_URL}` + email)
+      .then((res) => {
+        return this.setState({ dataProfileInfo: res.data });
+      })
+      .catch((err) => console.log(err));
+  };
+
+  componentDidMount() {
+    this.ProfileInfoApi();
+  }
+
+  render() {
+    // 로그아웃
+    const logout = () => {
+      localStorage.removeItem("Authentication");
+      localStorage.removeItem("Email");
+    };
+    const { dataProfileInfo } = this.state;
+    console.log("dataProfileInfo :::" + dataProfileInfo);
+    return (
+      <div className="nav__Wrap">
+        <div className="nav__Header">
           <Link to="/profile">
-            <NavContentsMenu>내 브런치</NavContentsMenu>
+            <ProfileImg>
+              <ProfileImgURL />
+            </ProfileImg>
+            <ProfileName>슈필라움</ProfileName>
+            <ProfileUrl>brunch.co.kr/@haha7037</ProfileUrl>
           </Link>
-          <Link to="/ready">
-            <NavContentsMenu>작가의 서랍</NavContentsMenu>
+          <Link to="/write">
+            <RoundSmallBtn>글쓰기</RoundSmallBtn>
           </Link>
-          <NavContentMenuLine /> {/*중간라인, 나중에 수정할 예정*/}
-          <Link to="/">
-            <NavContentsMenu>브런치 홈</NavContentsMenu>
-          </Link>
-          <Link to="/now">
-            <NavContentsMenu>브런치 나우</NavContentsMenu>
-          </Link>
-          <Link to="/library">
-            <NavContentsMenu>글 읽는 서재</NavContentsMenu>
-          </Link>
-          <Link to="/feed">
-            <NavContentsMenu>피드</NavContentsMenu>
-          </Link>
-        </ul>
-        <div className="nav__Footer">
-          <GrayBtn>설정</GrayBtn>
-          <Link to="/login">
-            <GrayBtn onClick={logout}>로그아웃</GrayBtn>
-          </Link>
+          {/* <RoundSmallBtn>작가신청</RoundSmallBtn> */}
+        </div>
+
+        <div className="nav__Main">
+          <ul className="nav__Contents">
+            <Link to="/profile">
+              <NavContentsMenu>내 브런치</NavContentsMenu>
+            </Link>
+            <Link to="/ready">
+              <NavContentsMenu>작가의 서랍</NavContentsMenu>
+            </Link>
+            <NavContentMenuLine /> {/*중간라인, 나중에 수정할 예정*/}
+            <Link to="/">
+              <NavContentsMenu>브런치 홈</NavContentsMenu>
+            </Link>
+            <Link to="/now">
+              <NavContentsMenu>브런치 나우</NavContentsMenu>
+            </Link>
+            <Link to="/library">
+              <NavContentsMenu>글 읽는 서재</NavContentsMenu>
+            </Link>
+            <Link to="/feed">
+              <NavContentsMenu>피드</NavContentsMenu>
+            </Link>
+          </ul>
+          <div className="nav__Footer">
+            {/* <GrayBtn>설정</GrayBtn> */}
+            <Link to="/login">
+              <GrayBtn onClick={logout()}>로그아웃</GrayBtn>
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 export { ProfileName };
 export default NavWriter;

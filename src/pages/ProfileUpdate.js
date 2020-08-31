@@ -27,12 +27,12 @@ const ProfileUpdata = () => {
             <ProfileImgURL />
             <form
               style={{ position: "relative", cursor: "pointer" }}
-              enctype="multipart/form-data"
+              encType="multipart/form-data"
               encoding="multipart/form-data"
               method="post"
             >
               <BtnUpload>
-                <label for="profileImage">이미지 업로드</label>
+                <label>이미지 업로드</label>
                 <input type="file" name="file" accept="image/*" />
               </BtnUpload>
             </form>

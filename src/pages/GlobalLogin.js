@@ -28,7 +28,7 @@ const GlobalLogin = ({ history }) => {
               .then(function (jwtToken) {
                 return jwtToken.text();
               })
-              .then(function (jwtToken, response) {
+              .then(function (jwtToken) {
                 // const email = response.kakao_account.email;
                 // localStorage.setItem("Authentication", "Bearer " + jwtToken);
                 localStorage.setItem("Authentication", jwtToken);

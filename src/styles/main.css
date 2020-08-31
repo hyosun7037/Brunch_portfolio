@@ -299,10 +299,9 @@ header {
   padding: 0 11px;
   vertical-align: top;
   outline: none;
-  border:none;
+  border: none;
   cursor: pointer;
 }
-
 
 .wrap__paging span .img__page {
   height: 12px;
@@ -403,8 +402,8 @@ header {
 }
 
 .keyword__list__grid {
-  width:100%;
-  display:grid;
+  width: 100%;
+  display: grid;
   grid-template-columns: repeat(8, 1fr);
 }
 
@@ -489,8 +488,11 @@ header {
 }
 
 .list__writers {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
+  column-gap: 20px;
+  row-gap: 20px;
 }
 .list__writers:nth-of-type(2) {
   padding-bottom: 100px;
