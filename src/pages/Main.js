@@ -17,7 +17,7 @@ import Tag from "components/Main/Tag";
 import { VIEWPOSTS_URL } from "config";
 import { POSTLIST_URL } from "config";
 import { USER_URL } from "config";
-import WritersInfo from "components/Main/WritersInfo";
+import WritersInfoFirst from "components/Main/WritersInfoFirst";
 
 // ScreenOut은 해당 섹션을 구분하기 위함. text-indent로 옆으로 다 빼놓음!
 class Main extends Component {
@@ -96,11 +96,29 @@ class Main extends Component {
     this.userApi();
   }
 
+  writersBtn1 = () => {
+    const active = { display: "inline-block" };
+    document.addEventListener("click", active);
+    console.log("1번탭 클릭됨!!");
+  };
+
+  writersBtn2 = () => {
+    console.log("2번탭 클릭됨!!");
+  };
+
+  writersBtn3 = () => {
+    console.log("3번탭 클릭됨!!");
+  };
+
   render() {
     // const { dataPost } = this.state;
-    const { dataTag } = this.state;
     const { dataPostList } = this.state;
     const { dataUser } = this.state;
+    const { dataTag } = this.state;
+    const slice1 = dataUser.slice(0, 6);
+    const slice2 = dataUser.slice(7, 13);
+    const slice3 = dataUser.slice(14, 20);
+
     return (
       <>
         {/*탑배너영역*/}
@@ -263,7 +281,6 @@ class Main extends Component {
                   {data.split('\n').map(line => {
                     return (<span>{line}<br/></span>)
                   })} */}
-
                     {dataTag.map((tag) => (
                       <Tag
                         key={tag.id}
@@ -286,14 +303,29 @@ class Main extends Component {
               <span className="txt__brunch">브런치 추천작가</span>
             </p>
             <div className="writer__keyword__wrap">
-              <RoundBtnBigActive>사랑</RoundBtnBigActive>
-              <RoundBtnBig>라이프스타일</RoundBtnBig>
-              <RoundBtnBig>여행</RoundBtnBig>
+              <RoundBtnBigActive
+                onClick={this.writersBtn1}
+                ref1={(ref1) => (this.button = ref1)}
+              >
+                사랑
+              </RoundBtnBigActive>
+              <RoundBtnBig
+                onClick={this.writersBtn2}
+                ref2={(ref2) => (this.button = ref2)}
+              >
+                라이프스타일
+              </RoundBtnBig>
+              <RoundBtnBig
+                onClick={this.writersBtn3}
+                ref3={(ref3) => (this.button = ref3)}
+              >
+                여행
+              </RoundBtnBig>
             </div>
             <div className="wrap__writers">
               <ul className="list__writers">
-                {dataUser.map((user) => (
-                  <WritersInfo
+                {slice1.map((user) => (
+                  <WritersInfoFirst
                     key={user.id}
                     id={user.id}
                     bio={user.bio}
@@ -301,91 +333,6 @@ class Main extends Component {
                     profileImage={user.profileImage}
                   />
                 ))}
-              </ul>
-              <ul className="list__writers">
-                <li>
-                  <Link to="/author" className="link__writers">
-                    <img
-                      className="img__brunch thumb__img"
-                      src="https://img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/7cQm/image/ARnSVQzjCFwYaGfU7WBWCN95S9U.jpg"
-                      alt="이미지"
-                    />
-                    <strong className="tit__writer">도시탐색자</strong>
-                    <span className="team__writer">
-                      도시와커뮤니티연구소 컨설턴트
-                    </span>
-                    <span className="txt__writer">
-                      흔들리는 서울의 골목길 출간, 주택, 도시, 그리고 커뮤니티를
-                      관찰하고 연구하고 있습니다. 오랜만에 마주한, 다소 낯설지만
-                      익숙해지고 있는 서울과 여러 도시를 탐색 중 입니다.
-                    </span>
-                    <div className="writer__keyword__wrap keyword__inside__wrap">
-                      <button className="keyword__item" data-keyword="패션">
-                        패션
-                      </button>
-                      <button className="keyword__item" data-keyword="자기계발">
-                        자기계발
-                      </button>
-                      <button className="keyword__item" data-url="/">
-                        더보기
-                      </button>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/author" className="link__writers">
-                    <img
-                      className="img__brunch thumb__img"
-                      src="https://img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/2TZp/image/lNmc1blYItZbASn44j-er7DkzWs.jpg"
-                      alt="이미지"
-                    />
-                    <strong className="tit__writer">CYRENE</strong>
-                    <span className="team__writer">프리랜서</span>
-                    <span className="txt__writer">
-                      여행을 일상처럼, 일상을 여행처럼 살아내는 것을 목표로
-                      하루하루를 살아가는 중이다. (월: 결혼과 이혼의 풍경 / 수:
-                      박사의 공부법 / 금:한국에서 남자로 사는 것에 대하여)
-                    </span>
-                    <div className="writer__keyword__wrap keyword__inside__wrap">
-                      <button className="keyword__item" data-keyword="패션">
-                        패션
-                      </button>
-                      <button className="keyword__item" data-keyword="자기계발">
-                        자기계발
-                      </button>
-                      <button className="keyword__item" data-url="/">
-                        더보기
-                      </button>
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/author" className="link__writers">
-                    <img
-                      className="img__brunch thumb__img"
-                      src="https://img1.daumcdn.net/thumb/C120x120.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/1YcW/image/w2BgeAPqH9ZjO-jee2wIAs2kKxg.jpg"
-                      alt="이미지"
-                    />
-                    <strong className="tit__writer">하몬</strong>
-                    <span className="team__writer">에세이스트</span>
-                    <span className="txt__writer">
-                      사람 만나기, 독서, 여행에는 돈을 아끼지 말자는 생활 신조를
-                      갖고 있습니다. 행복한 삶, 결혼의 현실, 회사 생활, 책에
-                      관한 이야기를 씁니다.
-                    </span>
-                    <div className="writer__keyword__wrap keyword__inside__wrap">
-                      <button className="keyword__item" data-keyword="패션">
-                        패션
-                      </button>
-                      <button className="keyword__item" data-keyword="자기계발">
-                        자기계발
-                      </button>
-                      <button className="keyword__item" data-url="/">
-                        더보기
-                      </button>
-                    </div>
-                  </Link>
-                </li>
               </ul>
             </div>
           </div>

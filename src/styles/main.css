@@ -439,6 +439,7 @@ header {
   margin: 150px auto;
   padding-top: 100px;
   background: #fafafa;
+  padding-bottom: 100px;
 }
 
 /* 브런치 추천 작가 타이틀 */
@@ -484,11 +485,14 @@ header {
 
 .wrap__writers {
   width: 1000px;
+
   margin: 50px auto 85px;
 }
 
 .list__writers {
   display: grid;
+  /* height: 800px; */
+  /* overflow: hidden; */
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
   column-gap: 20px;

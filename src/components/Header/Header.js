@@ -65,7 +65,7 @@ const Header = ({
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
   let loggedIn = localStorage.Authentication;
-  console.log("loggedIn ::: " + loggedIn);
+  // console.log("loggedIn ::: " + loggedIn);
 
   // 클릭하면 실행 (메뉴 열림)
   const ClickIn = (ref) => {
@@ -109,9 +109,7 @@ const Header = ({
           {/* <button onClick={getToken}>로그인테스트</button> */}
         </div>
       </ServiceHeader>
-      {/* {token === "" ? <NavNonmember /> : <NavWriter />} */}
-      {/* {token === "" ? <NavWriter /> : <NavNonmember />} */}
-      {/* {loggedIn === undefined ? <NavNonmember /> : <NavWriter/>} */}
+      {/* 이중 삼항 연산자 때문에 로그아웃 구현이 안됨 오류 해결하기! */}
       {loggedIn === undefined ? (
         visible ? (
           <NavNonmember />
@@ -123,6 +121,8 @@ const Header = ({
       ) : (
         <></>
       )}
+
+      {/* {loggedIn === undefined ? <NavNonmember /> : <NavWriter />} */}
       {/* {loggedIn === undefined ? <div>토큰 빈 값</div> : <div>토큰 들어감</div>} */}
       {/* {visible && <NavWriter/>} */}
       {/* {visible && <NavNonmember />} */}

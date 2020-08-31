@@ -107,14 +107,18 @@ class NavWriter extends Component {
 
   componentDidMount() {
     this.ProfileInfoApi();
+    // this.logout();
   }
 
+  logout = async () => {
+    const clear = localStorage.clear();
+    await clear();
+    // await console.log("로그아웃 됨");
+    // localStorage.removeItem("Authentication");
+    // localStorage.removeItem("Email");
+  };
+
   render() {
-    // 로그아웃
-    const logout = () => {
-      localStorage.removeItem("Authentication");
-      localStorage.removeItem("Email");
-    };
     const { dataProfileInfo } = this.state;
     console.log("dataProfileInfo :::" + dataProfileInfo);
     return (
@@ -158,7 +162,7 @@ class NavWriter extends Component {
           <div className="nav__Footer">
             {/* <GrayBtn>설정</GrayBtn> */}
             <Link to="/login">
-              <GrayBtn onClick={logout()}>로그아웃</GrayBtn>
+              <GrayBtn onClick={this.logout}>로그아웃</GrayBtn>
             </Link>
           </div>
         </div>

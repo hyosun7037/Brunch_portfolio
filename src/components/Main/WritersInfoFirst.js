@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const WritersInfo = ({ bio, nickName, profileImage }) => {
+const WritersInfoFirst = ({ bio, nickName, profileImage }) => {
   return (
-    <div>
+    <div style={{ display: "inline-block" }}>
       <li>
         <Link to="/author" className="link__writers">
           <img
@@ -31,4 +31,4 @@ const WritersInfo = ({ bio, nickName, profileImage }) => {
   );
 };
 
-export default WritersInfo;
+export default WritersInfoFirst;
