@@ -11,13 +11,14 @@ import {
   ScreenOut,
 } from "styles/StyledComponentAll";
 import Axios from "axios";
-import EditorPic from "components/Main/EditorPic";
+import EditorPic, { EditorPic2, EditorPic1 } from "components/Main/EditorPic";
 import { VIEWTAG_URL } from "config";
 import Tag from "components/Main/Tag";
-import { VIEWPOSTS_URL } from "config";
+// import { VIEWPOSTS_URL } from "config";
 import { POSTLIST_URL } from "config";
 import { USER_URL } from "config";
 import WritersInfoFirst from "components/Main/WritersInfoFirst";
+import Slider from "react-slick";
 
 // ScreenOut은 해당 섹션을 구분하기 위함. text-indent로 옆으로 다 빼놓음!
 class Main extends Component {
@@ -30,24 +31,6 @@ class Main extends Component {
       dataUser: [],
     };
   }
-
-  // postlist data - get
-  // postListApi = () => {
-  //   Axios.get(`${POSTLIST_URL}`)
-  //     .then((res) => {
-  //       return this.setState({ dataPostList: res.data });
-  //     })
-  //     .catch((res) => console.log(res));
-  // };
-
-  // postlist data - get
-  // postListApi = () => {
-  //   Axios.get(`${POSTLIST_URL}`)
-  //     .then((res) => {
-  //       return this.setState({ dataPostList: res.data });
-  //     })
-  //     .catch((res) => console.log(res));
-  // };
 
   // postlist data - get
   postListApi = () => {
@@ -64,13 +47,13 @@ class Main extends Component {
       .catch((res) => console.log(res));
   };
   // post data
-  postsApi = () => {
-    Axios.get(`${VIEWPOSTS_URL}`)
-      .then((res) => {
-        return this.setState({ dataPost: res.data });
-      })
-      .catch((res) => console.log(res));
-  };
+  // postsApi = () => {
+  //   Axios.get(`${VIEWPOSTS_URL}`)
+  //     .then((res) => {
+  //       return this.setState({ dataPost: res.data });
+  //     })
+  //     .catch((res) => console.log(res));
+  // };
 
   // tag data
   tagApi = () => {
@@ -90,7 +73,7 @@ class Main extends Component {
   };
 
   componentDidMount() {
-    this.postsApi();
+    // this.postsApi();
     this.tagApi();
     this.postListApi();
     this.userApi();
@@ -115,10 +98,14 @@ class Main extends Component {
     const { dataPostList } = this.state;
     const { dataUser } = this.state;
     const { dataTag } = this.state;
+
+    const slicePostList1 = dataPostList.slice(0,6);
+    const slicePostList2 = dataPostList.slice(7,13);
+
     const slice1 = dataUser.slice(0, 6);
     const slice2 = dataUser.slice(7, 13);
     const slice3 = dataUser.slice(14, 20);
-
+    
     return (
       <>
         {/*탑배너영역*/}
@@ -162,13 +149,24 @@ class Main extends Component {
                     <EditorPic
                       key={post.id}
                       id={post.id}
+                      coverImg={post.coverImg}
                       nickName={post.nickName}
                       title={post.title}
                       subTitle={post.subTitle}
                       content={post.content}
-                      // postType={post.postType}
                     />
                   ))}
+                {/* {slicePostList2.map((post) => (
+                    <EditorPic2
+                      key={post.id}
+                      id={post.id}
+                      coverImg={post.coverImg}
+                      nickName={post.nickName}
+                      title={post.title}
+                      subTitle={post.subTitle}
+                      content={post.content}
+                    />
+                  ))} */}
                   {/* <li>
                     <div className="wrap__pic wrap__pic2">
                       <div className="item__pic item__pic__type1">

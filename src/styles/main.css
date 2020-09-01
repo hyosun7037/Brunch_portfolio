@@ -145,6 +145,7 @@ header {
 
 .wrap__slide {
   width: 960px;
+  /* width:500px; */
   height: 520px;
   margin: 0 auto;
   justify-content: center;
@@ -163,7 +164,7 @@ header {
   position: relative;
 }
 .item__pic__type1 {
-  width: 50%;
+  /* width: 50%; */
   height: 520px;
   background: #00c6bd;
 }
@@ -190,9 +191,10 @@ header {
 }
 
 .wrap__pic {
-  width: 960px;
+  /* width: 960px; */
+  width:550px;
   overflow: hidden;
-  display: flex;
+  /* display: flex;  */
   flex-wrap: wrap;
 }
 

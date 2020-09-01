@@ -16,7 +16,7 @@ const GlobalLogin = ({ history }) => {
             console.log("이메일 : ", response.kakao_account.email);
             console.log("id : ", response.id);
             const email = response.kakao_account.email;
-            fetch("http://192.168.0.101:8080/brunch/oauth/jwt/kakao", {
+            fetch("http://localhost:8080/brunch/oauth/jwt/kakao", {
               method: "post",
               headers: {
                 "Content-Type": "application/json; charset=utf-8",

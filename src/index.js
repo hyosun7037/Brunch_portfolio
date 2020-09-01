@@ -8,6 +8,8 @@ import rootReducer from "modules";
 import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { createStore } from "redux";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const store = createStore(rootReducer, composeWithDevTools());
 
