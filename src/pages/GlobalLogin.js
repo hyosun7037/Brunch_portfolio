@@ -16,11 +16,11 @@ const GlobalLogin = ({ history }) => {
             console.log("이메일 : ", response.kakao_account.email);
             console.log("id : ", response.id);
             const email = response.kakao_account.email;
-            fetch("http://localhost:8080/brunch/oauth/jwt/kakao", {
+            fetch("http://192.168.0.101:8080/brunch/oauth/jwt/kakao", {
               method: "post",
               headers: {
                 "Content-Type": "application/json; charset=utf-8",
-                // "Authorization":"Bearer "+ authObj.access_token
+                // "Authorization":"Bearer"+ authObj.access_token
               },
               body: JSON.stringify(response),
               dataType: "text/plain",
@@ -31,7 +31,7 @@ const GlobalLogin = ({ history }) => {
               .then(function (jwtToken) {
                 // const email = response.kakao_account.email;
                 // localStorage.setItem("Authentication", "Bearer " + jwtToken);
-                localStorage.setItem("Authentication", jwtToken);
+                localStorage.setItem("Authentication", "Bearer " + jwtToken);
                 localStorage.setItem("Email", email);
                 alert("작가님 환영합니다!");
                 history.push("/");

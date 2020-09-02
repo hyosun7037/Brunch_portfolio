@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "styles/nav.css";
-import { ProfileImgURL } from "images/ImgAll";
+// import { ProfileImgURL } from "images/ImgAll";
 import Axios from "axios";
 import { USER_URL } from "config";
+import { USERPROFILE_URL } from "config";
 
 const NavContentsMenu = styled.li`
   font-size: 15px;
@@ -76,14 +77,21 @@ const ProfileName = styled.strong`
   vertical-align: bottom;
 `;
 
-const ProfileUrl = styled.p`
-  text-align: center;
-  font-size: 12px;
-  color: #959595;
-  font-family: Georgia;
-  font-style: italic;
-  white-space: nowrap;
-  vertical-align: top;
+// const ProfileUrl = styled.p`
+//   text-align: center;
+//   font-size: 12px;
+//   color: #959595;
+//   font-family: Georgia;
+//   font-style: italic;
+//   white-space: nowrap;
+//   vertical-align: top;
+// `;
+
+const ProfileImgURL = styled.img`
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  float: right;
 `;
 
 // console.log("ProfileInfo :::" + ProfileInfo);
@@ -96,13 +104,16 @@ class NavWriter extends Component {
   }
 
   ProfileInfoApi = () => {
-    const email = localStorage.getItem("Email"); // 이메일
-    console.log("email :::" + email);
-    Axios.post(`${USER_URL}` + email)
+    Axios.get(`${USERPROFILE_URL}`, {
+      headers: {
+        Authorization: localStorage.getItem("Authentication"),
+      },
+    })
       .then((res) => {
+        console.log(localStorage.getItem("Authentication"));
         return this.setState({ dataProfileInfo: res.data });
       })
-      .catch((err) => console.log(err));
+      .catch((res) => console.log(res));
   };
 
   componentDidMount() {
@@ -120,16 +131,18 @@ class NavWriter extends Component {
 
   render() {
     const { dataProfileInfo } = this.state;
-    console.log("dataProfileInfo :::" + dataProfileInfo);
+    const profileImageText = dataProfileInfo.profileImage;
+    const profileNameText = dataProfileInfo.nickName;
+    // console.log(replaceText.replace(/\"/g, ""));
     return (
       <div className="nav__Wrap">
         <div className="nav__Header">
           <Link to="/profile">
             <ProfileImg>
-              <ProfileImgURL />
+              <ProfileImgURL src={profileImageText}></ProfileImgURL>
             </ProfileImg>
-            <ProfileName>슈필라움</ProfileName>
-            <ProfileUrl>brunch.co.kr/@haha7037</ProfileUrl>
+            <ProfileName>{profileNameText}</ProfileName>
+            <br></br>
           </Link>
           <Link to="/write">
             <RoundSmallBtn>글쓰기</RoundSmallBtn>

@@ -18,7 +18,8 @@ import Tag from "components/Main/Tag";
 import { POSTLIST_URL } from "config";
 import { USER_URL } from "config";
 import WritersInfoFirst from "components/Main/WritersInfoFirst";
-import Slider from "react-slick";
+import { current } from "immer";
+// import Slider from "react-slick";
 
 // ScreenOut은 해당 섹션을 구분하기 위함. text-indent로 옆으로 다 빼놓음!
 class Main extends Component {
@@ -29,8 +30,23 @@ class Main extends Component {
       dataTag: [],
       dataPostList: [],
       dataUser: [],
+      left: 0,
     };
   }
+
+  // dom.style.left -= 400
+
+  nextClick = () => {
+    // this.next.setAttribute("style", "left:-400px");
+    this.next.setAttribute("style", `left:${(this.next.style.left -= 400)}px`);
+    console.log(this.next);
+    console.log(this.next.style.left);
+    console.log((this.next.style.left -= 400));
+  };
+
+  prevClick = () => {
+    this.next.setAttribute("style", `left:${(this.next.style.left += 400)}px`);
+  };
 
   // postlist data - get
   postListApi = () => {
@@ -99,13 +115,13 @@ class Main extends Component {
     const { dataUser } = this.state;
     const { dataTag } = this.state;
 
-    const slicePostList1 = dataPostList.slice(0,6);
-    const slicePostList2 = dataPostList.slice(7,13);
+    const slicePostList1 = dataPostList.slice(0, 6);
+    const slicePostList2 = dataPostList.slice(7, 13);
 
     const slice1 = dataUser.slice(0, 6);
     const slice2 = dataUser.slice(7, 13);
     const slice3 = dataUser.slice(14, 20);
-    
+
     return (
       <>
         {/*탑배너영역*/}
@@ -144,7 +160,7 @@ class Main extends Component {
             <ScreenOut>에디터픽</ScreenOut>
             <div className="editor__pic">
               <div className="wrap__slide">
-                <ul className="list__slide">
+                <ul className="list__slide" ref={(ref) => (this.next = ref)}>
                   {dataPostList.map((post) => (
                     <EditorPic
                       key={post.id}
@@ -156,7 +172,7 @@ class Main extends Component {
                       content={post.content}
                     />
                   ))}
-                {/* {slicePostList2.map((post) => (
+                  {/* {slicePostList2.map((post) => (
                     <EditorPic2
                       key={post.id}
                       id={post.id}
@@ -218,14 +234,16 @@ class Main extends Component {
               </div>
               <div className="wrap__btn">
                 <Link
-                  to="/detail"
+                  to=""
                   className="btn__scroll btn__brunch btn__prev"
+                  onClick={this.prevClick}
                 >
                   <span className="ico__brunch">이전 에디터 보기</span>
                 </Link>
                 <Link
-                  to="/detail"
+                  to=""
                   className="btn__scroll btn__brunch btn__next"
+                  onClick={this.nextClick}
                 >
                   <span className="ico__brunch">다음 에디터 보기</span>
                 </Link>
