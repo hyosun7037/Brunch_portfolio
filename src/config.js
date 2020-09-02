@@ -7,8 +7,7 @@ export const POSTLIST_URL = "http://192.168.0.101:8080/brunch/postlist";
 
 export const USER_URL = "http://192.168.0.101:8080/brunch/user/";
 
-export const USERPROFILE_URL =
-  "http://192.168.0.101:8080/brunch/user/mainprofile";
+export const USERPROFILE_URL = "http://192.168.0.101:8080/brunch/user/profile";
 
 export const VIEWPOSTS_URL = "http://192.168.0.101:8080/brunch/posts";
 

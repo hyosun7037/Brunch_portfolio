@@ -17,7 +17,8 @@ import {
 } from "styles/StyledComponentAll";
 import { ProfileImgURL } from "images/ImgAll";
 
-const ProfileUpdata = () => {
+const ProfileUpdata = ({ dataProfileInfo }) => {
+  console.log(dataProfileInfo);
   return (
     <>
       <Header position="fixed" title="프로필 편집"></Header>

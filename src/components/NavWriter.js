@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "styles/nav.css";
 // import { ProfileImgURL } from "images/ImgAll";
 import Axios from "axios";
-import { USER_URL } from "config";
 import { USERPROFILE_URL } from "config";
 
 const NavContentsMenu = styled.li`
@@ -77,16 +76,6 @@ const ProfileName = styled.strong`
   vertical-align: bottom;
 `;
 
-// const ProfileUrl = styled.p`
-//   text-align: center;
-//   font-size: 12px;
-//   color: #959595;
-//   font-family: Georgia;
-//   font-style: italic;
-//   white-space: nowrap;
-//   vertical-align: top;
-// `;
-
 const ProfileImgURL = styled.img`
   border-radius: 50%;
   width: 60px;
@@ -133,7 +122,6 @@ class NavWriter extends Component {
     const { dataProfileInfo } = this.state;
     const profileImageText = dataProfileInfo.profileImage;
     const profileNameText = dataProfileInfo.nickName;
-    // console.log(replaceText.replace(/\"/g, ""));
     return (
       <div className="nav__Wrap">
         <div className="nav__Header">
@@ -183,5 +171,6 @@ class NavWriter extends Component {
     );
   }
 }
+
 export { ProfileName };
 export default NavWriter;
