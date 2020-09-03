@@ -192,7 +192,7 @@ class Main extends Component {
             <div className="editor__pic">
               <div className="wrap__slide">
                 <ul className="list__slide" ref={(ref) => (this.next = ref)}>
-                  {dataPostList.map((post) => (
+                  {slicePostList1.map((post) => (
                     <EditorPic
                       key={post.id}
                       id={post.id}
@@ -325,12 +325,7 @@ class Main extends Component {
               <div className="keyword__list__wrap">
                 <div className="keyword__list">
                   <div className="keyword__list__grid">
-                    {/* DB <br> 파싱 - 좀더 생각해보기 */}
-                    {/* {data.replace('\n', '<br>')}
-                  {data.split('\n').map(line => {
-                    return (<span>{line}<br/></span>)
-                  })} */}
-                    {dataTag.map((tag) => (
+                    {/* {dataTag.map((tag) => (
                       <Tag
                         key={tag.id}
                         id={tag.id}
@@ -338,7 +333,8 @@ class Main extends Component {
                         tag={tag.tag}
                         userId={tag.userId}
                       />
-                    ))}
+                    ))} */}
+                    <Tag />
                   </div>
                 </div>
               </div>

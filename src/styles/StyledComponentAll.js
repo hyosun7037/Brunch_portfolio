@@ -246,7 +246,8 @@ const IcoBy = styled.span`
   height: 13px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
-  color: ${(props) => props.IcoByColor || "rgba(255, 255, 255, 0.5)"};
+  color: ${(props) => props.IcoByColor || "#999"};
+  /* color: ${(props) => props.IcoByColor || "rgba(255, 255, 255, 0.2)"}; */
   font-size: 12px;
   padding-right: 3px;
   margin-right: 3px;

@@ -49,6 +49,7 @@ class ProfileUpdata extends Component {
     const profileImageText = dataProfileInfo.profileImage;
     const profileNameText = dataProfileInfo.nickName;
     const profileBio = dataProfileInfo.bio;
+    console.log("bio" + profileBio);
     return (
       <>
         <Header position="fixed" title="프로필 편집"></Header>

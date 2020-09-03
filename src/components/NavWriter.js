@@ -121,6 +121,7 @@ class NavWriter extends Component {
     const { dataProfileInfo } = this.state;
     const profileImageText = dataProfileInfo.profileImage;
     const profileNameText = dataProfileInfo.nickName;
+    console.log(dataProfileInfo);
     return (
       <div className="nav__Wrap">
         <div className="nav__Header">

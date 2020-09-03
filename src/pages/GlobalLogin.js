@@ -23,7 +23,6 @@ const GlobalLogin = ({ history }) => {
                 // "Authorization":"Bearer"+ authObj.access_token
               },
               body: JSON.stringify(response),
-              dataType: "text/plain",
             })
               .then(function (jwtToken) {
                 return jwtToken.text();
@@ -35,7 +34,6 @@ const GlobalLogin = ({ history }) => {
                 localStorage.setItem("Email", email);
                 alert("작가님 환영합니다!");
                 history.push("/");
-                console.log(jwtToken);
               });
           },
           fail: function (error) {

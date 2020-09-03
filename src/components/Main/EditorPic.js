@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 // import Slider from "react-slick";
 
 const EditorPic = ({ title, nickName, coverImg }) => {
+  let codes = `${title}`;
   console.log(title);
   console.log(nickName);
   console.log(coverImg);
@@ -23,7 +24,10 @@ const EditorPic = ({ title, nickName, coverImg }) => {
             />
             <div className="append__info">
               <div className="info__g">
-                <strong className="tit__pic">{title}</strong>
+                <strong
+                  className="tit__pic"
+                  dangerouslySetInnerHTML={{ __html: codes }}
+                ></strong>
                 <span className="info__by">
                   <span className="ico__by">by</span>
                   {nickName}
