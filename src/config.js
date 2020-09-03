@@ -12,3 +12,5 @@ export const USERPROFILE_URL = "http://192.168.0.101:8080/brunch/user/profile";
 export const VIEWPOSTS_URL = "http://192.168.0.101:8080/brunch/posts";
 
 export const VIEWTAG_URL = "http://192.168.0.101:8080/brunch/tags";
+
+export const DRAWER_URL = "http://192.168.0.101:8080/brunch/writer";

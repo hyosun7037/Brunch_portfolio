@@ -1,68 +1,72 @@
 // 작가의 서랍 페이지
-import React, { Component } from 'react';
-import Header from 'components/Header/Header';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import AuthrorWriting from 'components/authorContents/AuthrorWriting';
-import { Wrapper, DrawerBtn } from 'styles/StyledComponentAll';
-import { POSTS_URL } from 'config';
-import { DrawerBanner } from 'images/ImgAll';
+import React, { Component } from "react";
+import Header from "components/Header/Header";
+import { Link } from "react-router-dom";
+import AuthrorWriting from "components/authorContents/AuthrorWriting";
+import { Wrapper } from "styles/StyledComponentAll";
+import { DrawerBanner } from "images/ImgAll";
+import Axios from "axios";
+import { DRAWER_URL } from "config";
 
-// 활성화 되면 스타일 적용
-const active = {
-    color:'#00c3bd',
-    borderBottom:'2px solid #00c3bc',
-    marginTop:'2px'
-}
+class AuthorDrawer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      writerList: [],
+    };
+  }
 
-class AuthorDrawer extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            data:[]
-        }
-    }
+  drawerURL = () => {
+    Axios.get(`${DRAWER_URL}`, {
+      headers: {
+        Authorization: localStorage.getItem("Authentication"),
+      },
+    })
+      .then((res) => {
+        console.log(localStorage.getItem("Authentication"));
+        return this.setState({ writerList: res.data });
+      })
+      .catch((res) => console.log(res));
+  };
 
-    getApi = () => { axios.get(`${POSTS_URL}`) 
-    .then(res => {return this.setState({ data: res.data }) }) 
-    .catch(res => console.log(res)) }
+  componentDidMount() {
+    this.drawerURL();
+  }
 
-    componentDidMount(){
-        this.getApi();
-    }
-    render(){
-        const {data} = this.state;
-      return(
-        <div>
+  render() {
+    const { writerList } = this.state;
+    console.log(writerList);
+    return (
+      <div>
         <Header searchDisplay="none" />
-
-        {/* 작가의 서랍 메뉴 */}
-        <Wrapper style={{textAlign:'center'}}>
-            <DrawerBtn style={active}>저장글</DrawerBtn>
-            <DrawerBtn>발행취소글</DrawerBtn>
-        </Wrapper>
-
         {/* 작가의 서랍 배너 */}
         <Wrapper>
-            <Link to="/" style={{display:'block', marginTop:'50px', borderBottom:'1px solid #eee'}}>
-                <DrawerBanner />
-            </Link> 
+          <Link
+            to="/"
+            style={{
+              display: "block",
+              marginTop: "50px",
+              borderBottom: "1px solid #eee",
+            }}
+          >
+            <DrawerBanner />
+          </Link>
         </Wrapper>
         {/* 목록뿌리기 */}
-        {data.map(post =>(
-            <AuthrorWriting
-                key={post.id}
-                userId={post.userId}
-                id={post.id}
-                title={post.title}
-                subTitle={post.subTitle} 
-                postType={post.postType}
-                content={post.content}
-             />
+        {writerList.map((writer) => (
+          <AuthrorWriting
+            key={writer.id}
+            id={writer.id}
+            userId={writer.userId}
+            title={writer.title}
+            subTitle={writer.subTitle}
+            content={writer.content}
+            createDate={writer.createDate}
+            coverImg={writer.coverImg}
+          />
         ))}
-        
-    </div>
-      );
-}
+      </div>
+    );
+  }
 }
 export default AuthorDrawer;

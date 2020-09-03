@@ -12,27 +12,27 @@ const EditorPic = ({ title, nickName, coverImg }) => {
 
   return (
     <li>
-        <div className="wrap__pic wrap__pic1">
-          <div className="item__pic item__pic__type1">
-            <Link to="/detail">
-              <img
-                src={coverImg}
-                width="100%"
-                height="100%"
-                alt="에디터 픽 사진1"
-              />
-              <div className="append__info">
-                <div className="info__g">
-                  <strong className="tit__pic">{title}</strong>
-                  <span className="info__by">
-                    <span className="ico__by">by</span>
-                    {nickName}
-                  </span>
-                </div>
+      <div className="wrap__pic wrap__pic1">
+        <div className="item__pic item__pic__type1">
+          <Link to="/detail">
+            <img
+              src={coverImg}
+              width="100%"
+              height="100%"
+              alt="에디터 픽 사진1"
+            />
+            <div className="append__info">
+              <div className="info__g">
+                <strong className="tit__pic">{title}</strong>
+                <span className="info__by">
+                  <span className="ico__by">by</span>
+                  {nickName}
+                </span>
               </div>
-            </Link>
-          </div>
-          {/* <div className="item__pic item__pic__type2__3">
+            </div>
+          </Link>
+        </div>
+        {/* <div className="item__pic item__pic__type2__3">
             <div className="item__pic item__pic__type2">
               <Link to="/detail">
                 <img
@@ -76,18 +76,17 @@ const EditorPic = ({ title, nickName, coverImg }) => {
               <div className="mask"></div>
             </div>
           </div> */}
-        </div>
+      </div>
     </li>
   );
 };
 
 EditorPic.prototype = {
   id: PropTypes.number.isRequired,
-  // userId: PropTypes.string.isRequired,
+  userId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   nickName: PropTypes.string.isRequired,
   subTitle: PropTypes.string.isRequired,
   content: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 export default EditorPic;
-

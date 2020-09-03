@@ -18,8 +18,7 @@ import Tag from "components/Main/Tag";
 import { POSTLIST_URL } from "config";
 import { USER_URL } from "config";
 import WritersInfoFirst from "components/Main/WritersInfoFirst";
-import { current } from "immer";
-// import Slider from "react-slick";
+import Recommend from "components/Main/Recommend";
 
 // ScreenOut은 해당 섹션을 구분하기 위함. text-indent로 옆으로 다 빼놓음!
 class Main extends Component {
@@ -30,22 +29,54 @@ class Main extends Component {
       dataTag: [],
       dataPostList: [],
       dataUser: [],
-      left: 0,
     };
   }
-
-  // dom.style.left -= 400
-
   nextClick = () => {
-    // this.next.setAttribute("style", "left:-400px");
-    this.next.setAttribute("style", `left:${(this.next.style.left -= 400)}px`);
-    console.log(this.next);
-    console.log(this.next.style.left);
-    console.log((this.next.style.left -= 400));
+    this.next.setAttribute("style", [
+      `left: ${(this.next.style.left -= 400)}px;transition:transform .3s ease-in-out`,
+    ]);
   };
 
   prevClick = () => {
-    this.next.setAttribute("style", `left:${(this.next.style.left += 400)}px`);
+    this.next.setAttribute("style", [
+      `left: ${(this.next.style.left += 400)}px;transition:transform .3s ease-in-out`,
+    ]);
+  };
+
+  one = () => {
+    this.next.setAttribute("style", [
+      `left: ${(this.next.style.left = NaN)}px;transition:transform .3s ease-in-out`,
+    ]);
+  };
+
+  two = () => {
+    this.next.setAttribute("style", [
+      `left: ${(this.next.style.left -= 400)}px;transition:transform .3s ease-in-out`,
+    ]);
+  };
+
+  three = () => {
+    this.next.setAttribute("style", [
+      `left: ${(this.next.style.left -= 800)}px;transition:transform .3s ease-in-out`,
+    ]);
+  };
+
+  four = () => {
+    this.next.setAttribute("style", [
+      `left: ${(this.next.style.left -= 1200)}px;transition:transform .3s ease-in-out`,
+    ]);
+  };
+
+  five = () => {
+    this.next.setAttribute("style", [
+      `left: ${(this.next.style.left -= 1600)}px;transition:transform .3s ease-in-out`,
+    ]);
+  };
+
+  numBtn = () => {
+    const num = document.querySelector(".img__page");
+    console.log("num 클래스 선택" + num);
+    num.setAttribute("style", `background-position-y: -10px`);
   };
 
   // postlist data - get
@@ -249,21 +280,23 @@ class Main extends Component {
                 </Link>
               </div>
               <div className="wrap__paging">
-                <span className="link__page">
-                  <ScreenOut>현재페이지</ScreenOut>
-                  <span className="img__page txt__page1">01</span>
-                </span>
+                <button className="link__page" onClick={this.one}>
+                  <span className="link__page">
+                    <ScreenOut>현재페이지</ScreenOut>
+                    <span className="img__page txt__page1">01</span>
+                  </span>
+                </button>
                 {/*현재 활성화 페이지*/}
-                <button className="link__page">
+                <button className="link__page" onClick={this.two}>
                   <span className="img__page txt__page2">02</span>
                 </button>
-                <button className="link__page">
+                <button className="link__page" onClick={this.three}>
                   <span className="img__page txt__page3">03</span>
                 </button>
-                <button className="link__page">
+                <button className="link__page" onClick={this.four}>
                   <span className="img__page txt__page4">04</span>
                 </button>
-                <button className="link__page">
+                <button className="link__page" onClick={this.five}>
                   <span className="img__page txt__page5">05</span>
                 </button>
                 <button className="link__page">
@@ -323,19 +356,13 @@ class Main extends Component {
                 onClick={this.writersBtn1}
                 ref1={(ref1) => (this.button = ref1)}
               >
-                사랑
+                인기작가
               </RoundBtnBigActive>
               <RoundBtnBig
                 onClick={this.writersBtn2}
                 ref2={(ref2) => (this.button = ref2)}
               >
-                라이프스타일
-              </RoundBtnBig>
-              <RoundBtnBig
-                onClick={this.writersBtn3}
-                ref3={(ref3) => (this.button = ref3)}
-              >
-                여행
+                추천작가
               </RoundBtnBig>
             </div>
             <div className="wrap__writers">
@@ -370,213 +397,17 @@ class Main extends Component {
             </p>
             <div className="wrap__slide">
               <ul className="list__slide">
-                <li>
-                  <Link to="/detail" className="link__slide">
-                    <div className="img__articles">
-                      <img
-                        src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
-                        alt="이미지"
-                      ></img>
-                    </div>
-                    <strong className="tit__subject">
-                      한국에서 멀어졌더니 생긴 변화
-                    </strong>
-                    <p className="desc__subject">
-                      어쩌다 보니 한국에서 떨어져 산지 1년 3개월. 지난해 2월쯤만
-                      해도 싱가포르라는 나라에 대해 아무런 정보가 없었는데 1년
-                      넘게 살다 보니 여기만큼 좋은 곳이 없더라. 싱가포르라는
-                      나라가 살기 좋은 것도 있지만 한국에서 멀어짐으로써 오는
-                      긍정적인 변화가 많았다는 게 더 솔직할 것 같다. 해외생활에
-                      대한 환상을 오롯이 극대화시켜줄 수 있는 지극히 주관적인{" "}
-                    </p>
-                    <span className="info__by">
-                      <span className="ico__by">by</span>
-                      써니
-                    </span>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/detail" className="link__slide">
-                    <div className="img__articles">
-                      <img
-                        src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
-                        alt="이미지"
-                      ></img>
-                    </div>
-                    <strong className="tit__subject">
-                      한국에서 멀어졌더니 생긴 변화
-                    </strong>
-                    <p className="desc__subject">
-                      어쩌다 보니 한국에서 떨어져 산지 1년 3개월. 지난해 2월쯤만
-                      해도 싱가포르라는 나라에 대해 아무런 정보가 없었는데 1년
-                      넘게 살다 보니 여기만큼 좋은 곳이 없더라. 싱가포르라는
-                      나라가 살기 좋은 것도 있지만 한국에서 멀어짐으로써 오는
-                      긍정적인 변화가 많았다는 게 더 솔직할 것 같다. 해외생활에
-                      대한 환상을 오롯이 극대화시켜줄 수 있는 지극히 주관적인{" "}
-                    </p>
-                    <span className="info__by">
-                      <span className="ico__by">by</span>
-                      써니
-                    </span>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/detail" className="link__slide">
-                    <div className="img__articles">
-                      <img
-                        src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
-                        alt="이미지"
-                      ></img>
-                    </div>
-                    <strong className="tit__subject">
-                      한국에서 멀어졌더니 생긴 변화
-                    </strong>
-                    <p className="desc__subject">
-                      어쩌다 보니 한국에서 떨어져 산지 1년 3개월. 지난해 2월쯤만
-                      해도 싱가포르라는 나라에 대해 아무런 정보가 없었는데 1년
-                      넘게 살다 보니 여기만큼 좋은 곳이 없더라. 싱가포르라는
-                      나라가 살기 좋은 것도 있지만 한국에서 멀어짐으로써 오는
-                      긍정적인 변화가 많았다는 게 더 솔직할 것 같다. 해외생활에
-                      대한 환상을 오롯이 극대화시켜줄 수 있는 지극히 주관적인{" "}
-                    </p>
-                    <span className="info__by">
-                      <span className="ico__by">by</span>
-                      써니
-                    </span>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/detail" className="link__slide">
-                    <div className="img__articles">
-                      <img
-                        src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
-                        alt="이미지"
-                      ></img>
-                    </div>
-                    <strong className="tit__subject">
-                      한국에서 멀어졌더니 생긴 변화
-                    </strong>
-                    <p className="desc__subject">
-                      어쩌다 보니 한국에서 떨어져 산지 1년 3개월. 지난해 2월쯤만
-                      해도 싱가포르라는 나라에 대해 아무런 정보가 없었는데 1년
-                      넘게 살다 보니 여기만큼 좋은 곳이 없더라. 싱가포르라는
-                      나라가 살기 좋은 것도 있지만 한국에서 멀어짐으로써 오는
-                      긍정적인 변화가 많았다는 게 더 솔직할 것 같다. 해외생활에
-                      대한 환상을 오롯이 극대화시켜줄 수 있는 지극히 주관적인{" "}
-                    </p>
-                    <span className="info__by">
-                      <span className="ico__by">by</span>
-                      써니
-                    </span>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/detail" className="link__slide">
-                    <div className="img__articles">
-                      <img
-                        src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
-                        alt="이미지"
-                      ></img>
-                    </div>
-                    <strong className="tit__subject">
-                      한국에서 멀어졌더니 생긴 변화
-                    </strong>
-                    <p className="desc__subject">
-                      어쩌다 보니 한국에서 떨어져 산지 1년 3개월. 지난해 2월쯤만
-                      해도 싱가포르라는 나라에 대해 아무런 정보가 없었는데 1년
-                      넘게 살다 보니 여기만큼 좋은 곳이 없더라. 싱가포르라는
-                      나라가 살기 좋은 것도 있지만 한국에서 멀어짐으로써 오는
-                      긍정적인 변화가 많았다는 게 더 솔직할 것 같다. 해외생활에
-                      대한 환상을 오롯이 극대화시켜줄 수 있는 지극히 주관적인{" "}
-                    </p>
-                    <span className="info__by">
-                      <span className="ico__by">by</span>
-                      써니
-                    </span>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/detail" className="link__slide">
-                    <div className="img__articles">
-                      <img
-                        src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
-                        alt="이미지"
-                      ></img>
-                    </div>
-                    <strong className="tit__subject">
-                      한국에서 멀어졌더니 생긴 변화
-                    </strong>
-                    <p className="desc__subject">
-                      어쩌다 보니 한국에서 떨어져 산지 1년 3개월. 지난해 2월쯤만
-                      해도 싱가포르라는 나라에 대해 아무런 정보가 없었는데 1년
-                      넘게 살다 보니 여기만큼 좋은 곳이 없더라. 싱가포르라는
-                      나라가 살기 좋은 것도 있지만 한국에서 멀어짐으로써 오는
-                      긍정적인 변화가 많았다는 게 더 솔직할 것 같다. 해외생활에
-                      대한 환상을 오롯이 극대화시켜줄 수 있는 지극히 주관적인{" "}
-                    </p>
-                    <span className="info__by">
-                      <span className="ico__by">by</span>
-                      써니
-                    </span>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/detail" className="link__slide">
-                    <div className="img__articles">
-                      <img
-                        src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
-                        alt="이미지"
-                      ></img>
-                    </div>
-                    <strong className="tit__subject">
-                      한국에서 멀어졌더니 생긴 변화
-                    </strong>
-                    <p className="desc__subject">
-                      어쩌다 보니 한국에서 떨어져 산지 1년 3개월. 지난해 2월쯤만
-                      해도 싱가포르라는 나라에 대해 아무런 정보가 없었는데 1년
-                      넘게 살다 보니 여기만큼 좋은 곳이 없더라. 싱가포르라는
-                      나라가 살기 좋은 것도 있지만 한국에서 멀어짐으로써 오는
-                      긍정적인 변화가 많았다는 게 더 솔직할 것 같다. 해외생활에
-                      대한 환상을 오롯이 극대화시켜줄 수 있는 지극히 주관적인{" "}
-                    </p>
-                    <span className="info__by">
-                      <span className="ico__by">by</span>
-                      써니
-                    </span>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/detail" className="link__slide">
-                    <div className="img__articles">
-                      <img
-                        src="//img1.daumcdn.net/thumb/C240x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/OLI00wxhmz2MRouvBZYFOQH7sDs.JPG"
-                        alt="이미지"
-                      ></img>
-                    </div>
-                    <strong className="tit__subject">
-                      한국에서 멀어졌더니 생긴 변화
-                    </strong>
-                    <p className="desc__subject">
-                      어쩌다 보니 한국에서 떨어져 산지 1년 3개월. 지난해 2월쯤만
-                      해도 싱가포르라는 나라에 대해 아무런 정보가 없었는데 1년
-                      넘게 살다 보니 여기만큼 좋은 곳이 없더라. 싱가포르라는
-                      나라가 살기 좋은 것도 있지만 한국에서 멀어짐으로써 오는
-                      긍정적인 변화가 많았다는 게 더 솔직할 것 같다. 해외생활에
-                      대한 환상을 오롯이 극대화시켜줄 수 있는 지극히 주관적인{" "}
-                    </p>
-                    <span className="info__by">
-                      <span className="ico__by">by</span>
-                      써니
-                    </span>
-                  </Link>
-                </li>
+                {dataPostList.map((post) => (
+                  <Recommend
+                    key={post.id}
+                    id={post.id}
+                    coverImg={post.coverImg}
+                    nickName={post.nickName}
+                    title={post.title}
+                    subTitle={post.subTitle}
+                    content={post.content}
+                  />
+                ))}
               </ul>
             </div>
 
@@ -589,7 +420,6 @@ class Main extends Component {
               </Link>
             </div>
           </div>
-
           {/* 푸터 영역 */}
           <Footer></Footer>
         </div>

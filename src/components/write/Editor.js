@@ -130,12 +130,16 @@ const Editor = () => {
     };
     Axios({
       method: "post",
-      headers: { "content-type": "application/json" },
+      headers: {
+        "content-type": "application/json",
+        Authorization: localStorage.getItem("Authentication"),
+      },
       url: `${POSTS_URL}`,
       data: JSON.stringify(data),
       dataType: "json",
     })
       .then(function (res) {
+        console.log(localStorage.getItem("Authentication"));
         console.log("결과값" + res);
       })
       .catch(function (err) {

@@ -305,10 +305,10 @@ header {
   cursor: pointer;
 }
 
-.wrap__paging span .img__page {
+/* .wrap__paging span .img__page {
   height: 12px;
   margin-top: 8px;
-}
+} */
 .wrap__paging .img__page {
   display: block;
   overflow: hidden;

@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "styles/nav.css";
-// import { ProfileImgURL } from "images/ImgAll";
-import Axios from "axios";
 import { USERPROFILE_URL } from "config";
+import Axios from "axios";
 
 const NavContentsMenu = styled.li`
   font-size: 15px;
@@ -172,5 +171,5 @@ class NavWriter extends Component {
   }
 }
 
-export { ProfileName };
+export { ProfileName, ProfileImgURL };
 export default NavWriter;

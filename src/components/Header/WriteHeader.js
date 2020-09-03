@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import NavWriter from "components/NavWriter";
+import Axios from "axios";
 
 const RoundBtn = styled.button`
   border-radius: 16px;
@@ -46,7 +47,7 @@ const ServiceHeader = styled.div`
   width: 100%;
 `;
 
-const Header = ({ position, backposition, title}) => {
+const Header = ({ position, backposition, title }) => {
   const [visible, setVisible] = useState(false);
   const menuToggle = useRef(null);
   const ref = useRef(null);
@@ -54,8 +55,7 @@ const Header = ({ position, backposition, title}) => {
   // 클릭하면 실행 (메뉴 열림)
   const ClickIn = (ref) => {
     setVisible(true); // true로 변경됨!
-  }; 
-
+  };
   const clickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
       setVisible(false);
@@ -69,28 +69,27 @@ const Header = ({ position, backposition, title}) => {
     };
   });
 
-  
   return (
     <>
-    <ServiceHeader position={position}>
-      <div className="header__inner">
-        <div className="sidebtn__logo">
-        <SideBtn ref={ref} onClick={ClickIn}></SideBtn>
-          <Link to="/">
-            <Logo backposition={backposition} />
-          </Link>
+      <ServiceHeader position={position}>
+        <div className="header__inner">
+          <div className="sidebtn__logo">
+            <SideBtn ref={ref} onClick={ClickIn}></SideBtn>
+            <Link to="/">
+              <Logo backposition={backposition} />
+            </Link>
+          </div>
+          <div className="applybtn__search">
+            <span>{title}</span>
+            {/* <RoundBtn style={{marginRight:"10px"}}>저장</RoundBtn> */}
+          </div>
         </div>
-        <div className="applybtn__search">
-          <span>{title}</span>
-          {/* <RoundBtn style={{marginRight:"10px"}}>저장</RoundBtn> */}
-        </div>
-      </div>
-    </ServiceHeader>
-     {visible && <NavWriter ref={menuToggle} />}
-     {!visible && <></>}
-     </>
+      </ServiceHeader>
+      {visible && <NavWriter ref={menuToggle} />}
+      {!visible && <></>}
+    </>
   );
 };
 
-export {RoundBtn}
+export { RoundBtn };
 export default Header;
