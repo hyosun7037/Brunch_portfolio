@@ -12,6 +12,23 @@ const ScreenOut = styled.h2`
   height: 0;
 `;
 
+const Line = styled.div`
+  border-bottom: 1px solid #f6f6f6;
+  width: 696px;
+  height: 1px;
+`;
+
+const CommentCon = styled.div`
+  font-family: "Noto Sans KR";
+  font-size: ${(props) => props.CommentConsize || "14px"};
+  font-weight: 300;
+  line-height: 22px;
+`;
+
+const CommentConSmall = styled(CommentCon)`
+  font-size: 12px;
+`;
+
 const RoundBtnBig = styled.button`
   display: inline-block;
   margin: 0 2px;
@@ -30,7 +47,14 @@ const RoundBtnBigActive = styled(RoundBtnBig)`
   color: #00c6bd;
   border: 1px solid #00c6bd;
 `;
-export { ScreenOut, RoundBtnBig, RoundBtnBigActive };
+export {
+  CommentConSmall,
+  CommentCon,
+  Line,
+  ScreenOut,
+  RoundBtnBig,
+  RoundBtnBigActive,
+};
 
 //// page
 
@@ -860,6 +884,7 @@ const BtnDefault = styled.button`
   font-size: 12px;
   line-height: 28px;
   color: #666;
+  cursor: pointer;
 `;
 
 // 이전글

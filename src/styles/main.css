@@ -251,6 +251,7 @@ header {
   display: inline-block;
   vertical-align: middle;
   border-radius: 50%;
+  width: 250px;
 }
 
 .mask {
