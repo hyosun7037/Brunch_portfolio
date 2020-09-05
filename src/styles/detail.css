@@ -14,18 +14,18 @@
 }
 
 .cover__image {
-  background-image: url("http://t1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/1kRw/image/d0ZGfu3jqCeandvOx_SfULUH600.jpg");
+  background-image: url("//t1.daumcdn.net/thumb/R1280x0.fjpg/?fname=http://t1.daumcdn.net/brunch/service/guest/image/Xco5PXswZSm9A093-Cf3NrC1rTc.jpg");
   display: block;
   background-size: cover;
   background-position: 50% 50%;
-  height: 450px;
+  height: 500px;
 }
 
 .cover__inner {
   display: block;
   background-color: #000;
   opacity: 0.3;
-  height: 450px;
+  height: 500px;
   position: absolute;
   top: 0;
   left: 0;

@@ -11,7 +11,6 @@ import {
   ScreenOut,
 } from "styles/StyledComponentAll";
 import Axios from "axios";
-import EditorPic, { EditorPic2, EditorPic1 } from "components/Main/EditorPic";
 import { VIEWTAG_URL } from "config";
 import Tag from "components/Main/Tag";
 // import { VIEWPOSTS_URL } from "config";
@@ -19,6 +18,7 @@ import { POSTLIST_URL } from "config";
 import { USER_URL } from "config";
 import WritersInfoFirst from "components/Main/WritersInfoFirst";
 import Recommend from "components/Main/Recommend";
+import EditorPic from "components/Main/EditorPic";
 
 // ScreenOut은 해당 섹션을 구분하기 위함. text-indent로 옆으로 다 빼놓음!
 class Main extends Component {
@@ -144,14 +144,14 @@ class Main extends Component {
     // const { dataPost } = this.state;
     const { dataPostList } = this.state;
     const { dataUser } = this.state;
-    const { dataTag } = this.state;
+    // const { dataTag } = this.state;
 
-    const slicePostList1 = dataPostList.slice(0, 6);
+    // const slicePostList1 = dataPostList.slice(0, 6);
     const slicePostList2 = dataPostList.slice(7, 13);
 
     const slice1 = dataUser.slice(0, 6);
-    const slice2 = dataUser.slice(7, 13);
-    const slice3 = dataUser.slice(14, 20);
+    // const slice2 = dataUser.slice(7, 13);
+    // const slice3 = dataUser.slice(14, 20);
 
     return (
       <>
@@ -192,7 +192,7 @@ class Main extends Component {
             <div className="editor__pic">
               <div className="wrap__slide">
                 <ul className="list__slide" ref={(ref) => (this.next = ref)}>
-                  {slicePostList1.map((post) => (
+                  {slicePostList2.map((post) => (
                     <EditorPic
                       key={post.id}
                       id={post.id}

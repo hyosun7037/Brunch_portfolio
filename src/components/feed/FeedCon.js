@@ -1,21 +1,25 @@
-// 작가 페이지 글 목록 배열
-// 나중에 DB 넣고 다 수정하기!!!
 import React from "react";
-import { Link } from "react-router-dom";
 import {
   ListCommon,
   TitSub,
   DescCommon,
   AppendCommon,
+  IcoBy,
+  IcoDot,
   LinkThumb,
 } from "styles/StyledComponentAll";
+import { Link } from "react-router-dom";
 import moment from "moment";
 
-function AuthrorWriting({ content, title, coverImg, createDate }) {
+const link__category = {
+  paddingRight: "5px",
+  color: "#00c3bd",
+};
+
+const FeedCon = ({ title, content, createDate, coverImg, nickName }) => {
   let codes = `${content}`;
   return (
     <>
-      {/* 글 목록 */}
       <ListCommon>
         <li>
           <div className="cont__common">
@@ -31,41 +35,32 @@ function AuthrorWriting({ content, title, coverImg, createDate }) {
               <Link
                 to="/detail"
                 className="link__category"
-                style={{
-                  paddingRight: "5px",
-                  color: "#00c3bd",
-                  display: "inline",
-                }}
+                style={link__category}
+              ></Link>
+              <IcoBy>by</IcoBy>
+              <Link
+                to="/detail"
+                className="link__bloger"
+                style={{ fontWeight: "300" }}
               >
-                {/* 감정과 기억의 방 */}
+                {nickName}
               </Link>
+              <IcoDot />
               <span className="txt__time">
                 {moment(createDate).format("MMM D YYYY")}
               </span>
             </AppendCommon>
           </div>
+
           <LinkThumb>
             <Link to="/detail">
-              <img
-                src={coverImg}
-                alt="썸네일 이미지"
-                width="120px"
-                height="120px"
-              />
+              <img src={coverImg} alt="이미지" width="120px" height="120px" />
             </Link>
           </LinkThumb>
         </li>
       </ListCommon>
     </>
   );
-}
+};
 
-// AuthrorWriting.propTypes = {
-//   id: PropTypes.number.isRequired,
-//   userId: PropTypes.string.isRequired,
-//   title: PropTypes.string.isRequired,
-//   subTitle: PropTypes.string.isRequired,
-//   content: PropTypes.arrayOf(PropTypes.string).isRequired,
-// };
-
-export default AuthrorWriting;
+export default FeedCon;

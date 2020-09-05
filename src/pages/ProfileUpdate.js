@@ -34,7 +34,6 @@ class ProfileUpdata extends Component {
       },
     })
       .then((res) => {
-        // console.log(localStorage.getItem("Authentication"));
         return this.setState({ dataProfileInfo: res.data });
       })
       .catch((res) => console.log(res));
@@ -49,7 +48,6 @@ class ProfileUpdata extends Component {
     const profileImageText = dataProfileInfo.profileImage;
     const profileNameText = dataProfileInfo.nickName;
     const profileBio = dataProfileInfo.bio;
-    console.log("bio" + profileBio);
     return (
       <>
         <Header position="fixed" title="프로필 편집"></Header>
@@ -64,8 +62,13 @@ class ProfileUpdata extends Component {
                 method="post"
               >
                 <BtnUpload>
+                  <input
+                    type="file"
+                    name="file"
+                    accept="image/*"
+                    style={{ opacity: "0" }}
+                  />
                   <label>이미지 업로드</label>
-                  <input type="file" name="file" accept="image/*" />
                 </BtnUpload>
               </form>
               <div className="wrap__profile__desc">

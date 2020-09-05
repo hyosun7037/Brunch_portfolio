@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // import NavWriter from "components/NavWriter";
 import NavNonmember from "components/NavNonmem";
 import NavWriter from "components/NavWriter";
+import { RoundBtn } from "./WriteHeader";
 
 // import NavWriter from "components/NavWriter";
 
@@ -58,6 +59,7 @@ const Header = ({
   backposition,
   title,
   height,
+  menuBtn,
   searchposition,
   SearchHeight,
   searchDisplay,
@@ -65,18 +67,25 @@ const Header = ({
   const [visible, setVisible] = useState(false);
   const ref = useRef(null);
   let loggedIn = localStorage.Authentication;
-  // console.log("loggedIn ::: " + loggedIn);
 
   // 클릭하면 실행 (메뉴 열림)
-  const ClickIn = (ref) => {
+  const ClickIn = () => {
     setVisible(true); // true로 변경됨!
-    console.log(ref.target);
   };
 
-  const clickOutside = (event) => {
-    if (ref.current && !ref.current.contains(event.target)) {
+  // 해당영역 외부 클릭시 Nav 창이 닫힘
+  const clickOutside = (e) => {
+    if (ref.current && !ref.current.contains(e.target)) {
+      console.log("clickOutside::: 작동");
+      console.log("ref.current :::" + ref.current);
       setVisible(false);
     }
+  };
+
+  const logout = () => {
+    localStorage.clear();
+    alert("작가님, 안녕히 가세요:)");
+    console.log("로그아웃됨");
   };
 
   useEffect(() => {
@@ -91,7 +100,7 @@ const Header = ({
       <ServiceHeader position={position} height={height}>
         <div className="header__inner">
           <div className="sidebtn__logo">
-            <SideBtn ref={ref} onClick={ClickIn}></SideBtn>
+            <SideBtn onClick={ClickIn} ref={ref}></SideBtn>
             <Link to="/">
               <Logo backposition={backposition} />
             </Link>
@@ -99,6 +108,13 @@ const Header = ({
           <HeaderTitle>{title}</HeaderTitle>
           <div className="applybtn__search">
             <Link to="/search">
+              {loggedIn === undefined ? (
+                <></>
+              ) : (
+                <Link to="/login">
+                  <RoundBtn onClick={logout}>로그아웃</RoundBtn>
+                </Link>
+              )}
               <SearchBtn
                 searchposition={searchposition}
                 SearchHeight={SearchHeight}
@@ -106,7 +122,6 @@ const Header = ({
               ></SearchBtn>
             </Link>
           </div>
-          {/* <button onClick={getToken}>로그인테스트</button> */}
         </div>
       </ServiceHeader>
       {/* 이중 삼항 연산자 때문에 로그아웃 구현이 안됨 오류 해결하기! */}
@@ -122,12 +137,7 @@ const Header = ({
         <></>
       )}
 
-      {/* {loggedIn === undefined ? <NavNonmember /> : <NavWriter />} */}
-      {/* {loggedIn === undefined ? <div>토큰 빈 값</div> : <div>토큰 들어감</div>} */}
-      {/* {visible && <NavWriter/>} */}
-      {/* {visible && <NavNonmember />} */}
-      {visible && <></>}
-      {!visible && <></>}
+      {/* {loggedIn === undefined ? <NavNonmember /> : <NavWriter> */}
     </>
   );
 };

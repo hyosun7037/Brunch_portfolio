@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import NavWriter from "components/NavWriter";
-import Axios from "axios";
 
 const RoundBtn = styled.button`
   border-radius: 16px;

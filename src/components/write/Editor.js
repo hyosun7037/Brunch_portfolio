@@ -50,9 +50,12 @@ const QuilWrapper = styled.div`
   .ql-editor {
     padding: 0;
     min-height: 320px;
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height: 1.5;
     font-style: normal;
+    font-family: "Noto Sans KR";
+    font-weight: 300;
+    color: #333;
     &::placeholder {
       font-size: 14px;
     }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "styles/nav.css";
-import { USERPROFILE_URL } from "config";
+import { USERPROFILE_URL, ADMIN_URL } from "config";
 import Axios from "axios";
 
 const NavContentsMenu = styled.li`
@@ -104,73 +104,92 @@ class NavWriter extends Component {
       .catch((res) => console.log(res));
   };
 
+  AdminApi = () => {
+    Axios.get(`${ADMIN_URL}`, {
+      headers: {
+        Authorization: localStorage.getItem("Authentication"),
+      },
+    })
+      .then((res) => {
+        console.log(res + "작동함");
+      })
+      .then((res) => {
+        window.location.href = "http://192.168.0.61:8080/brunch/admin/dash";
+      });
+  };
+
   componentDidMount() {
     this.ProfileInfoApi();
-    // this.logout();
   }
 
-  logout = async () => {
-    const clear = localStorage.clear();
-    await clear();
-    // await console.log("로그아웃 됨");
-    // localStorage.removeItem("Authentication");
-    // localStorage.removeItem("Email");
+  logout = () => {
+    localStorage.clear();
+    alert("작가님, 안녕히 가세요:)");
+    console.log("로그아웃됨");
   };
 
   render() {
     const { dataProfileInfo } = this.state;
     const profileImageText = dataProfileInfo.profileImage;
     const profileNameText = dataProfileInfo.nickName;
+    const profileRole = dataProfileInfo.userRole;
     console.log(dataProfileInfo);
     return (
-      <div className="nav__Wrap">
-        <div className="nav__Header">
-          <Link to="/profile">
-            <ProfileImg>
-              <ProfileImgURL src={profileImageText}></ProfileImgURL>
-            </ProfileImg>
-            <ProfileName>{profileNameText}</ProfileName>
-            <br></br>
-          </Link>
-          <Link to="/write">
-            <RoundSmallBtn>글쓰기</RoundSmallBtn>
-          </Link>
-          {/* <RoundSmallBtn>작가신청</RoundSmallBtn> */}
-        </div>
-
-        <div className="nav__Main">
-          <ul className="nav__Contents">
+      <>
+        <div className="nav__Wrap">
+          <div className="nav__Header">
             <Link to="/profile">
-              <NavContentsMenu>내 브런치</NavContentsMenu>
+              <ProfileImg>
+                <ProfileImgURL src={profileImageText}></ProfileImgURL>
+              </ProfileImg>
+              <ProfileName>{profileNameText}</ProfileName>
+              <br></br>
             </Link>
-            <Link to="/ready">
-              <NavContentsMenu>작가의 서랍</NavContentsMenu>
-            </Link>
-            <NavContentMenuLine /> {/*중간라인, 나중에 수정할 예정*/}
-            <Link to="/">
-              <NavContentsMenu>브런치 홈</NavContentsMenu>
-            </Link>
-            <Link to="/now">
-              <NavContentsMenu>브런치 나우</NavContentsMenu>
-            </Link>
-            <Link to="/library">
-              <NavContentsMenu>글 읽는 서재</NavContentsMenu>
-            </Link>
-            <Link to="/feed">
-              <NavContentsMenu>피드</NavContentsMenu>
-            </Link>
-          </ul>
-          <div className="nav__Footer">
-            {/* <GrayBtn>설정</GrayBtn> */}
-            <Link to="/login">
-              <GrayBtn onClick={this.logout}>로그아웃</GrayBtn>
+            <Link to="/write">
+              <RoundSmallBtn>글쓰기</RoundSmallBtn>
             </Link>
           </div>
+
+          <div className="nav__Main">
+            <ul className="nav__Contents">
+              <Link to="/profile">
+                <NavContentsMenu>내 브런치</NavContentsMenu>
+              </Link>
+              <Link to="/ready">
+                <NavContentsMenu>작가의 서랍</NavContentsMenu>
+              </Link>
+              <NavContentMenuLine /> {/*중간라인, 나중에 수정할 예정*/}
+              <Link to="/">
+                <NavContentsMenu>브런치 홈</NavContentsMenu>
+              </Link>
+              <Link to="/now">
+                <NavContentsMenu>브런치 나우</NavContentsMenu>
+              </Link>
+              <Link to="/library">
+                <NavContentsMenu>글 읽는 서재</NavContentsMenu>
+              </Link>
+              <Link to="/feed">
+                <NavContentsMenu>피드</NavContentsMenu>
+              </Link>
+            </ul>
+            <div className="nav__Footer">
+              {/* 임시로 a 태그 삽입, 나중에 axios로 수정(jwt 토큰 담아서 이동) */}
+              <a href="http://192.168.0.61:8080/brunch/admin">
+                {profileRole === "ROLE_ADMIN" ? (
+                  <GrayBtn onClick={this.AdminApi}>관리</GrayBtn>
+                ) : (
+                  <></>
+                )}
+              </a>
+              {/* <Link to="/login">
+                <GrayBtn onClick={this.logout}>로그아웃</GrayBtn>
+              </Link> */}
+            </div>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 }
-
 export { ProfileName, ProfileImgURL };
 export default NavWriter;

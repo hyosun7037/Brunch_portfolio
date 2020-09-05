@@ -114,8 +114,12 @@ const BtnUpload = styled.span`
   background-image: url("//t1.daumcdn.net/brunch9/static/images/pc/ico_brunch_v1_200824.png");
   background-repeat: no-repeat;
   line-height: 0;
-  text-indent: -9999px;
+  /* text-indent: -9999px; */
   vertical-align: top;
+  cursor: pointer;
+  label {
+    font-size: 0px;
+  }
 `;
 
 const AuthorName = styled.span`
@@ -1087,7 +1091,8 @@ const Wrap = styled.div`
 
 // 관련글
 const ListRelativeArticle = styled.ul`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   position: relative;
   margin: 0 auto;
   max-width: 1020px;

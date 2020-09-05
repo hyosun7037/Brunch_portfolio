@@ -14,6 +14,7 @@ import KeywordDetail from "pages/Detail/KeywordDetail";
 import Author from "pages/Author";
 import AuthorDrawer from "pages/AuthorDrawer";
 import Library from "pages/Library";
+import Feed from "pages/Feed";
 // import LinkData from "assets/LinkData";
 
 const Routes = () => {
@@ -44,6 +45,8 @@ const Routes = () => {
         <Route path="/Keyword_detail" component={KeywordDetail} />
         {/* 작가소개 */}
         <Route path="/author" component={Author} />
+        {/* 피드 */}
+        <Route path="/feed" component={Feed} />
         {/* 로그인 */}
         <Route path="/login" component={GlobalLogin} />
         {/* 검색 */}

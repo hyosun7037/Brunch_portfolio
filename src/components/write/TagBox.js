@@ -1,15 +1,15 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useState, useCallback, useEffect } from "react";
+import styled from "styled-components";
 // import axios from 'axios';
 // import { VIEWTAG_URL } from 'config';
 
 const TagBoxBlock = styled.div`
   /* width: 100%; */
-  max-width:920px;
-  margin:0 auto;
-  border-top: 1px solid #bfbfbf;
+  max-width: 920px;
+  margin: 0 auto;
+  border-top: 1px solid #f4f4f4;
   padding-top: 2rem;
-  padding-bottom:2rem;
+  padding-bottom: 2rem;
   /* display:flex;
   justify-content:flex-end; */
   h4 {
@@ -20,7 +20,7 @@ const TagBoxBlock = styled.div`
 `;
 
 const TagForm = styled.form`
-  width:300px;
+  width: 300px;
   border-radius: 4px;
   overflow: hidden;
   display: flex;
@@ -79,38 +79,38 @@ const TagList = React.memo(({ tags, onRemove }) => (
 ));
 
 const TagBox = ({ tags, onChangeTags }) => {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [localTags, setLocalTags] = useState([]);
 
   const insertTag = useCallback(
-    tag => {
+    (tag) => {
       if (!tag) return; // 공백이라면 추가하지 않음
       if (localTags.includes(tag)) return; // 이미 존재한다면 추가하지 않음
       const nextTags = [...localTags, tag];
       setLocalTags(nextTags);
       onChangeTags(nextTags);
     },
-    [localTags, onChangeTags],
+    [localTags, onChangeTags]
   );
 
   const onRemove = useCallback(
-    tag => {
-      const nextTags = localTags.filter(t => t !== tag);
+    (tag) => {
+      const nextTags = localTags.filter((t) => t !== tag);
       setLocalTags(nextTags);
       onChangeTags(nextTags);
     },
-    [localTags, onChangeTags],
+    [localTags, onChangeTags]
   );
 
-  const onChange = useCallback(e => {
+  const onChange = useCallback((e) => {
     setInput(e.target.value);
   }, []);
 
   const onSubmit = useCallback(
-    e => {
+    (e) => {
       e.preventDefault();
       insertTag(input.trim()); // 앞뒤 공백 없앤 후 등록
-      setInput(''); // input 초기화
+      setInput(""); // input 초기화
     },
     [input, insertTag]
   );
@@ -120,26 +120,24 @@ const TagBox = ({ tags, onChangeTags }) => {
     setLocalTags(tags);
   }, [tags]);
 
-
-// const save = (e) => {
-//   e.preventDefault();
-//   const data = {
-//     tag: localTags,
-//   }
-//   axios({
-//     method:'post',
-//     headers: { 'content-type': 'application/json' },
-//     url:`${VIEWTAG_URL}`,
-//     data : JSON.stringify(data),
-//     dataType:'json'
-//   }).then(function(res){
-//     console.log('결과값' + res);
-//     console.log('결과값' + localTags);
-//   }).catch(function(err){
-//     console.log(err);
-//   });
-// }
-
+  // const save = (e) => {
+  //   e.preventDefault();
+  //   const data = {
+  //     tag: localTags,
+  //   }
+  //   axios({
+  //     method:'post',
+  //     headers: { 'content-type': 'application/json' },
+  //     url:`${VIEWTAG_URL}`,
+  //     data : JSON.stringify(data),
+  //     dataType:'json'
+  //   }).then(function(res){
+  //     console.log('결과값' + res);
+  //     console.log('결과값' + localTags);
+  //   }).catch(function(err){
+  //     console.log(err);
+  //   });
+  // }
 
   return (
     <TagBoxBlock>
@@ -151,7 +149,9 @@ const TagBox = ({ tags, onChangeTags }) => {
           value={input}
           onChange={onChange}
         />
-        <button type="submit" value="submit">추가</button>
+        <button type="submit" value="submit">
+          추가
+        </button>
       </TagForm>
       <TagList tags={localTags} onRemove={onRemove} />
     </TagBoxBlock>

@@ -39,7 +39,10 @@ const AuthorProfile = ({ profileImageText }) => {
             {/* 작가 프로필 이미지 */}
             <Link to="/profile">
               <LinkAuthorImg>
-                <img src={profileImageText} alt="프로필 이미지" />
+                <img
+                  src="https://img1.daumcdn.net/thumb/C100x100.fpng/?fname=https://t1.daumcdn.net/brunch/static/img/help/pc/ico_profile_100_01.png"
+                  alt="프로필 이미지"
+                />
               </LinkAuthorImg>
             </Link>
           </div>

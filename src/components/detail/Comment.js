@@ -28,7 +28,7 @@ class Comment extends Component {
     };
   }
   // 초기화
-  num = 0;
+  num = 1;
 
   handleChange = (e) => {
     e.preventDefault();
@@ -66,13 +66,14 @@ class Comment extends Component {
 
   // 댓글 뿌리기
   CommentApi = () => {
-    Axios.get(`${COMMENT_URL}/1`, {
+    // 나중에 번호 userId로 수정하기!
+    Axios.get(`${COMMENT_URL}/${this.num}`, {
       headers: {
         Authorization: localStorage.getItem("Authentication"),
       },
     })
       .then((res) => {
-        console.log(localStorage.getItem("Authentication"));
+        console.log(`${COMMENT_URL}/${this.num}`);
         return this.setState({ dataComments: res.data });
       })
       .catch((res) => console.log(res));
@@ -115,11 +116,13 @@ class Comment extends Component {
     const { dataProfileInfo } = this.state;
     const profileImageText = dataProfileInfo.profileImage;
     const profileNameText = dataProfileInfo.nickName;
+    // const profileUserID = dataProfileInfo.userId;
+    // console.log("profileUserID::: " + profileUserID); // 나중에 uesrId 받기!
+    console.log("profileNameText::: " + profileNameText);
     // 다른유저 댓글내용
     const { dataComments } = this.state;
-    console.log("dataComments:::" + dataComments);
-    const commentsContent = dataComments.content;
-    console.log("commentsContent:::" + commentsContent);
+    const commentContent = dataComments.content;
+    console.log("commentContent::: " + commentContent);
 
     const comment__text = {
       width: "600px",
@@ -141,9 +144,9 @@ class Comment extends Component {
           {dataComments.map((commentOtherText) => {
             return (
               <FeedCommentOtherList
-                key={commentOtherText.num}
+                key={commentOtherText.id}
                 id={commentOtherText.id}
-                comment={commentOtherText.comment}
+                content={commentOtherText.comment}
               >
                 {profileNameText}
               </FeedCommentOtherList>
@@ -154,7 +157,7 @@ class Comment extends Component {
               <FeedCommentList
                 key={commentText.num}
                 id={commentText.id}
-                comment={commentText.comment}
+                content={commentText.comment}
               >
                 {profileNameText}
               </FeedCommentList>
@@ -194,14 +197,14 @@ class Comment extends Component {
                     <BtnDefault
                       type="submit"
                       value="submit"
-                      onClick={this.save}
-                      //   onClick={
-                      //     !this.state.comment
-                      //       ? (e) => {
-                      //           e.preventDefault();
-                      //         }
-                      //       : this.handleComment
-                      //   } //댓글 input 창에 내용이 없으면 함수 이벤트 막아주기
+                      //   onClick={this.save}
+                      onClick={
+                        !this.state.comment
+                          ? (e) => {
+                              e.preventDefault();
+                            }
+                          : (this.handleComment, this.save)
+                      } //댓글 input 창에 내용이 없으면 함수 이벤트 막아주기
                     >
                       확인
                     </BtnDefault>

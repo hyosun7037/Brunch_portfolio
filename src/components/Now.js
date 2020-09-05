@@ -3,13 +3,13 @@ import {
   ListCommon,
   TitSub,
   DescCommon,
-  IcoBar,
   AppendCommon,
   IcoBy,
   IcoDot,
   LinkThumb,
 } from "styles/StyledComponentAll";
 import { Link } from "react-router-dom";
+import moment from "moment";
 
 const link__category = {
   paddingRight: "5px",
@@ -46,7 +46,9 @@ const Now = ({ title, content, createDate, coverImg, nickName }) => {
                 {nickName}
               </Link>
               <IcoDot />
-              <span className="txt__time">{createDate}</span>
+              <span className="txt__time">
+                {moment(createDate).format("MMM D YYYY")}
+              </span>
             </AppendCommon>
           </div>
 
