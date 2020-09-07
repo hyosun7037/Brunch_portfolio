@@ -20,16 +20,24 @@ import {
   BtnType,
 } from "styles/StyledComponentAll";
 import AuthorInfo from "components/authorContents/AuthorInfo";
-
+import Axios from "axios";
+import { AUTHOR_URL } from "config";
+import { AUTHOR_POSTS_URL } from "config";
+import { USERPROFILE_URL } from "config";
+import { COMMENT_URL } from "config";
 const active = {
   color: "#333",
   borderColor: "#333",
 };
 
 const Author = () => {
+  // console.log("작가페이지pk id ::: " + id);
   const [visible, setVisible] = useState(false);
   const ref1 = useRef(null); // 작가소개
   const ref2 = useRef(null); // 글
+  const [profile, setProfile] = useState([]);
+  const [follow, setFollow] = useState([]);
+  const [profilePosts, setProfilePosts] = useState([]);
 
   const ClickIn = (ref1) => {
     setVisible(false); // true로 변경됨!
@@ -41,12 +49,53 @@ const Author = () => {
     console.log(ref2.target);
   };
 
+  // 나중에 작가 pk 붙이기
+  // const ProfileInfoApi = () => {
+  //   Axios.get(`${USERPROFILE_URL}`, {
+  //     headers: {
+  //       Authorization: localStorage.getItem("Authentication"),
+  //     },
+  //   })
+  //     .then((res) => {
+  //       return setDataProfileInfo({ dataProfileInfo: res.data });
+
+  //     })
+  //     .catch((res) => console.log(res));
+  // };
+
+  // 작가
+  const ProfileInfoApi = () => {
+    Axios.get(`${AUTHOR_URL}/110`, {
+      headers: {
+        Authorization: localStorage.getItem("Authentication"),
+      },
+    }).then((res) => {
+      console.log(res);
+      console.log("작가 프로필 정보::: " + res.data.user.nickName);
+      return setProfile(res.data.user), setFollow(res.data);
+    });
+  };
+
+  const ProfilePostsApi = () => {
+    Axios.get(`${AUTHOR_POSTS_URL}`, {
+      headers: {
+        Authorization: localStorage.getItem("Authentication"),
+      },
+    }).then((res) => {
+      console.log(res);
+      console.log("작가 글 목록::: " + res.data);
+      return setProfilePosts(res.data);
+    });
+  };
+
   useEffect(() => {
+    ProfileInfoApi();
+    ProfilePostsApi();
     document.addEventListener("click", active);
     return () => {
       document.removeEventListener("click", active);
     };
-  });
+  }, []);
 
   return (
     <div>
@@ -58,17 +107,14 @@ const Author = () => {
         <CoverBloger coverHeight="200px" />
         <WrapProfile>
           <ProfileImg>
-            <img
-              src="//img1.daumcdn.net/thumb/C100x100.fjpg/?fname=http://t1.daumcdn.net/brunch/service/user/aFZ0/image/0e47B_A7ISf1x9sYZ8wjsRZJZRA.jpg"
-              alt="프로필 이미지"
-            />
+            <img src={profile.profileImage} alt="프로필 이미지" />
           </ProfileImg>
           <div className="wrap__profile__desc">
-            <TitBloger>슈필라움</TitBloger>
+            <TitBloger>{profile.nickName}</TitBloger>
             {/* 소속, 작가이름 */}
             <AuthorName>
               <ScreenOut>소속</ScreenOut>
-              <TxtInfo>슈필라움</TxtInfo>
+              <TxtInfo>{profile.nickName}</TxtInfo>
             </AuthorName>
             {/* 구독자, 관심작가, 구독하기 */}
             <dd
@@ -83,12 +129,12 @@ const Author = () => {
               <BlogCount>
                 <dd style={{ margin: "0" }}>
                   <TxtG>구독자</TxtG>
-                  <NumCount>0</NumCount>
+                  <NumCount>{follow.followerCount}</NumCount>
                 </dd>
                 <dd>
                   <Link to="/" className="link__count">
                     <TxtG>관심작가</TxtG>
-                    <NumCount>0</NumCount>
+                    <NumCount>{follow.followingCount}</NumCount>
                   </Link>
                 </dd>
               </BlogCount>
@@ -107,13 +153,14 @@ const Author = () => {
             </li>
             <li>
               <button onClick={ClickIn2} ref={ref2}>
-                <span>글 10</span>
+                <span>글 {profilePosts.length}</span>
               </button>
             </li>
           </ul>
         </TabContents>
       </nav>
       {!visible && <AuthorInfo />}
+      {/* {visible && <AuthrorWriting />} */}
       {visible && <AuthrorWriting />}
     </div>
   );

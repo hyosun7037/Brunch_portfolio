@@ -691,7 +691,9 @@ header {
 }
 
 .rec__articles .desc__subject {
-  display: block;
+  display: inline-block;
+  max-height: 300px;
+  overflow: hidden;
   padding-top: 10px;
   font-size: 12px;
   line-height: 20px;

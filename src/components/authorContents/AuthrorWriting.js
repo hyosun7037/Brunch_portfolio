@@ -1,6 +1,6 @@
 // 작가 페이지 글 목록 배열
 // 나중에 DB 넣고 다 수정하기!!!
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ListCommon,
@@ -10,8 +10,28 @@ import {
   LinkThumb,
 } from "styles/StyledComponentAll";
 import moment from "moment";
+import Axios from "axios";
+import { AUTHOR_POSTS_URL } from "config";
 
 function AuthrorWriting({ content, title, coverImg, createDate }) {
+  const [profilePosts, setProfilePosts] = useState([]);
+
+  const ProfilePostsApi = () => {
+    Axios.get(`${AUTHOR_POSTS_URL}`, {
+      headers: {
+        Authorization: localStorage.getItem("Authentication"),
+      },
+    }).then((res) => {
+      console.log(res);
+      console.log("작가 글 목록::: " + res.data);
+      return setProfilePosts(res.data);
+    });
+  };
+
+  useEffect(() => {
+    ProfilePostsApi();
+  }, []);
+
   let codes = `${content}`;
   return (
     <>

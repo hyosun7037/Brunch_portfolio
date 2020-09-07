@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const WritersInfoFirst = ({ bio, nickName, profileImage }) => {
+const WritersInfoFirst = ({ bio, nickName, profileImage, id }) => {
+  console.log("작가 pk::: " + id);
   return (
     <div style={{ display: "inline-block" }}>
       <li>

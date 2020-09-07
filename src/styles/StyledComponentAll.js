@@ -542,6 +542,10 @@ const BtnType = styled.button`
   box-sizing: border-box;
   cursor: pointer;
   font-family: "Noto Sans KR";
+  &:hover {
+    background: #00c3bd;
+    color: #fff;
+  }
 `;
 
 const BtnType2 = styled(BtnType)`

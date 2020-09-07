@@ -3,6 +3,7 @@ import React from "react";
 // import fileUpload2 from "test/fileUpload2";
 // import Slick from "test/Slick";
 // import Comment from "test/Comment";
+import SearchTest from "test/SearchTest";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       {/* <Slick /> */}
       {/* <Comment /> */}
       {/* <Upload /> */}
+      <SearchTest />
     </div>
   );
 };

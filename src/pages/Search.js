@@ -1,13 +1,44 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Header from "components/Header/Header";
 import { Link } from "react-router-dom";
-import { ScreenOut, Box, BoxInner, WrapSerach, TxtSearch, SearchForm, ButtonSearch, IcoSearch, SuggestGuide, MoveUp, WrapList, DescG, RecKeyword, ThumbImg, TitWriter, TxtWriter, RecList } from "styles/StyledComponentAll";
+import {
+  ScreenOut,
+  Box,
+  BoxInner,
+  WrapSerach,
+  TxtSearch,
+  SearchForm,
+  ButtonSearch,
+  IcoSearch,
+  SuggestGuide,
+  MoveUp,
+  WrapList,
+  DescG,
+  RecKeyword,
+  ThumbImg,
+  TitWriter,
+  TxtWriter,
+  RecList,
+} from "styles/StyledComponentAll";
 
 const Search = () => {
+  // const [data, setData] = useState({
+  //   id: 0,
+  //   title: "테스트1",
+  //   content: "010-1234-5678",
+  // });
+
   const searchInput = useRef(null);
   useEffect(() => {
     searchInput.current.focus();
   }, [searchInput]);
+
+  // 변화값
+  const handleChange = (e) => {
+    this.setState({
+      keyword: e.target.value,
+    });
+  };
   return (
     <>
       <Header searchposition="-90px 0" />
@@ -21,10 +52,9 @@ const Search = () => {
                   <span>
                     <TxtSearch
                       placeholder="검색어를 입력해 주세요"
+                      onChange={handleChange}
                       ref={searchInput}
                     />
-                    {/* <input type="text" placeholder="검색어를 입력해 주세요"/> */}
-                    {/* <input type="hidden" placeholder="검색어를 입력해 주세요"/> */}
                   </span>
                 </div>
                 <ButtonSearch>

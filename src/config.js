@@ -14,8 +14,15 @@ export const POSTLIST_URL = "http://192.168.0.101:8080/brunch/post/main";
 // 작가 리스트
 export const USER_URL = "http://192.168.0.101:8080/brunch/user/list";
 
+// 작가 한명 뿌리기 (+ 작가 pk)
+export const AUTHOR_URL = "http://192.168.0.101:8080/brunch/user/profile";
+
+export const AUTHOR_POSTS_URL =
+  "http://192.168.0.101:8080/brunch/user/profile/110/posts";
+
 // nav, userProfile
-export const USERPROFILE_URL = "http://192.168.0.61:8080/brunch/user/loginUser";
+export const USERPROFILE_URL =
+  "http://192.168.0.101:8080/brunch/user/loginUser";
 
 // 프로필 편집
 export const USERPROFILE_UPDATE_URL =
